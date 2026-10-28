@@ -26,22 +26,26 @@ VER = hashlib.md5(str(time.time()).encode()).hexdigest()[:8]
 
 UI = {
     "en": dict(
-        home="Home", kicker="Cybersecurity portfolio",
-        lead=("This portfolio collects the case studies completed during the Google Cybersecurity Certificate. Each one is based on a simulated "
-              "scenario provided by the course, and no real systems were analyzed. The topics include network traffic analysis, incident response, "
-              "risk and vulnerability assessment, access control, regulatory compliance and basic system hardening."),
-        nav_about="About", nav_cases="Case studies", nav_projects="Projects", nav_path="Training",
+        home="Home", kicker="Portfolio",
+        lead=("I am a Computer Science student at the University of Salerno. This is where I collect the software projects I have built, "
+              "an independent research project and the case studies from the Google Cybersecurity Certificate."),
+        cyber_kicker="Cybersecurity", cyber_title="Cybersecurity case studies",
+        cyber_lead=("These case studies were completed during the Google Cybersecurity Certificate. Each one is based on a simulated "
+                    "scenario provided by the course, and no real systems were analyzed. The topics include network traffic analysis, incident response, "
+                    "risk and vulnerability assessment, access control, regulatory compliance and basic system hardening."),
+        proj_open="Explore the project",
+        nav_about="About", nav_cases="Cybersecurity", nav_projects="Projects", nav_path="Training",
         btn_cases="View the case studies", btn_about="About me", cert_kicker="Training", cert_more="Learn more about the program",
         about_kicker="Profile", about_title="About me", skills="Skills", links="Links",
         cases_kicker="Selected work", cases_title="Case studies",
         cases_note="Grouped by the six functions of the NIST Cybersecurity Framework 2.0: Govern, Identify, Protect, Detect, Respond and Recover.",
         n_cs="case studies", n_ar="CSF functions", n_lg="languages", all="All", read="Read the case study",
         crumb="All case studies", pdf="Download as PDF", prev="Previous", next="Next",
-        foot1="Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.",
+        foot1="Personal portfolio. The cybersecurity case studies are educational and based on simulated scenarios from the Google Cybersecurity Certificate: no live systems were tested and no real data is used.",
         foot2="They are not a formal attestation, certification or legal assessment of compliance.",
         projects="Projects", projects_note="Software projects, with code and instructions on GitHub.",
         previews="Previews", previews_note="Work in progress. These pages are not listed publicly.",
-        open="Open", skip="Skip to content", desc_home="Cybersecurity case studies: incident response, network analysis, risk assessment, access control and compliance.",
+        open="Open", skip="Skip to content", desc_home="Portfolio of a Computer Science student: software projects, independent research and cybersecurity case studies.",
         credential="View the credential", source="Source", courses_n="%d courses",
         proj_kicker="Software", proj_title="Projects",
         proj_lead=("Software projects developed independently or as part of my university studies. The source code and instructions for running each project are available on GitHub."),
@@ -49,22 +53,26 @@ UI = {
         proj_all="View the projects", proj_teaser="Software projects, with code and instructions on GitHub.",
         notfound="Page not found", back="Back to the home page"),
     "it": dict(
-        home="Home", kicker="Portfolio di cybersecurity",
-        lead=("Il portfolio raccoglie i case study realizzati durante il Google Cybersecurity Certificate. Ogni lavoro si basa su uno scenario simulato "
-              "proposto dal corso: non sono stati analizzati sistemi reali. Gli argomenti comprendono l'analisi del traffico di rete, la risposta agli incidenti, "
-              "la valutazione di rischi e vulnerabilità, il controllo degli accessi, la conformità normativa e l'hardening di base dei sistemi."),
-        nav_about="Profilo", nav_cases="Case study", nav_projects="Progetti", nav_path="Formazione",
+        home="Home", kicker="Portfolio",
+        lead=("Sono studente di Informatica all'Università degli Studi di Salerno. Qui raccolgo i progetti software che ho sviluppato, "
+              "un lavoro di ricerca indipendente e i case study del Google Cybersecurity Certificate."),
+        cyber_kicker="Cybersecurity", cyber_title="Case study di cybersecurity",
+        cyber_lead=("I case study sono stati realizzati durante il Google Cybersecurity Certificate. Ogni lavoro si basa su uno scenario simulato "
+                    "proposto dal corso: non sono stati analizzati sistemi reali. Gli argomenti comprendono l'analisi del traffico di rete, la risposta agli incidenti, "
+                    "la valutazione di rischi e vulnerabilità, il controllo degli accessi, la conformità normativa e l'hardening di base dei sistemi."),
+        proj_open="Scopri il progetto",
+        nav_about="Profilo", nav_cases="Cybersecurity", nav_projects="Progetti", nav_path="Formazione",
         btn_cases="Vai ai case study", btn_about="Profilo", cert_kicker="Formazione", cert_more="Approfondisci il percorso",
         about_kicker="Profilo", about_title="Riguardo me", skills="Competenze", links="Link",
         cases_kicker="Lavori selezionati", cases_title="Case study",
         cases_note="Raggruppati secondo le sei funzioni del NIST Cybersecurity Framework 2.0: Governare, Identificare, Proteggere, Rilevare, Rispondere e Ripristinare.",
         n_cs="case study", n_ar="funzioni CSF", n_lg="lingue", all="Tutti", read="Leggi il case study",
         crumb="Tutti i case study", pdf="Scarica il PDF", prev="Precedente", next="Successivo",
-        foot1="Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.",
+        foot1="Portfolio personale. I case study di cybersecurity sono didattici e basati su scenari simulati del Google Cybersecurity Certificate: non sono stati testati sistemi reali e non si usano dati reali.",
         foot2="Non costituiscono un'attestazione formale, una certificazione né una valutazione legale di conformità.",
         projects="Progetti", projects_note="Progetti software, con codice e istruzioni su GitHub.",
         previews="Anteprime", previews_note="Lavori in corso. Queste pagine non sono elencate pubblicamente.",
-        open="Apri", skip="Vai al contenuto", desc_home="Case study di cybersecurity: risposta agli incidenti, analisi di rete, valutazione del rischio, controllo degli accessi e conformità.",
+        open="Apri", skip="Vai al contenuto", desc_home="Portfolio di uno studente di Informatica: progetti software, ricerca indipendente e case study di cybersecurity.",
         credential="Verifica il certificato", source="Fonte", courses_n="%d corsi",
         proj_kicker="Software", proj_title="Progetti",
         proj_lead=("Progetti software sviluppati in autonomia o nell'ambito degli studi universitari. Il codice sorgente e le istruzioni per eseguire ciascun progetto sono disponibili su GitHub."),
@@ -146,8 +154,8 @@ def portrait_html(lang, cls=""):
 
 def nav_html(lang, here):
     u = UI[lang]
-    items = [("about.html", u["nav_about"], "about"), ("index.html#case-study", u["nav_cases"], "cases"),
-             ("projects.html", u["nav_projects"], "projects")]
+    items = [("about.html", u["nav_about"], "about"), ("projects.html", u["nav_projects"], "projects"),
+             ("cybersecurity.html", u["nav_cases"], "cyber")]
     out = []
     for href, label, key in items:
         cur = ' aria-current="page"' if key == here else ""
@@ -523,13 +531,21 @@ def active_projects(kind):
 
 
 def projects_html(lang):
-    """Rimando nella home: compare solo se ci sono progetti pubblici attivi."""
+    """Schede dei progetti nella home: compaiono solo se ci sono progetti pubblici attivi."""
     u = UI[lang]
-    if not active_projects("public"):
+    pub = active_projects("public")
+    if not pub:
         return ""
-    return ('<section class="proj-teaser"><div class="wrap"><p class="kicker">%s</p><h2>%s</h2><p class="lead">%s</p>'
-            '<a class="btn solid" href="projects.html">%s</a></div></section>'
-            % (esc(u["proj_kicker"]), esc(u["proj_title"]), esc(u["proj_teaser"]), esc(u["proj_all"])))
+    cards = []
+    for p in pub:
+        tone = p.get("tone", "risk")
+        cards.append('<li class="card a-%s"><a href="projects.html#%s"><span class="card-top">%s<span class="tag">%s</span></span>'
+                     '<h3>%s</h3><p>%s</p><span class="skills">%s</span><span class="go">%s &rarr;</span></a></li>'
+                     % (tone, esc(p["id"]), icon(tone) if tone in ICONS else "", esc(p["status"][lang]), esc(p["title"]),
+                        esc(p["summary"][lang]), esc(p["tags"][lang]), esc(u["proj_open"])))
+    return ('<section class="cases" id="progetti"><div class="wrap"><p class="kicker center">%s</p><h2 class="section-title">%s</h2>'
+            '<p class="section-note">%s</p><ul class="grid fit">%s</ul></div></section>'
+            % (esc(u["proj_kicker"]), esc(u["proj_title"]), esc(u["proj_teaser"]), "".join(cards)))
 
 
 def project_block(p, lang, u, preview=False):
@@ -542,7 +558,7 @@ def project_block(p, lang, u, preview=False):
     else:
         href, label, rel = p["url"], u["proj_code"], ' rel="noopener noreferrer"'
     tags = "".join("<li>%s</li>" % esc(t.strip()) for t in p["tags"][lang].split(","))
-    return (f'<article class="project a-{p.get("tone", "risk")}">'
+    return (f'<article class="project a-{p.get("tone", "risk")}" id="{esc(p["id"])}">'
             f'<div class="project-meta"><span class="tag">{esc(p["status"][lang])}</span><h2>{esc(p["title"])}</h2>'
             f'<ul class="chips">{tags}</ul><a class="btn solid" href="{esc(href)}"{rel}>{esc(label)}</a></div>'
             f'<div class="project-body"><p class="project-sum">{esc(p["summary"][lang])}</p>{how}{note}</div></article>')
@@ -571,9 +587,49 @@ def build_projects(lang):
     return page(lang, f"{u['proj_title']} | {CFG['name']}", u["proj_lead"], body, 1, alt="../%s/projects.html" % other, here="projects")
 
 
-def build_home(lang):
+def cert_band(lang, more_href, more_label):
+    """Fascia blu sul Google Cybersecurity Certificate, con scheda dei dati e link alla verifica."""
     u = UI[lang]
     C = PROFILE["certificate"]
+    facts = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (esc(f["label"][lang]), esc(f["value"][lang])) for f in C["facts"])
+    cert_link = ""
+    if C.get("credential_url"):
+        cert_link = '<a class="btn light" href="%s" rel="noopener noreferrer">%s</a>' % (esc(C["credential_url"]), esc(u["credential"]))
+    return f"""<section class="cert-band" id="formazione">
+<div class="wrap cert-grid">
+<div>
+<p class="kicker">{esc(u['cert_kicker'])}</p>
+<h2>{esc(C['title'][lang])}</h2>
+<p>{esc(C['band'][lang])}</p>
+<div class="actions"><a class="btn light" href="{more_href}">{esc(more_label)}</a>{cert_link}</div>
+</div>
+<dl class="facts">{facts}</dl>
+</div>
+</section>"""
+
+
+def build_home(lang):
+    u = UI[lang]
+    body = f"""<section class="hero">
+<div class="wrap hero-grid">
+<div class="hero-text">
+<p class="kicker">{esc(u['kicker'])}</p>
+<h1>{esc(CFG['site_title'][lang])}</h1>
+<hr class="rule">
+<p class="lead">{esc(u['lead'])}</p>
+<div class="actions"><a class="btn solid" href="projects.html">{esc(u['proj_all'])}</a><a class="btn" href="about.html">{esc(u['btn_about'])}</a></div>
+</div>
+{portrait_html(lang, "hero-photo")}
+</div>
+</section>
+{projects_html(lang)}
+{cert_band(lang, "cybersecurity.html", u['btn_cases'])}"""
+    other = "en" if lang == "it" else "it"
+    return page(lang, f"{CFG['site_title'][lang]} | {CFG['name']}", u["desc_home"], body, 1, alt="../%s/index.html" % other)
+
+
+def build_cyber(lang):
+    u = UI[lang]
     chips = ['<button class="chip" data-filter="all" aria-pressed="true">%s</button>' % esc(u["all"])]
     for k, v in AREAS.items():
         chips.append('<button class="chip c-%s" data-filter="%s" aria-pressed="false">%s</button>' % (k, k, esc(v[lang])))
@@ -584,38 +640,15 @@ def build_home(lang):
             '<h3>%s</h3><p>%s</p><span class="skills">%s</span><span class="go">%s &rarr;</span></a></li>'
             % (c["area"], c["area"], c["slug"], icon(c["area"]), esc(AREAS[c["area"]][lang]), esc(c["title"][lang]),
                esc(c["summary"][lang]), esc(c["skills"][lang]), esc(u["read"])))
-    facts = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (esc(f["label"][lang]), esc(f["value"][lang])) for f in C["facts"])
-    cert_link = ""
-    if C.get("credential_url"):
-        cert_link = '<a class="btn light" href="%s" rel="noopener noreferrer">%s</a>' % (esc(C["credential_url"]), esc(u["credential"]))
-    body = f"""<section class="hero">
-<div class="wrap hero-grid">
-<div class="hero-text">
-<p class="kicker">{esc(u['kicker'])}</p>
-<h1>{esc(CFG['site_title'][lang])}</h1>
+    body = f"""<div class="wrap">
+<header class="about-head">
+<p class="kicker">{esc(u['cyber_kicker'])}</p>
+<h1>{esc(u['cyber_title'])}</h1>
 <hr class="rule">
-<p class="lead">{esc(u['lead'])}</p>
-<div class="actions"><a class="btn solid" href="#case-study">{esc(u['btn_cases'])}</a><a class="btn" href="about.html">{esc(u['btn_about'])}</a></div>
-<ul class="stats">
-<li><b>{len(CASES)}</b><span>{esc(u['n_cs'])}</span></li>
-<li><b>{len(AREAS)}</b><span>{esc(u['n_ar'])}</span></li>
-<li><b>2</b><span>{esc(u['n_lg'])}</span></li>
-</ul>
+<p class="lead center">{esc(u['cyber_lead'])}</p>
+</header>
 </div>
-{portrait_html(lang, "hero-photo")}
-</div>
-</section>
-<section class="cert-band" id="formazione">
-<div class="wrap cert-grid">
-<div>
-<p class="kicker">{esc(u['cert_kicker'])}</p>
-<h2>{esc(C['title'][lang])}</h2>
-<p>{esc(C['band'][lang])}</p>
-<div class="actions"><a class="btn light" href="about.html#percorso">{esc(u['cert_more'])}</a>{cert_link}</div>
-</div>
-<dl class="facts">{facts}</dl>
-</div>
-</section>
+{cert_band(lang, "about.html#percorso", u['cert_more'])}
 <section class="cases" id="case-study">
 <div class="wrap">
 <p class="kicker center">{esc(u['cases_kicker'])}</p>
@@ -624,10 +657,9 @@ def build_home(lang):
 <div class="filters" role="group" aria-label="Filter">{''.join(chips)}</div>
 <ul class="grid">{''.join(cards)}</ul>
 </div>
-</section>
-{projects_html(lang)}"""
+</section>"""
     other = "en" if lang == "it" else "it"
-    return page(lang, f"{CFG['site_title'][lang]} | {CFG['name']}", u["desc_home"], body, 1, alt="../%s/index.html" % other)
+    return page(lang, f"{u['cyber_title']} | {CFG['name']}", u["cyber_lead"], body, 1, alt="../%s/cybersecurity.html" % other, here="cyber")
 
 
 def build_about(lang):
@@ -679,7 +711,7 @@ def build_about(lang):
 </div>
 </div>"""
     other = "en" if lang == "it" else "it"
-    return page(lang, f"{u['about_title']} | {CFG['name']}", P["role"][lang] + ". " + C["band"][lang], body, 1, alt="../%s/about.html" % other, here="about")
+    return page(lang, f"{u['about_title']} | {CFG['name']}", P["role"][lang] + ". " + P["intro"][lang][0], body, 1, alt="../%s/about.html" % other, here="about")
 
 
 def build_case(lang, i):
@@ -697,7 +729,7 @@ def build_case(lang, i):
     skills = "".join("<li>%s</li>" % esc(s.strip()) for s in c["skills"][lang].split(","))
     body = f"""<div class="wrap">
 <header class="article-head a-{c['area']}">
-<p class="crumbs"><a href="index.html">&larr; {esc(u['crumb'])}</a></p>
+<p class="crumbs"><a href="cybersecurity.html">&larr; {esc(u['crumb'])}</a></p>
 <span class="tag a-{c['area']}">{esc(AREAS[c['area']][lang])}</span>
 <h1>{esc(c['title'][lang])}</h1>
 <hr class="rule">
@@ -711,7 +743,7 @@ def build_case(lang, i):
 </article>
 </div>"""
     other = "en" if lang == "it" else "it"
-    return page(lang, f"{c['title'][lang]} | {CFG['name']}", c["summary"][lang], body, 1, alt="%s.html" % c["slug"] if False else "../%s/%s.html" % (other, c["slug"]), here="case")
+    return page(lang, f"{c['title'][lang]} | {CFG['name']}", c["summary"][lang], body, 1, alt="../%s/%s.html" % (other, c["slug"]), here="cyber")
 
 
 # ---------------------------------------------------------------- scrittura
@@ -732,6 +764,7 @@ def build():
     for lang in LANGS:
         write(os.path.join(DOCS, lang, "index.html"), build_home(lang))
         write(os.path.join(DOCS, lang, "about.html"), build_about(lang))
+        write(os.path.join(DOCS, lang, "cybersecurity.html"), build_cyber(lang))
         write(os.path.join(DOCS, lang, "projects.html"), build_projects(lang))
         for i, c in enumerate(CASES):
             write(os.path.join(DOCS, lang, c["slug"] + ".html"), build_case(lang, i))
@@ -748,7 +781,7 @@ def build():
 <meta http-equiv="Content-Security-Policy" content="{CSP}">
 <title>{esc(CFG['name'])}</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css?v={VER}"><script src="assets/redirect.js?v={VER}"></script></head>
-<body><main class="wrap hero"><p class="kicker">Google Cybersecurity Certificate</p><h1>{esc(CFG['name'])}</h1>
+<body><main class="wrap hero"><p class="kicker">Portfolio</p><h1>{esc(CFG['name'])}</h1>
 <p class="lead"><a href="it/">Italiano</a> &nbsp;|&nbsp; <a href="en/">English</a></p></main></body></html>
 """)
     write(os.path.join(DOCS, "404.html"), f"""<!doctype html>

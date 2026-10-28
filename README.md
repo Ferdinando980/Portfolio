@@ -1,12 +1,12 @@
-# Portfolio di cybersecurity / Cybersecurity portfolio
+# Portfolio / Portfolio
 
-Sito statico con i case study del Google Cybersecurity Certificate, in italiano e in inglese.
-A static site with the case studies from the Google Cybersecurity Certificate, in Italian and English.
+Sito statico con i miei progetti software, un lavoro di ricerca e i case study del Google Cybersecurity Certificate, in italiano e in inglese.
+A static site with my software projects, a research project and the case studies from the Google Cybersecurity Certificate, in Italian and English.
 
 ## Cosa contiene / What it contains
 
-- 20 case study, ciascuno con la pagina web e il PDF scaricabile (tranne l'inventario dei beni, che contiene nomi resi anonimi).
-- Profilo e pagina Progetti.
+- Home, Profilo e pagina Progetti.
+- Pagina Cybersecurity con 20 case study, ciascuno con la pagina web e il PDF scaricabile (tranne l'inventario dei beni, che contiene nomi resi anonimi), ordinati per funzione del NIST CSF 2.0.
 - Tutti gli esercizi sono su scenari simulati del corso. Nessun sistema reale è stato toccato.
 
 ## Come si genera / How to build
