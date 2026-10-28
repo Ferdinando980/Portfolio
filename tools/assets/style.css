@@ -381,3 +381,13 @@ td .q { margin-bottom: .4em; }
 .filter-note { text-align: center; color: var(--muted); max-width: 62ch; margin: -14px auto 28px; font-size: .95rem; }
 .ref-divider { grid-column: 1 / -1; list-style: none; margin: 14px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
 .ref-divider span { font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+
+/* una sezione per funzione NIST, con il blocco Reference sotto */
+.fn { margin: 0 0 56px; }
+.fn-title { font: 400 1.9rem/1.2 var(--serif); color: var(--c, var(--azure)); margin: 40px 0 22px; padding-top: 22px; border-top: 3px solid var(--c, var(--ink)); }
+.fn-empty { color: var(--muted); margin: 0 0 8px; max-width: 62ch; }
+.ref-title { font: 600 .78rem var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin: 34px 0 16px; }
+.fn .grid { margin-bottom: 8px; }
+.fn[hidden] { display: none; }
+.card.is-ref { border-top-style: dashed; background: transparent; }
+.card.is-ref .refbadge { display: inline-block; }
