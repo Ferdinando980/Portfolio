@@ -745,8 +745,9 @@ def build_about(lang):
             for it in g["items"]:
                 name = it["name"] if isinstance(it["name"], str) else it["name"][lang]
                 if it.get("links"):
+                    label = lambda l: l["label"] if isinstance(l["label"], str) else l["label"][lang]
                     link = '<span class="skill-links">%s</span>' % "".join('<a class="pill" href="%s" aria-label="%s, %s">%s <i aria-hidden="true">&rarr;</i></a>'
-                                         % (esc(l["href"]), esc(name), esc(l["label"]), esc(l["label"])) for l in it["links"])
+                                         % (esc(l["href"]), esc(name), esc(label(l)), esc(label(l))) for l in it["links"])
                 elif it.get("href"):
                     link = ' <a href="%s" aria-label="%s">&rarr;</a>' % (esc(it["href"]), esc(name))
                 else:

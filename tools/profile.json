@@ -547,7 +547,29 @@
               "it": "Wireshark, tcpdump e VirusTotal nei case study. Il programma del corso comprende anche SIEM (Splunk, Chronicle) e IDS (Suricata).",
               "en": "Wireshark, tcpdump and VirusTotal in the case studies. The course program also covers SIEM (Splunk, Chronicle) and IDS (Suricata)."
             },
-            "href": "cybersecurity.html"
+            "links": [
+              {
+                "label": {
+                  "it": "Wireshark: SYN flood",
+                  "en": "Wireshark: SYN flood"
+                },
+                "href": "syn-flood.html"
+              },
+              {
+                "label": {
+                  "it": "tcpdump: DNS e ICMP",
+                  "en": "tcpdump: DNS and ICMP"
+                },
+                "href": "dns-icmp-traffic.html"
+              },
+              {
+                "label": {
+                  "it": "VirusTotal: hash di file",
+                  "en": "VirusTotal: file hash"
+                },
+                "href": "pyramid-of-pain.html"
+              }
+            ]
           }
         ]
       },
