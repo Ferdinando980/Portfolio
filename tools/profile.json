@@ -10,14 +10,14 @@
   },
   "intro": {
     "it": [
-      "Sono studente di Informatica all'Università degli Studi di Salerno. Ci sono arrivato grazie ai videogiochi, e gli esami che ho amato di più sono quelli più vicini a quel mondo: Ingegneria del software, Programmazione orientata agli oggetti e Grafica ed interattività.",
+      "Sono studente di Informatica all'Università degli Studi di Salerno. A portarmi qui sono stati i videogiochi. Gli esami che ho amato di più sono quelli più vicini a quel mondo: Ingegneria del software, Programmazione orientata agli oggetti e Grafica ed interattività.",
       "Ho sviluppato applicazioni web in Java, ho lavorato in gruppo su progetti seguiti dall'analisi dei requisiti fino al codice e ho portato avanti un progetto di ricerca in Python. In parallelo ho completato il Google Cybersecurity Certificate, da cui nascono i case study di questo sito.",
-      "Prima di tutto questo ho fatto il coach nel settore degli E-Sports. Guidare una squadra, analizzare le partite e tenere un ambiente di lavoro sereno sono cose che porto anche nel lavoro tecnico."
+      "Ho anche lavorato come coach nel settore degli E-Sports. Guidare una squadra, analizzare le partite e tenere un ambiente di lavoro sereno sono cose che porto anche nel lavoro tecnico."
     ],
     "en": [
-      "I am a Computer Science student at the University of Salerno. Video games are what brought me here, and the exams I loved most are the ones closest to that world: Software Engineering, Object Oriented Programming and Graphics and Interactivity.",
-      "I have built web applications in Java, worked in teams on projects followed from requirements analysis to code, and carried on a research project in Python. Alongside that I completed the Google Cybersecurity Certificate, which is where the case studies on this site come from.",
-      "Before all this I worked as a coach in E-Sports. Leading a team, analysing matches and keeping a calm working environment are things I bring to technical work too."
+      "I am a Computer Science student at the University of Salerno. Video games are what brought me here. The exams I loved most are the ones closest to that world: Software Engineering, Object Oriented Programming and Graphics and Interactivity.",
+      "I have built web applications in Java, worked in teams on projects that went from requirements analysis to code, and carried out an independent research project in Python. Alongside that I completed the Google Cybersecurity Certificate, which is where the case studies on this site come from.",
+      "I have also worked as a coach in E-Sports. Leading a team, analyzing matches and keeping a calm working environment are things I bring to technical work too."
     ]
   },
   "side": {
@@ -217,7 +217,7 @@
       {
         "title": "Accelerate Your Job Search with AI",
         "text": {
-          "it": "Individuare le proprie competenze, organizzare le candidature, preparare il curriculum e un piano di ricerca e simulare i colloqui.",
+          "it": "Individuare le proprie competenze, organizzare le candidature, preparare curriculum e piano di ricerca, simulare i colloqui.",
           "en": "Identifying your skills, organizing applications, building a resume and a job search plan, and practicing interviews."
         }
       }
@@ -344,8 +344,8 @@
           {
             "name": "Java",
             "text": {
-              "it": "Applicazioni web con Servlet e JSP in VinylWaves, e con Spring Boot in JustInTime.",
-              "en": "Web applications with Servlets and JSP in VinylWaves, and with Spring Boot in JustInTime."
+              "it": "Applicazioni web con Servlet e JSP in VinylWaves e con Spring Boot in JustInTime.",
+              "en": "Web applications with Servlets and JSP in VinylWaves and with Spring Boot in JustInTime."
             },
             "links": [
               {
@@ -374,8 +374,8 @@
           {
             "name": "Python",
             "text": {
-              "it": "Il banco di prova di Procedural Memory Lab, con verifiche automatiche in pytest, e lo scanner ASES.",
-              "en": "The test bed of Procedural Memory Lab, with automated pytest checks, and the ASES scanner."
+              "it": "Procedural Memory Lab (un banco di prova con verifiche automatiche in pytest) e lo scanner ASES.",
+              "en": "Procedural Memory Lab (a test bed with automated pytest checks) and the ASES scanner."
             },
             "links": [
               {
@@ -394,8 +394,8 @@
               "en": "C, C# and Unity"
             },
             "text": {
-              "it": "Programmazione e grafica interattiva negli esami universitari: applicazioni e giochi con Unity.",
-              "en": "Programming and interactive graphics in university courses: applications and games with Unity."
+              "it": "Esami di programmazione e di grafica interattiva, con applicazioni e giochi realizzati in Unity.",
+              "en": "University courses in programming and interactive graphics, with applications and games built in Unity."
             },
             "href": ""
           },
@@ -411,7 +411,10 @@
             "href": ""
           },
           {
-            "name": "SQL e MySQL",
+            "name": {
+              "it": "SQL e MySQL",
+              "en": "SQL and MySQL"
+            },
             "text": {
               "it": "Schema e accesso ai dati in VinylWaves (JDBC) e in JustInTime (JPA).",
               "en": "Schema and data access in VinylWaves (JDBC) and in JustInTime (JPA)."
@@ -464,8 +467,8 @@
               "en": "Risks and fundamentals"
             },
             "text": {
-              "it": "Come un attacco colpisce un'azienda e come si valutano i rischi: il registro dei rischi di una banca e i controlli secondo il NIST CSF.",
-              "en": "How an attack hits a business and how risks are assessed: a bank's risk register and controls following the NIST CSF."
+              "it": "Come un attacco colpisce un'azienda e come si valutano i rischi: il registro dei rischi di una banca e le funzioni del NIST CSF.",
+              "en": "How an attack hits a business and how risks are assessed: a bank's risk register and the functions of the NIST CSF."
             },
             "href": "risk-register-bank.html"
           },
@@ -486,8 +489,8 @@
               "en": "Linux and SQL"
             },
             "text": {
-              "it": "Riga di comando e permessi dei file in Linux con chmod, e query SQL nei laboratori del corso.",
-              "en": "The command line and Linux file permissions with chmod, and SQL queries in the course labs."
+              "it": "Riga di comando e permessi dei file in Linux con chmod; query SQL nei laboratori del corso.",
+              "en": "The command line and Linux file permissions with chmod; SQL queries in the course labs."
             },
             "href": "linux-file-permissions.html"
           },
@@ -497,7 +500,7 @@
               "en": "Assets, threats and vulnerabilities"
             },
             "text": {
-              "it": "Inventario dei beni, valutazione delle vulnerabilità di un server di database e modello di minacce con PASTA.",
+              "it": "Inventario dei beni, valutazione delle vulnerabilità di un server di database e un modello di minacce con PASTA.",
               "en": "An asset inventory, a vulnerability assessment of a database server and a threat model with PASTA."
             },
             "href": "vulnerability-assessment.html"
@@ -519,8 +522,8 @@
               "en": "Python for security"
             },
             "text": {
-              "it": "Nel corso, script per automatizzare attività di sicurezza. I miei progetti in Python sono tra i Progetti.",
-              "en": "In the course, scripts to automate security tasks. My Python projects are in the Projects page."
+              "it": "Nel corso, script Python per automatizzare compiti di sicurezza. I miei progetti in Python sono nella pagina Progetti.",
+              "en": "In the course, Python scripts to automate security tasks. My Python projects are on the Projects page."
             },
             "href": "projects.html"
           },
@@ -530,8 +533,8 @@
               "en": "Access, data and compliance"
             },
             "text": {
-              "it": "Privilegio minimo e fuga di dati, e la revisione dei controlli di un'organizzazione rispetto a PCI DSS, GDPR e SOC.",
-              "en": "Least privilege and data leaks, and a review of an organization's controls against PCI DSS, GDPR and SOC."
+              "it": "Privilegio minimo e fughe di dati. Revisione dei controlli di un'organizzazione rispetto a PCI DSS, GDPR e SOC.",
+              "en": "Least privilege and data leaks. A review of an organization's controls against PCI DSS, GDPR and SOC."
             },
             "href": "botium-toys-review.html"
           },
@@ -541,8 +544,8 @@
               "en": "Tools"
             },
             "text": {
-              "it": "Wireshark, tcpdump e VirusTotal nei case study. Dal programma del corso anche SIEM (Splunk, Chronicle) e IDS (Suricata).",
-              "en": "Wireshark, tcpdump and VirusTotal in the case studies. From the course program also SIEM (Splunk, Chronicle) and IDS (Suricata)."
+              "it": "Wireshark, tcpdump e VirusTotal nei case study. Il programma del corso comprende anche SIEM (Splunk, Chronicle) e IDS (Suricata).",
+              "en": "Wireshark, tcpdump and VirusTotal in the case studies. The course program also covers SIEM (Splunk, Chronicle) and IDS (Suricata)."
             },
             "href": "cybersecurity.html"
           }
@@ -598,8 +601,8 @@
               "en": "Software testing"
             },
             "text": {
-              "it": "Test dei servizi con JUnit e Mockito in JustInTime, e verifiche automatiche con pytest in Python.",
-              "en": "Service tests with JUnit and Mockito in JustInTime, and automated checks with pytest in Python."
+              "it": "Test dei servizi con JUnit e Mockito in JustInTime e verifiche automatiche con pytest in Python.",
+              "en": "Service tests with JUnit and Mockito in JustInTime and automated checks with pytest in Python."
             },
             "links": [
               {
@@ -618,8 +621,8 @@
               "en": "Technical writing"
             },
             "text": {
-              "it": "Venti case study in italiano e in inglese, ciascuno con un PDF scaricabile.",
-              "en": "Twenty case studies in Italian and English, each with a downloadable PDF."
+              "it": "Venti case study in italiano e in inglese, quasi tutti con un PDF scaricabile.",
+              "en": "Twenty case studies in Italian and English, almost all with a downloadable PDF."
             },
             "href": "cybersecurity.html"
           }
@@ -636,7 +639,7 @@
           {
             "name": {
               "it": "Confrontare con metodo",
-              "en": "Comparing with method"
+              "en": "Comparing in a structured way"
             },
             "text": {
               "it": "Provare la stessa cosa in modi diversi e guardare cosa cambia davvero, senza fidarsi dell'impressione.",
@@ -650,15 +653,15 @@
               "en": "Changing one thing at a time"
             },
             "text": {
-              "it": "Per capire cosa produce un risultato modifico un solo elemento e controllo se il risultato lo segue.",
-              "en": "To understand what produces a result I change a single element and check whether the result follows."
+              "it": "Per capire cosa produce un risultato, modifico un solo elemento e controllo se il risultato lo segue.",
+              "en": "To understand what produces a result, I change a single element and check whether the result follows."
             },
             "href": ""
           },
           {
             "name": {
-              "it": "Dire anche cosa non va",
-              "en": "Saying what does not work too"
+              "it": "Dire anche cosa non funziona",
+              "en": "Being open about what does not work"
             },
             "text": {
               "it": "Nel mio progetto di ricerca ho scritto i limiti e i risultati negativi accanto ai numeri.",
