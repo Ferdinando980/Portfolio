@@ -539,9 +539,12 @@ def projects_html(lang):
     cards = []
     for p in pub:
         tone = p.get("tone", "risk")
-        cards.append('<li class="card a-%s"><a href="projects.html#%s"><span class="card-top">%s<span class="tag">%s</span></span>'
+        im = p.get("image")
+        thumb = ('<img class="card-img" src="../assets/img/%s" width="%d" height="%d" alt="%s" loading="lazy">'
+                 % (esc(im["file"]), im["w"], im["h"], esc(im["alt"][lang]))) if im else ""
+        cards.append('<li class="card a-%s"><a href="projects.html#%s">%s<span class="card-top">%s<span class="tag">%s</span></span>'
                      '<h3>%s</h3><p>%s</p><span class="skills">%s</span><span class="go">%s &rarr;</span></a></li>'
-                     % (tone, esc(p["id"]), icon(tone) if tone in ICONS else "", esc(p["status"][lang]), esc(p["title"]),
+                     % (tone, esc(p["id"]), thumb, icon(tone) if tone in ICONS else "", esc(p["status"][lang]), esc(p["title"]),
                         esc((p.get("teaser") or p["summary"])[lang]), esc(p["tags"][lang]), esc(u["proj_open"])))
     return ('<section class="cases" id="progetti"><div class="wrap"><p class="kicker center">%s</p><h2 class="section-title">%s</h2>'
             '<p class="section-note">%s</p><ul class="grid fit">%s</ul></div></section>'
@@ -561,10 +564,16 @@ def project_block(p, lang, u, preview=False):
     else:
         href, label, rel = p["url"], u["proj_code"], ' rel="noopener noreferrer"'
     tags = "".join("<li>%s</li>" % esc(t.strip()) for t in p["tags"][lang].split(","))
+    shot = ""
+    im = p.get("image")
+    if im and not preview:
+        file, w, h = (im["detail"], im["dw"], im["dh"]) if im.get("detail") else (im["file"], im["w"], im["h"])
+        shot = ('<figure class="project-shot"><img src="../assets/img/%s" width="%d" height="%d" alt="%s" loading="lazy">'
+                '<figcaption>%s</figcaption></figure>' % (esc(file), w, h, esc(im["alt"][lang]), esc(im["caption"][lang])))
     return (f'<article class="project a-{p.get("tone", "risk")}" id="{esc(p["id"])}">'
             f'<div class="project-meta"><span class="tag">{esc(p["status"][lang])}</span><h2>{esc(p["title"])}</h2>'
             f'<ul class="chips">{tags}</ul><a class="btn solid" href="{esc(href)}"{rel}>{esc(label)}</a></div>'
-            f'<div class="project-body"><p class="project-sum">{esc(p["summary"][lang])}</p>{results}{how}{note}</div></article>')
+            f'<div class="project-body">{shot}<p class="project-sum">{esc(p["summary"][lang])}</p>{results}{how}{note}</div></article>')
 
 
 def build_projects(lang):
@@ -706,7 +715,13 @@ def build_about(lang):
             lis = []
             for it in g["items"]:
                 name = it["name"] if isinstance(it["name"], str) else it["name"][lang]
-                link = ' <a href="%s" aria-label="%s">&rarr;</a>' % (esc(it["href"]), esc(name)) if it.get("href") else ""
+                if it.get("links"):
+                    link = '<span class="skill-links">%s</span>' % "".join('<a class="pill" href="%s" aria-label="%s, %s">%s <i aria-hidden="true">&rarr;</i></a>'
+                                         % (esc(l["href"]), esc(name), esc(l["label"]), esc(l["label"])) for l in it["links"])
+                elif it.get("href"):
+                    link = ' <a href="%s" aria-label="%s">&rarr;</a>' % (esc(it["href"]), esc(name))
+                else:
+                    link = ""
                 lis.append("<li><b>%s</b><span>%s%s</span></li>" % (esc(name), esc(it["text"][lang]), link))
             note = '<p class="group-note">%s</p>' % esc(g["note"][lang]) if g.get("note") else ""
             cols[g.get("col", 1)].append('<div class="skill-group a-%s"><h3>%s</h3>%s<ul>%s</ul></div>'

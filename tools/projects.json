@@ -57,6 +57,22 @@
       "teaser": {
         "it": "Un modello linguistico piccolo migliora recuperando procedure, o rivede solo risposte simili? Ricerca sperimentale su funzioni Python con bug reali, verificate da pytest e confrontate in quattro configurazioni.",
         "en": "Does a small language model improve by retrieving procedures, or does it only see similar answers again? Experimental research on Python functions with real bugs, checked by pytest and compared across four configurations."
+      },
+      "image": {
+        "file": "procedural-memory-lab.webp",
+        "w": 734,
+        "h": 413,
+        "detail": "cognitive-city.gif",
+        "dw": 880,
+        "dh": 413,
+        "alt": {
+          "it": "Cognitive City: quattro personaggi si spostano tra casa, biblioteca, negozio e ospedale mentre risolvono un bug.",
+          "en": "Cognitive City: four characters move between the house, the library, the shop and the hospital while they solve a bug."
+        },
+        "caption": {
+          "it": "Una quest rigiocata in Cognitive City: gli agenti ricevono il bug, consultano la libreria, scrivono la soluzione e fanno i test.",
+          "en": "A quest replayed in Cognitive City: the agents get the bug, consult the library, write a solution and run the tests."
+        }
       }
     },
     {
@@ -93,7 +109,20 @@
         "it": "Lavoro di gruppo: ogni contributo è indicato nel README. Il codice è visibile per valutazione; il riutilizzo non è consentito.",
         "en": "Team project: each contribution is credited in the README. The code is visible for evaluation; reuse is not permitted."
       },
-      "url": "https://github.com/Ferdinando980/Vinylwaves"
+      "url": "https://github.com/Ferdinando980/Vinylwaves",
+      "image": {
+        "file": "vinylwaves.webp",
+        "w": 1200,
+        "h": 675,
+        "alt": {
+          "it": "La home di VinylWaves: scaffale di dischi con logo, barra di ricerca e menu di vinili, CD e giradischi.",
+          "en": "The VinylWaves home page: a shelf of records with the logo, a search bar and a menu for vinyl, CDs and turntables."
+        },
+        "caption": {
+          "it": "La home del negozio, con ricerca e categorie. Progetto di gruppo.",
+          "en": "The shop home page, with search and categories. Team project."
+        }
+      }
     },
     {
       "id": "justintime",
@@ -129,7 +158,20 @@
         "it": "Progetto accademico svolto in gruppo, come VinylWaves. Il repository originale è di un compagno di squadra e questo è il mio fork. Il mio contributo riguarda soprattutto la logica di partita lato server: turni, sessione, stato dei giocatori, podio ed eliminazione dell'utenza.",
         "en": "An academic team project, like VinylWaves. The original repository belongs to a teammate and this is my fork. My contribution is mostly the server-side match logic: turns, session, player state, podium and account deletion."
       },
-      "url": "https://github.com/Ferdinando980/JustInTime"
+      "url": "https://github.com/Ferdinando980/JustInTime",
+      "image": {
+        "file": "justintime.webp",
+        "w": 1200,
+        "h": 675,
+        "alt": {
+          "it": "Quattro carte del gioco JustInTime: Rallenta, una carta numerata, Accelera e Jolly.",
+          "en": "Four cards from the JustInTime game: Slow down, a numbered card, Speed up and Joker."
+        },
+        "caption": {
+          "it": "Alcune carte del gioco: Rallenta, una carta numerata, Accelera e Jolly. Progetto di gruppo.",
+          "en": "Some cards from the game: Slow down, a numbered card, Speed up and Joker. Team project."
+        }
+      }
     },
     {
       "id": "ases-scanner",
@@ -165,7 +207,20 @@
         "it": "Progetto personale ancora in sviluppo. Il codice è visibile per valutazione; il riutilizzo non è consentito.",
         "en": "A personal project still in development. The code is visible for evaluation; reuse is not permitted."
       },
-      "url": "https://github.com/Ferdinando980/Ases-scanner"
+      "url": "https://github.com/Ferdinando980/Ases-scanner",
+      "image": {
+        "file": "ases.webp",
+        "w": 1200,
+        "h": 675,
+        "alt": {
+          "it": "L'area di lavoro di ASES dopo un'analisi: cosa è stato trovato, cosa resta da verificare e i risultati principali.",
+          "en": "The ASES workspace after an analysis: what was found, what is left to verify and the main results."
+        },
+        "caption": {
+          "it": "L'area di lavoro dopo un'analisi: cosa è stato trovato e cosa resta da verificare.",
+          "en": "The workspace after an analysis: what was found and what is left to verify."
+        }
+      }
     }
   ]
 }

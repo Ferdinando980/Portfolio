@@ -347,7 +347,29 @@
               "it": "Applicazioni web con Servlet e JSP in VinylWaves, e con Spring Boot in JustInTime.",
               "en": "Web applications with Servlets and JSP in VinylWaves, and with Spring Boot in JustInTime."
             },
-            "href": "projects.html"
+            "links": [
+              {
+                "label": "VinylWaves",
+                "href": "projects.html#vinylwaves"
+              },
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              }
+            ]
+          },
+          {
+            "name": "Spring Boot",
+            "text": {
+              "it": "In JustInTime: controller REST, servizi e repository con Spring Data JPA e Hibernate, sessioni, pagine Thymeleaf e turni a tempo con operazioni asincrone.",
+              "en": "In JustInTime: REST controllers, services and repositories with Spring Data JPA and Hibernate, sessions, Thymeleaf pages and timed turns with asynchronous operations."
+            },
+            "links": [
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              }
+            ]
           },
           {
             "name": "Python",
@@ -355,7 +377,16 @@
               "it": "Il banco di prova di Procedural Memory Lab, con verifiche automatiche in pytest, e lo scanner ASES.",
               "en": "The test bed of Procedural Memory Lab, with automated pytest checks, and the ASES scanner."
             },
-            "href": "projects.html#procedural-memory-lab"
+            "links": [
+              {
+                "label": "Procedural Memory Lab",
+                "href": "projects.html#procedural-memory-lab"
+              },
+              {
+                "label": "ASES",
+                "href": "projects.html#ases-scanner"
+              }
+            ]
           },
           {
             "name": {
@@ -385,15 +416,33 @@
               "it": "Schema e accesso ai dati in VinylWaves (JDBC) e in JustInTime (JPA).",
               "en": "Schema and data access in VinylWaves (JDBC) and in JustInTime (JPA)."
             },
-            "href": "projects.html#vinylwaves"
+            "links": [
+              {
+                "label": "VinylWaves",
+                "href": "projects.html#vinylwaves"
+              },
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              }
+            ]
           },
           {
             "name": "Git, GitHub, Maven",
             "text": {
-              "it": "Lavoro condiviso in squadra: nella cronologia di JustInTime ci sono i commit di ciascuno.",
-              "en": "Shared work in a team: the history of JustInTime keeps everyone's commits."
+              "it": "Lavoro condiviso in squadra: le cronologie di VinylWaves e di JustInTime conservano i commit di ciascuno.",
+              "en": "Shared work in a team: the histories of VinylWaves and JustInTime keep everyone's commits."
             },
-            "href": "projects.html#justintime"
+            "links": [
+              {
+                "label": "VinylWaves",
+                "href": "projects.html#vinylwaves"
+              },
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              }
+            ]
           }
         ]
       },
@@ -503,8 +552,8 @@
         "col": 2,
         "tone": "govern",
         "title": {
-          "it": "Progettazione e documentazione",
-          "en": "Design and documentation"
+          "it": "Progettazione, test e documentazione",
+          "en": "Design, testing and documentation"
         },
         "items": [
           {
@@ -516,7 +565,12 @@
               "it": "RAD, SDD e ODD di JustInTime: requisiti, casi d'uso, sottosistemi e design pattern.",
               "en": "RAD, SDD and ODD of JustInTime: requirements, use cases, subsystems and design patterns."
             },
-            "href": "projects.html#justintime"
+            "links": [
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              }
+            ]
           },
           {
             "name": {
@@ -524,10 +578,39 @@
               "en": "Patterns and architecture"
             },
             "text": {
-              "it": "Bridge, Factory e State in un gioco di carte a turni, e un'architettura MVC in VinylWaves.",
-              "en": "Bridge, Factory and State in a turn based card game, and an MVC architecture in VinylWaves."
+              "it": "Bridge, Factory e State in un gioco di carte a turni; architettura a tre livelli (controller, servizi e repository) in JustInTime e MVC in VinylWaves.",
+              "en": "Bridge, Factory and State in a turn based card game; a three-tier architecture (controllers, services and repositories) in JustInTime and MVC in VinylWaves."
             },
-            "href": "projects.html#justintime"
+            "links": [
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              },
+              {
+                "label": "VinylWaves",
+                "href": "projects.html#vinylwaves"
+              }
+            ]
+          },
+          {
+            "name": {
+              "it": "Test del software",
+              "en": "Software testing"
+            },
+            "text": {
+              "it": "Test dei servizi con JUnit e Mockito in JustInTime, e verifiche automatiche con pytest in Python.",
+              "en": "Service tests with JUnit and Mockito in JustInTime, and automated checks with pytest in Python."
+            },
+            "links": [
+              {
+                "label": "JustInTime",
+                "href": "projects.html#justintime"
+              },
+              {
+                "label": "Procedural Memory Lab",
+                "href": "projects.html#procedural-memory-lab"
+              }
+            ]
           },
           {
             "name": {
