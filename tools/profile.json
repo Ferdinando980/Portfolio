@@ -470,7 +470,22 @@
               "it": "Come un attacco colpisce un'azienda e come si valutano i rischi: il registro dei rischi di una banca e le funzioni del NIST CSF.",
               "en": "How an attack hits a business and how risks are assessed: a bank's risk register and the functions of the NIST CSF."
             },
-            "href": "risk-register-bank.html"
+            "links": [
+              {
+                "label": {
+                  "it": "Registro dei rischi",
+                  "en": "Risk register"
+                },
+                "href": "risk-register-bank.html"
+              },
+              {
+                "label": {
+                  "it": "Valutazione del rischio",
+                  "en": "Risk assessment"
+                },
+                "href": "hardening-risk-assessment.html"
+              }
+            ]
           },
           {
             "name": {
@@ -481,7 +496,29 @@
               "it": "tcpdump e Wireshark per capire un attacco SYN flood e un problema DNS e ICMP.",
               "en": "tcpdump and Wireshark to understand a SYN flood attack and a DNS and ICMP problem."
             },
-            "href": "syn-flood.html"
+            "links": [
+              {
+                "label": {
+                  "it": "SYN flood",
+                  "en": "SYN flood"
+                },
+                "href": "syn-flood.html"
+              },
+              {
+                "label": {
+                  "it": "DNS e ICMP",
+                  "en": "DNS and ICMP"
+                },
+                "href": "dns-icmp-traffic.html"
+              },
+              {
+                "label": {
+                  "it": "tcpdump e Wireshark",
+                  "en": "tcpdump and Wireshark"
+                },
+                "href": "tcpdump-vs-wireshark.html"
+              }
+            ]
           },
           {
             "name": {
@@ -492,7 +529,15 @@
               "it": "Riga di comando e permessi dei file in Linux con chmod; query SQL nei laboratori del corso.",
               "en": "The command line and Linux file permissions with chmod; SQL queries in the course labs."
             },
-            "href": "linux-file-permissions.html"
+            "links": [
+              {
+                "label": {
+                  "it": "Permessi dei file",
+                  "en": "File permissions"
+                },
+                "href": "linux-file-permissions.html"
+              }
+            ]
           },
           {
             "name": {
@@ -503,7 +548,29 @@
               "it": "Inventario dei beni, valutazione delle vulnerabilità di un server di database e un modello di minacce con PASTA.",
               "en": "An asset inventory, a vulnerability assessment of a database server and a threat model with PASTA."
             },
-            "href": "vulnerability-assessment.html"
+            "links": [
+              {
+                "label": {
+                  "it": "Inventario dei beni",
+                  "en": "Asset inventory"
+                },
+                "href": "home-asset-inventory.html"
+              },
+              {
+                "label": {
+                  "it": "Vulnerabilità",
+                  "en": "Vulnerability assessment"
+                },
+                "href": "vulnerability-assessment.html"
+              },
+              {
+                "label": {
+                  "it": "Modello PASTA",
+                  "en": "PASTA threat model"
+                },
+                "href": "pasta-threat-model.html"
+              }
+            ]
           },
           {
             "name": {
@@ -514,7 +581,43 @@
               "it": "Incidenti simulati (ICMP flood, phishing, violazione di dati), ticket di allerta e Piramide del dolore.",
               "en": "Simulated incidents (ICMP flood, phishing, data breach), alert tickets and the Pyramid of Pain."
             },
-            "href": "icmp-flood-incident.html"
+            "links": [
+              {
+                "label": {
+                  "it": "ICMP flood",
+                  "en": "ICMP flood"
+                },
+                "href": "icmp-flood-incident.html"
+              },
+              {
+                "label": {
+                  "it": "Phishing",
+                  "en": "Phishing"
+                },
+                "href": "phishing-incident.html"
+              },
+              {
+                "label": {
+                  "it": "Ticket di allerta",
+                  "en": "Alert ticket"
+                },
+                "href": "phishing-alert-ticket.html"
+              },
+              {
+                "label": {
+                  "it": "Violazione di dati",
+                  "en": "Data breach"
+                },
+                "href": "incident-final-report.html"
+              },
+              {
+                "label": {
+                  "it": "Piramide del dolore",
+                  "en": "Pyramid of Pain"
+                },
+                "href": "pyramid-of-pain.html"
+              }
+            ]
           },
           {
             "name": {
@@ -536,7 +639,29 @@
               "it": "Privilegio minimo e fughe di dati. Revisione dei controlli di un'organizzazione rispetto a PCI DSS, GDPR e SOC.",
               "en": "Least privilege and data leaks. A review of an organization's controls against PCI DSS, GDPR and SOC."
             },
-            "href": "botium-toys-review.html"
+            "links": [
+              {
+                "label": {
+                  "it": "Privilegio minimo",
+                  "en": "Least privilege"
+                },
+                "href": "data-leak-least-privilege.html"
+              },
+              {
+                "label": {
+                  "it": "Controlli di accesso",
+                  "en": "Access controls"
+                },
+                "href": "access-controls-payroll.html"
+              },
+              {
+                "label": {
+                  "it": "Conformità Botium Toys",
+                  "en": "Botium Toys compliance"
+                },
+                "href": "botium-toys-review.html"
+              }
+            ]
           },
           {
             "name": {
