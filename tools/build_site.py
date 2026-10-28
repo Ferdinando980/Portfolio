@@ -748,6 +748,8 @@ def build_case(lang, i):
 
 # ---------------------------------------------------------------- scrittura
 def write(path, text):
+    if path.endswith(".html"):
+        text = text.replace("—", ", ")  # niente trattini lunghi usati come pausa
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(text)
