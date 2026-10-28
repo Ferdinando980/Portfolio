@@ -687,6 +687,19 @@ def build_about(lang):
 {cred}
 <p class="source">{esc(C['sources'][lang])} <a href="{esc(C['source_url'])}" rel="noopener noreferrer">Coursera</a></p>
 </section>"""
+    skills = ""
+    if P.get("skills"):
+        S = P["skills"]
+        groups = []
+        for g in S["groups"]:
+            lis = []
+            for it in g["items"]:
+                name = it["name"] if isinstance(it["name"], str) else it["name"][lang]
+                link = ' <a href="%s" aria-label="%s">&rarr;</a>' % (esc(it["href"]), esc(name)) if it.get("href") else ""
+                lis.append("<li><b>%s</b><span>%s%s</span></li>" % (esc(name), esc(it["text"][lang]), link))
+            groups.append('<div class="skill-group a-%s"><h3>%s</h3><ul>%s</ul></div>' % (g["tone"], esc(g["title"][lang]), "".join(lis)))
+        skills = ('<section class="block skills" id="skills"><h2>%s</h2><p class="skills-lead">%s</p><div class="skill-groups">%s</div></section>'
+                  % (esc(S["title"][lang]), esc(S["lead"][lang]), "".join(groups)))
     secs = []
     for sec in P["sections"]:
         items = []
@@ -694,7 +707,7 @@ def build_about(lang):
             text = it["text"][lang]
             items.append('<li class="entry"><h3>%s</h3><p class="meta">%s</p>%s</li>'
                          % (esc(it["title"][lang]), esc(it["meta"][lang]), "<p>%s</p>" % esc(text) if text else ""))
-        secs.append('<section class="block a-%s"><h2>%s</h2><ol class="timeline">%s</ol></section>' % (sec["tone"], esc(sec["title"][lang]), "".join(items)))
+        secs.append('<section class="block a-%s" id="%s"><h2>%s</h2><ol class="timeline">%s</ol></section>' % (sec["tone"], esc(sec["id"]), esc(sec["title"][lang]), "".join(items)))
     body = f"""<div class="wrap">
 <header class="about-head">
 <p class="kicker">{esc(u['about_kicker'])}</p>
@@ -708,6 +721,7 @@ def build_about(lang):
 </aside>
 <article class="article about">
 <div class="intro">{intro}</div>
+{skills}
 {cert}
 {''.join(secs)}
 </article>

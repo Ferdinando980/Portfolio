@@ -326,3 +326,15 @@ td .q { margin-bottom: .4em; }
 .proj-teaser .btn { margin-top: 18px; }
 .section-title.sub { margin-top: 72px; }
 @media (max-width: 900px) { .project { grid-template-columns: 1fr; gap: 24px; } }
+
+/* sezione Competenze nella pagina Profilo */
+.skills-lead { margin: -.4em 0 1.8em; color: var(--muted); font-size: 1.05rem; }
+.skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px 36px; }
+.skill-group { border-top: 3px solid var(--c, var(--ink)); padding-top: 12px; }
+.skill-group h3 { font: 600 .78rem var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--c, var(--ink)); margin: 0 0 6px; }
+.skill-group ul { list-style: none; margin: 0; padding: 0; }
+.skill-group li { padding: 11px 0; border-bottom: 1px solid var(--line); }
+.skill-group li:last-child { border-bottom: 0; }
+.skill-group li b { display: block; font: 400 1.12rem/1.3 var(--serif); }
+.skill-group li span { display: block; margin-top: 3px; color: var(--muted); font-size: .94rem; line-height: 1.55; }
+.skill-group li a { text-decoration: none; font-weight: 600; }
