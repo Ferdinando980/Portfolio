@@ -116,7 +116,7 @@ CASES = [
 
 # Funzioni del CSF che un case study tocca oltre a quella principale (verificate leggendo il contenuto)
 ALSO = {
-    "botium-toys-review": ["protect", "detect", "recover"],
+    "botium-toys-review": ["protect", "detect"],
     "risk-register-bank": ["govern"],
     "pasta-threat-model": ["protect"],
     "access-controls-payroll": ["respond"],

@@ -374,3 +374,8 @@ td .q { margin-bottom: .4em; }
 /* funzioni del CSF toccate */
 .card .also { font-size: .78rem; color: var(--muted); line-height: 1.5; }
 .also-line { display: block; margin-top: 8px; color: var(--muted); font-size: .86rem; letter-spacing: .02em; }
+
+/* case study mostrati come riferimento in un filtro */
+.refbadge { display: none; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--c, var(--ink)); border: 1px solid var(--c, var(--ink)); padding: 2px 10px; align-self: flex-start; }
+.card.is-ref .refbadge { display: inline-block; }
+.filter-note { text-align: center; color: var(--muted); max-width: 62ch; margin: -14px auto 28px; font-size: .95rem; }

@@ -38,7 +38,7 @@ UI = {
         btn_cases="View the case studies", btn_about="About me", cert_kicker="Training", cert_more="Learn more about the program",
         about_kicker="Profile", about_title="About me", skills="Skills", links="Links",
         cases_kicker="Selected work", cases_title="Case studies",
-        cases_note="Each case study sits under the NIST Cybersecurity Framework 2.0 function that describes it best. The filters also show the ones that touch that function.", also="Also touches",
+        cases_note="Each case study sits under the NIST Cybersecurity Framework 2.0 function that describes it best. The filters also show the ones that touch that function.", also="Also touches", ref="Reference", recover_note="No case study is only about recovery. These two cover it in their own section, as part of the incident response.",
         n_cs="case studies", n_ar="CSF functions", n_lg="languages", all="All", read="Read the case study",
         crumb="All case studies", pdf="Download as PDF", prev="Previous", next="Next",
         foot1="Personal portfolio. The cybersecurity case studies are educational and based on simulated scenarios from the Google Cybersecurity Certificate: no live systems were tested and no real data is used.",
@@ -65,7 +65,7 @@ UI = {
         btn_cases="Vai ai case study", btn_about="Profilo", cert_kicker="Formazione", cert_more="Approfondisci il percorso",
         about_kicker="Profilo", about_title="Riguardo me", skills="Competenze", links="Link",
         cases_kicker="Lavori selezionati", cases_title="Case study",
-        cases_note="Ogni case study sta sotto la funzione del NIST Cybersecurity Framework 2.0 che lo descrive meglio. I filtri mostrano anche quelli che la toccano.", also="Tocca anche",
+        cases_note="Ogni case study sta sotto la funzione del NIST Cybersecurity Framework 2.0 che lo descrive meglio. I filtri mostrano anche quelli che la toccano.", also="Tocca anche", ref="Riferimento", recover_note="Nessun case study riguarda solo il ripristino. Questi due lo trattano in una sezione dedicata, dentro la risposta all'incidente.",
         n_cs="case study", n_ar="funzioni CSF", n_lg="lingue", all="Tutti", read="Leggi il case study",
         crumb="Tutti i case study", pdf="Scarica il PDF", prev="Precedente", next="Successivo",
         foot1="Portfolio personale. I case study di cybersecurity sono didattici e basati su scenari simulati del Google Cybersecurity Certificate: non sono stati testati sistemi reali e non si usano dati reali.",
@@ -651,9 +651,9 @@ def build_cyber(lang):
         also_line = '<span class="also">%s: %s</span>' % (esc(u["also"]), esc(also_names)) if also_names else ""
         cards.append(
             '<li class="card a-%s" data-area="%s" data-also="%s"><a href="%s.html"><span class="card-top">%s<span class="tag">%s</span></span>'
-            '<h3>%s</h3><p>%s</p>%s<span class="skills">%s</span><span class="go">%s &rarr;</span></a></li>'
+            '<h3>%s</h3><p>%s</p>%s<span class="skills">%s</span><span class="go">%s &rarr;</span><span class="refbadge">%s</span></a></li>'
             % (c["area"], c["area"], " ".join(c.get("also", [])), c["slug"], icon(c["area"]), esc(AREAS[c["area"]][lang]), esc(c["title"][lang]),
-               esc(c["summary"][lang]), also_line, esc(c["skills"][lang]), esc(u["read"])))
+               esc(c["summary"][lang]), also_line, esc(c["skills"][lang]), esc(u["read"]), esc(u["ref"])))
     body = f"""<div class="wrap">
 <header class="about-head">
 <p class="kicker">{esc(u['cyber_kicker'])}</p>
@@ -669,6 +669,7 @@ def build_cyber(lang):
 <h2 class="section-title">{esc(u['cases_title'])}</h2>
 <p class="section-note">{esc(u['cases_note'])}</p>
 <div class="filters" role="group" aria-label="Filter">{''.join(chips)}</div>
+<p class="filter-note" id="filter-note-recover" hidden>{esc(u['recover_note'])}</p>
 <ul class="grid">{''.join(cards)}</ul>
 </div>
 </section>"""

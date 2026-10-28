@@ -7,9 +7,12 @@
     chip.addEventListener('click', function () {
       var f = chip.getAttribute('data-filter');
       chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      var note = document.getElementById('filter-note-recover');
+      if (note) note.hidden = f !== 'recover';
       cards.forEach(function (card) {
         var also = (card.getAttribute('data-also') || '').split(' ');
         card.hidden = !(f === 'all' || card.getAttribute('data-area') === f || also.indexOf(f) !== -1);
+        card.classList.toggle('is-ref', f !== 'all' && card.getAttribute('data-area') !== f && also.indexOf(f) !== -1);
       });
     });
   });
