@@ -723,8 +723,9 @@ def build_about(lang):
     courses = ""
     if C.get("courses"):
         lis = "".join("<li><span><b>%s</b><br>%s</span></li>" % (esc(c["title"]), esc(c["text"][lang])) for c in C["courses"])
-        courses = ('<h3>%s</h3><ol class="courses">%s</ol><p class="note">%s</p>'
-                   % (esc(C["courses_title"][lang]), lis, esc(C["courses_note"][lang])))
+        courses = ('<details class="courses-box"><summary><h3>%s</h3><span class="count">%s</span></summary>'
+                   '<ol class="courses">%s</ol><p class="note">%s</p></details>'
+                   % (esc(C["courses_title"][lang]), esc(u["courses_n"] % len(C["courses"])), lis, esc(C["courses_note"][lang])))
     cert = f"""<section class="cert-panel a-net" id="percorso">
 <p class="kicker">{esc(u['cert_kicker'])}</p>
 <h2>{esc(C['title'][lang])}</h2>

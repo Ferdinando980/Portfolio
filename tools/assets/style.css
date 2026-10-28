@@ -215,6 +215,15 @@ td.label { font-weight: 600; background: var(--paper); width: 180px; }
 .fact { padding: 14px 0; border-top: 1px solid var(--line); }
 .fact dt { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--azure); font-weight: 700; }
 .fact dd { margin: 3px 0 0; font: 400 1.08rem/1.4 var(--serif); }
+.courses-box { margin: 2em 0 1.4em; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.courses-box summary { display: flex; align-items: center; gap: 14px; padding: 14px 0; cursor: pointer; list-style: none; }
+.courses-box summary::-webkit-details-marker { display: none; }
+.courses-box summary::after { content: ""; margin-left: auto; width: 9px; height: 9px; border-right: 2px solid var(--azure); border-bottom: 2px solid var(--azure); transform: rotate(45deg); transition: transform .2s; }
+.courses-box[open] summary::after { transform: rotate(-135deg); }
+.courses-box summary h3, .cert-panel .courses-box summary h3 { margin: 0; }
+.courses-box .count { color: var(--muted); font-size: .85rem; }
+.courses-box .courses { margin-bottom: .6em; }
+@media (prefers-reduced-motion: reduce) { .courses-box summary::after { transition: none; } }
 .courses { counter-reset: c; list-style: none; padding: 0; margin: 0 0 1.4em; }
 .courses li { counter-increment: c; display: flex; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); margin: 0; }
 .courses li::before { content: counter(c, decimal-leading-zero); color: var(--azure); font: 600 .8rem var(--sans); letter-spacing: .12em; padding-top: 3px; min-width: 24px; }
