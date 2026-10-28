@@ -26,7 +26,7 @@ VER = hashlib.sha256(str(time.time()).encode()).hexdigest()[:8]
 
 UI = {
     "en": dict(
-        home="Home", kicker="Portfolio",
+        home="Home", kicker="Portfolio", contact_title="Get in touch", contact_text="If you would like to talk about a project or an opportunity, write to me on LinkedIn.", glance_title="At a glance",
         lead=("I am a Computer Science student at the University of Salerno. This is where I collect the software projects I have built, "
               "an independent research project and the case studies from the Google Cybersecurity Certificate."),
         cyber_kicker="Cybersecurity", cyber_title="Cybersecurity case studies",
@@ -53,7 +53,7 @@ UI = {
         proj_all="View the projects", proj_teaser="Software projects, with code and instructions on GitHub.",
         notfound="Page not found", back="Back to the home page"),
     "it": dict(
-        home="Home", kicker="Portfolio",
+        home="Home", kicker="Portfolio", contact_title="Contatti", contact_text="Se vuoi parlare di un progetto o di un'opportunità, scrivimi su LinkedIn.", glance_title="In sintesi",
         lead=("Sono studente di Informatica all'Università degli Studi di Salerno. Qui raccolgo i progetti software che ho sviluppato, "
               "un lavoro di ricerca indipendente e i case study del Google Cybersecurity Certificate."),
         cyber_kicker="Cybersecurity", cyber_title="Case study di cybersecurity",
@@ -620,6 +620,27 @@ def cert_band(lang, more_href, more_label):
 </section>"""
 
 
+def hero_side(lang):
+    """Colonna destra dell'apertura: la foto, se c'e', altrimenti una scheda con i dati che i recruiter guardano per primi."""
+    if PHOTO:
+        return portrait_html(lang, "hero-photo")
+    u = UI[lang]
+    items = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (esc(i["label"][lang]), esc(i["value"][lang])) for i in PROFILE["side"]["items"])
+    L = PROFILE["links"]
+    return ('<aside class="hero-card" aria-label="%s"><p class="kicker">%s</p><h2>%s</h2><p class="role">%s</p><dl>%s</dl>'
+            '<p class="hero-links"><a href="%s" rel="noopener noreferrer">GitHub</a><a href="%s" rel="noopener noreferrer">LinkedIn</a></p></aside>'
+            % (esc(u["glance_title"]), esc(u["glance_title"]), esc(CFG["name"]), esc(PROFILE["role"][lang]), items, esc(L["github"]), esc(L["linkedin"])))
+
+
+def contact_band(lang):
+    u = UI[lang]
+    L = PROFILE["links"]
+    return ('<section class="contact-band" id="contatti"><div class="wrap contact-grid"><div><h2>%s</h2><p>%s</p></div>'
+            '<div class="actions"><a class="btn solid" href="%s" rel="noopener noreferrer">LinkedIn</a>'
+            '<a class="btn" href="%s" rel="noopener noreferrer">GitHub</a></div></div></section>'
+            % (esc(u["contact_title"]), esc(u["contact_text"]), esc(L["linkedin"]), esc(L["github"])))
+
+
 def build_home(lang):
     u = UI[lang]
     body = f"""<section class="hero">
@@ -631,11 +652,12 @@ def build_home(lang):
 <p class="lead">{esc(u['lead'])}</p>
 <div class="actions"><a class="btn solid" href="projects.html">{esc(u['proj_all'])}</a><a class="btn" href="about.html">{esc(u['btn_about'])}</a></div>
 </div>
-{portrait_html(lang, "hero-photo")}
+{hero_side(lang)}
 </div>
 </section>
 {projects_html(lang)}
-{cert_band(lang, "cybersecurity.html", u['btn_cases'])}"""
+{cert_band(lang, "cybersecurity.html", u['btn_cases'])}
+{contact_band(lang)}"""
     other = "en" if lang == "it" else "it"
     return page(lang, f"{CFG['site_title'][lang]} | {CFG['name']}", u["desc_home"], body, 1, alt="../%s/index.html" % other)
 
@@ -762,7 +784,8 @@ def build_about(lang):
 {''.join(secs)}
 </article>
 </div>
-</div>"""
+</div>
+{contact_band(lang)}"""
     other = "en" if lang == "it" else "it"
     return page(lang, f"{u['about_title']} | {CFG['name']}", P["role"][lang] + ". " + P["intro"][lang][0], body, 1, alt="../%s/about.html" % other, here="about")
 
