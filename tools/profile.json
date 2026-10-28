@@ -10,14 +10,14 @@
   },
   "intro": {
     "it": [
-      "Sono studente di Informatica all'Università degli Studi di Salerno. Mi interessa il software che si può verificare: scrivo codice, ma mi piace anche documentarlo, misurarlo e capire dove non regge.",
-      "Ho sviluppato applicazioni web in Java, ho lavorato in gruppo su un progetto seguito dall'analisi dei requisiti fino al codice e ho condotto una ricerca indipendente in Python, con verifiche automatiche e confronti controllati. In parallelo ho seguito il Google Cybersecurity Certificate, da cui nascono i case study di questo sito.",
-      "Prima di tutto questo ho fatto l'head coach in un team di E-Sports. Coordinare delle persone, dare feedback chiari e tenere un ambiente di lavoro ordinato sono cose che porto anche nel lavoro tecnico."
+      "Sono studente di Informatica all'Università degli Studi di Salerno. Ci sono arrivato grazie ai videogiochi, e gli esami che ho amato di più sono quelli più vicini a quel mondo: Ingegneria del software, Programmazione orientata agli oggetti e Grafica ed interattività.",
+      "Ho sviluppato applicazioni web in Java, ho lavorato in gruppo su progetti seguiti dall'analisi dei requisiti fino al codice e ho portato avanti un progetto di ricerca in Python. In parallelo ho completato il Google Cybersecurity Certificate, da cui nascono i case study di questo sito.",
+      "Prima di tutto questo ho fatto il coach nel settore degli E-Sports. Guidare una squadra, analizzare le partite e tenere un ambiente di lavoro sereno sono cose che porto anche nel lavoro tecnico."
     ],
     "en": [
-      "I am a Computer Science student at the University of Salerno. I care about software that can be checked: I write code, but I also like to document it, measure it and find out where it breaks.",
-      "I have built web applications in Java, worked in a team on a project followed from requirements analysis to code, and run an independent research project in Python with automated checks and controlled comparisons. Alongside that I completed the Google Cybersecurity Certificate, which is where the case studies on this site come from.",
-      "Before all this I was a head coach in an E-Sports team. Coordinating people, giving clear feedback and keeping a tidy working environment are things I bring to technical work too."
+      "I am a Computer Science student at the University of Salerno. Video games are what brought me here, and the exams I loved most are the ones closest to that world: Software Engineering, Object Oriented Programming and Graphics and Interactivity.",
+      "I have built web applications in Java, worked in teams on projects followed from requirements analysis to code, and carried on a research project in Python. Alongside that I completed the Google Cybersecurity Certificate, which is where the case studies on this site come from.",
+      "Before all this I worked as a coach in E-Sports. Leading a team, analysing matches and keeping a calm working environment are things I bring to technical work too."
     ]
   },
   "side": {
@@ -126,7 +126,99 @@
       "en": "Source of the program information: the course page on Coursera."
     },
     "source_url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
-    "credential_url": "https://www.coursera.org/account/accomplishments/professional-cert/YRQSFY9HC7DL"
+    "credential_url": "https://www.coursera.org/account/accomplishments/professional-cert/YRQSFY9HC7DL",
+    "roles_title": {
+      "it": "Ruoli a cui prepara",
+      "en": "Roles it prepares for"
+    },
+    "roles": {
+      "it": [
+        "Analista di cybersecurity",
+        "Analista della sicurezza",
+        "Analista SOC (Security Operations Center)",
+        "Analista della sicurezza delle informazioni",
+        "Analista di sicurezza IT",
+        "Analista di difesa informatica"
+      ],
+      "en": [
+        "Cybersecurity analyst",
+        "Security analyst",
+        "SOC (Security Operations Center) analyst",
+        "Information security analyst",
+        "IT security analyst",
+        "Cyber defense analyst"
+      ]
+    },
+    "roles_note": {
+      "it": "Sono i ruoli indicati dalla pagina del corso su Coursera. Il certificato prepara a questi ruoli: non è un'abilitazione e non sostituisce l'esperienza. Il percorso prepara anche all'esame CompTIA Security+, che è una certificazione separata.",
+      "en": "These are the roles listed on the course page on Coursera. The certificate prepares for these roles: it is not a license and it does not replace experience. The program also prepares for the CompTIA Security+ exam, which is a separate certification."
+    },
+    "courses_title": {
+      "it": "I corsi del programma",
+      "en": "The courses in the program"
+    },
+    "courses": [
+      {
+        "title": "Foundations of Cybersecurity",
+        "text": {
+          "it": "Le basi del mestiere: l'impatto degli attacchi sulle aziende, l'etica e gli strumenti dell'analista.",
+          "en": "The basics of the job: how attacks affect businesses, security ethics and the analyst's tools."
+        }
+      },
+      {
+        "title": "Play It Safe: Manage Security Risks",
+        "text": {
+          "it": "Minacce, rischi e vulnerabilità, framework di sicurezza, strumenti SIEM e playbook di risposta.",
+          "en": "Threats, risks and vulnerabilities, security frameworks, SIEM tools and response playbooks."
+        }
+      },
+      {
+        "title": "Connect and Protect: Networks and Network Security",
+        "text": {
+          "it": "Tipi e componenti di rete, trasmissione dei dati, difesa dalle intrusioni e hardening dei sistemi.",
+          "en": "Network types and components, data transmission, intrusion defense and system hardening."
+        }
+      },
+      {
+        "title": "Tools of the Trade: Linux and SQL",
+        "text": {
+          "it": "Sistemi operativi, riga di comando, gestione dei file in Linux e query SQL sui database.",
+          "en": "Operating systems, the command line, Linux file management and SQL queries on databases."
+        }
+      },
+      {
+        "title": "Assets, Threats, and Vulnerabilities",
+        "text": {
+          "it": "Classificazione dei beni, superficie di attacco, minacce comuni e modellazione delle minacce.",
+          "en": "Asset classification, attack surface, common threats and threat modeling."
+        }
+      },
+      {
+        "title": "Sound the Alarm: Detection and Response",
+        "text": {
+          "it": "Contenimento e ripristino degli incidenti, analisi dei pacchetti, firme e log degli IDS, indagini con un SIEM.",
+          "en": "Incident containment and recovery, packet analysis, IDS signatures and logs, investigations with a SIEM."
+        }
+      },
+      {
+        "title": "Automate Cybersecurity Tasks with Python",
+        "text": {
+          "it": "Python per le attività di sicurezza: funzioni, espressioni regolari, lettura e scrittura di file, debug.",
+          "en": "Python for security tasks: functions, regular expressions, reading and writing files, debugging."
+        }
+      },
+      {
+        "title": "Put It to Work: Prepare for Cybersecurity Jobs",
+        "text": {
+          "it": "Escalation degli incidenti, partecipazione alla community e preparazione ai colloqui.",
+          "en": "Incident escalation, community engagement and interview preparation."
+        }
+      }
+    ],
+    "courses_note": {
+      "it": "I corsi principali, come elencati nel programma su Coursera.",
+      "en": "The main courses, as listed in the program on Coursera."
+    }
   },
   "sections": [
     {
@@ -190,16 +282,16 @@
       "items": [
         {
           "title": {
-            "it": "Head coach",
-            "en": "Head coach"
+            "it": "Coach nel settore E-Sports",
+            "en": "Coach in E-Sports"
           },
           "meta": {
-            "it": "Settore E-Sports",
-            "en": "E-Sports"
+            "it": "League of Legends",
+            "en": "League of Legends"
           },
           "text": {
-            "it": "Coordinamento di un team e cura di un ambiente di lavoro tranquillo e professionale.",
-            "en": "Coordination of a team and care for a calm, professional working environment."
+            "it": "Ho guidato una squadra competitiva amatoriale e ho collaborato da remoto con il team Axolotl Esports nella lega BTL, insieme ad assistant coach, analyst e coach individuali. Ho imparato a lavorare in gruppo, a gestirlo e a tenere un ambiente tranquillo e professionale.",
+            "en": "I led an amateur competitive team and worked remotely with the Axolotl Esports team in the BTL league, together with assistant coaches, analysts and individual coaches. I learned to work in a team, to manage it and to keep a calm, professional environment."
           }
         },
         {
@@ -235,6 +327,7 @@
     },
     "groups": [
       {
+        "col": 1,
         "tone": "detect",
         "title": {
           "it": "Sviluppo software",
@@ -258,10 +351,24 @@
             "href": "projects.html#procedural-memory-lab"
           },
           {
-            "name": "HTML, CSS, JavaScript",
+            "name": {
+              "it": "C, C# e Unity",
+              "en": "C, C# and Unity"
+            },
             "text": {
-              "it": "Le interfacce dei progetti di gruppo. Questo sito è generato da uno script Python e funziona con una Content Security Policy restrittiva.",
-              "en": "The interfaces of the team projects. This site is generated by a Python script and runs under a strict Content Security Policy."
+              "it": "Programmazione e grafica interattiva negli esami universitari: applicazioni e giochi con Unity.",
+              "en": "Programming and interactive graphics in university courses: applications and games with Unity."
+            },
+            "href": ""
+          },
+          {
+            "name": {
+              "it": "Sviluppo web",
+              "en": "Web development"
+            },
+            "text": {
+              "it": "HTML, CSS, JavaScript e PHP negli studi e nei progetti di gruppo. Questo sito è generato da uno script Python e funziona con una Content Security Policy restrittiva.",
+              "en": "HTML, CSS, JavaScript and PHP in my studies and team projects. This site is generated by a Python script and runs under a strict Content Security Policy."
             },
             "href": ""
           },
@@ -284,6 +391,109 @@
         ]
       },
       {
+        "col": 1,
+        "tone": "protect",
+        "title": {
+          "it": "Sicurezza informatica",
+          "en": "Cybersecurity"
+        },
+        "note": {
+          "it": "Le voci seguono i temi dei corsi del Google Cybersecurity Certificate. Dove c'è un case study, lo collego.",
+          "en": "The entries follow the themes of the Google Cybersecurity Certificate courses. Where there is a case study, I link it."
+        },
+        "items": [
+          {
+            "name": {
+              "it": "Rischi e fondamenti",
+              "en": "Risks and fundamentals"
+            },
+            "text": {
+              "it": "Come un attacco colpisce un'azienda e come si valutano i rischi: il registro dei rischi di una banca e i controlli secondo il NIST CSF.",
+              "en": "How an attack hits a business and how risks are assessed: a bank's risk register and controls following the NIST CSF."
+            },
+            "href": "risk-register-bank.html"
+          },
+          {
+            "name": {
+              "it": "Reti e sicurezza di rete",
+              "en": "Networks and network security"
+            },
+            "text": {
+              "it": "tcpdump e Wireshark per capire un attacco SYN flood e un problema DNS e ICMP.",
+              "en": "tcpdump and Wireshark to understand a SYN flood attack and a DNS and ICMP problem."
+            },
+            "href": "syn-flood.html"
+          },
+          {
+            "name": {
+              "it": "Linux e SQL",
+              "en": "Linux and SQL"
+            },
+            "text": {
+              "it": "Riga di comando e permessi dei file in Linux con chmod, e query SQL nei laboratori del corso.",
+              "en": "The command line and Linux file permissions with chmod, and SQL queries in the course labs."
+            },
+            "href": "linux-file-permissions.html"
+          },
+          {
+            "name": {
+              "it": "Beni, minacce e vulnerabilità",
+              "en": "Assets, threats and vulnerabilities"
+            },
+            "text": {
+              "it": "Inventario dei beni, valutazione delle vulnerabilità di un server di database e modello di minacce con PASTA.",
+              "en": "An asset inventory, a vulnerability assessment of a database server and a threat model with PASTA."
+            },
+            "href": "vulnerability-assessment.html"
+          },
+          {
+            "name": {
+              "it": "Rilevamento e risposta",
+              "en": "Detection and response"
+            },
+            "text": {
+              "it": "Incidenti simulati (ICMP flood, phishing, violazione di dati), ticket di allerta e Piramide del dolore.",
+              "en": "Simulated incidents (ICMP flood, phishing, data breach), alert tickets and the Pyramid of Pain."
+            },
+            "href": "icmp-flood-incident.html"
+          },
+          {
+            "name": {
+              "it": "Python per la sicurezza",
+              "en": "Python for security"
+            },
+            "text": {
+              "it": "Nel corso, script per automatizzare attività di sicurezza. I miei progetti in Python sono tra i Progetti.",
+              "en": "In the course, scripts to automate security tasks. My Python projects are in the Projects page."
+            },
+            "href": "projects.html"
+          },
+          {
+            "name": {
+              "it": "Accessi, dati e conformità",
+              "en": "Access, data and compliance"
+            },
+            "text": {
+              "it": "Privilegio minimo e fuga di dati, e la revisione dei controlli di un'organizzazione rispetto a PCI DSS, GDPR e SOC.",
+              "en": "Least privilege and data leaks, and a review of an organization's controls against PCI DSS, GDPR and SOC."
+            },
+            "href": "botium-toys-review.html"
+          },
+          {
+            "name": {
+              "it": "Strumenti",
+              "en": "Tools"
+            },
+            "text": {
+              "it": "Wireshark, tcpdump e VirusTotal nei case study. Dal programma del corso anche SIEM (Splunk, Chronicle) e IDS (Suricata).",
+              "en": "Wireshark, tcpdump and VirusTotal in the case studies. From the course program also SIEM (Splunk, Chronicle) and IDS (Suricata)."
+            },
+            "href": "cybersecurity.html"
+          }
+        ]
+      },
+      {
+        "col": 2,
         "tone": "govern",
         "title": {
           "it": "Progettazione e documentazione",
@@ -326,112 +536,50 @@
         ]
       },
       {
+        "col": 2,
         "tone": "identify",
         "title": {
-          "it": "Sperimentazione e valutazione",
-          "en": "Experimentation and evaluation"
+          "it": "Provare e verificare",
+          "en": "Testing and checking"
         },
         "items": [
           {
             "name": {
-              "it": "Disegno sperimentale",
-              "en": "Experimental design"
+              "it": "Confrontare con metodo",
+              "en": "Comparing with method"
             },
             "text": {
-              "it": "Quattro configurazioni a confronto e un gruppo di controllo permanente, per separare l'apprendimento dalla copia.",
-              "en": "Four configurations compared and a permanent control group, to tell learning apart from copying."
+              "it": "Provare la stessa cosa in modi diversi e guardare cosa cambia davvero, senza fidarsi dell'impressione.",
+              "en": "Trying the same thing in different ways and looking at what really changes, without trusting a hunch."
             },
             "href": "projects.html#procedural-memory-lab"
           },
           {
             "name": {
-              "it": "Verifica causale",
-              "en": "Causal verification"
+              "it": "Cambiare una cosa alla volta",
+              "en": "Changing one thing at a time"
             },
             "text": {
-              "it": "Cambiare un valore nella procedura e vedere se la risposta lo segue (12 volte su 12), invece di fermarsi a una correlazione.",
-              "en": "Changing a value in the procedure and checking that the answer follows it (12 times out of 12), instead of stopping at a correlation."
+              "it": "Per capire cosa produce un risultato modifico un solo elemento e controllo se il risultato lo segue.",
+              "en": "To understand what produces a result I change a single element and check whether the result follows."
             },
-            "href": "projects.html#procedural-memory-lab"
+            "href": ""
           },
           {
             "name": {
-              "it": "Lettura onesta dei risultati",
-              "en": "Honest reading of results"
+              "it": "Dire anche cosa non va",
+              "en": "Saying what does not work too"
             },
             "text": {
-              "it": "Limiti, costi e risultati negativi scritti accanto ai numeri.",
-              "en": "Limits, costs and negative results written next to the numbers."
+              "it": "Nel mio progetto di ricerca ho scritto i limiti e i risultati negativi accanto ai numeri.",
+              "en": "In my research project I wrote the limits and the negative results next to the numbers."
             },
-            "href": "projects.html#procedural-memory-lab"
+            "href": ""
           }
         ]
       },
       {
-        "tone": "protect",
-        "title": {
-          "it": "Sicurezza informatica",
-          "en": "Cybersecurity"
-        },
-        "items": [
-          {
-            "name": {
-              "it": "Analisi del traffico di rete",
-              "en": "Network traffic analysis"
-            },
-            "text": {
-              "it": "tcpdump e Wireshark su un attacco SYN flood e su un problema DNS e ICMP.",
-              "en": "tcpdump and Wireshark on a SYN flood attack and on a DNS and ICMP problem."
-            },
-            "href": "syn-flood.html"
-          },
-          {
-            "name": {
-              "it": "Risposta agli incidenti",
-              "en": "Incident response"
-            },
-            "text": {
-              "it": "ICMP flood, phishing e violazione di dati, con le funzioni del NIST CSF.",
-              "en": "ICMP flood, phishing and a data breach, using the NIST CSF functions."
-            },
-            "href": "icmp-flood-incident.html"
-          },
-          {
-            "name": {
-              "it": "Rischi e vulnerabilità",
-              "en": "Risks and vulnerabilities"
-            },
-            "text": {
-              "it": "NIST SP 800-30, un registro dei rischi e un modello di minacce con PASTA.",
-              "en": "NIST SP 800-30, a risk register and a threat model with PASTA."
-            },
-            "href": "vulnerability-assessment.html"
-          },
-          {
-            "name": {
-              "it": "Accessi e hardening",
-              "en": "Access control and hardening"
-            },
-            "text": {
-              "it": "Privilegio minimo, permessi dei file in Linux, MFA e politica delle password.",
-              "en": "Least privilege, Linux file permissions, MFA and a password policy."
-            },
-            "href": "linux-file-permissions.html"
-          },
-          {
-            "name": {
-              "it": "Conformità",
-              "en": "Compliance"
-            },
-            "text": {
-              "it": "Revisione dei controlli di un'organizzazione rispetto a PCI DSS, GDPR e SOC.",
-              "en": "Review of an organization's controls against PCI DSS, GDPR and SOC."
-            },
-            "href": "botium-toys-review.html"
-          }
-        ]
-      },
-      {
+        "col": 2,
         "tone": "respond",
         "title": {
           "it": "Lavorare con le persone",
@@ -444,8 +592,8 @@
               "en": "Coordinating a team"
             },
             "text": {
-              "it": "Head coach in un team di E-Sports.",
-              "en": "Head coach in an E-Sports team."
+              "it": "Coach nel settore E-Sports: guidare una squadra amatoriale e collaborare da remoto con un team in una lega, insieme ad assistant coach e analyst.",
+              "en": "Coach in E-Sports: leading an amateur team and working remotely with a team in a league, together with assistant coaches and analysts."
             },
             "href": "#experience"
           },
@@ -459,6 +607,17 @@
               "en": "Projects with three and with four people, with roles and contributions stated in the READMEs."
             },
             "href": "projects.html"
+          },
+          {
+            "name": {
+              "it": "Pianificare e adattarsi",
+              "en": "Planning and adapting"
+            },
+            "text": {
+              "it": "Faccio un piano prima di iniziare e, se le cose cambiano, mi adatto senza perdere di vista l'obiettivo.",
+              "en": "I make a plan before starting and, if things change, I adapt without losing sight of the goal."
+            },
+            "href": ""
           },
           {
             "name": {

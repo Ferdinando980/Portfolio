@@ -678,11 +678,22 @@ def build_about(lang):
     cred = ""
     if C.get("credential_url"):
         cred = '<p><a class="btn" href="%s" rel="noopener noreferrer">%s</a></p>' % (esc(C["credential_url"]), esc(u["credential"]))
+    roles = ""
+    if C.get("roles"):
+        roles = ('<h3>%s</h3><ul class="chips">%s</ul><p class="note">%s</p>'
+                 % (esc(C["roles_title"][lang]), "".join("<li>%s</li>" % esc(r) for r in C["roles"][lang]), esc(C["roles_note"][lang])))
+    courses = ""
+    if C.get("courses"):
+        lis = "".join("<li><span><b>%s</b><br>%s</span></li>" % (esc(c["title"]), esc(c["text"][lang])) for c in C["courses"])
+        courses = ('<h3>%s</h3><ol class="courses">%s</ol><p class="note">%s</p>'
+                   % (esc(C["courses_title"][lang]), lis, esc(C["courses_note"][lang])))
     cert = f"""<section class="cert-panel a-net" id="percorso">
 <p class="kicker">{esc(u['cert_kicker'])}</p>
 <h2>{esc(C['title'][lang])}</h2>
 {paras}
 <dl class="factgrid">{facts}</dl>
+{roles}
+{courses}
 <p>{esc(C['link'][lang])}</p>
 {cred}
 <p class="source">{esc(C['sources'][lang])} <a href="{esc(C['source_url'])}" rel="noopener noreferrer">Coursera</a></p>
@@ -690,16 +701,19 @@ def build_about(lang):
     skills = ""
     if P.get("skills"):
         S = P["skills"]
-        groups = []
+        cols = {1: [], 2: []}
         for g in S["groups"]:
             lis = []
             for it in g["items"]:
                 name = it["name"] if isinstance(it["name"], str) else it["name"][lang]
                 link = ' <a href="%s" aria-label="%s">&rarr;</a>' % (esc(it["href"]), esc(name)) if it.get("href") else ""
                 lis.append("<li><b>%s</b><span>%s%s</span></li>" % (esc(name), esc(it["text"][lang]), link))
-            groups.append('<div class="skill-group a-%s"><h3>%s</h3><ul>%s</ul></div>' % (g["tone"], esc(g["title"][lang]), "".join(lis)))
+            note = '<p class="group-note">%s</p>' % esc(g["note"][lang]) if g.get("note") else ""
+            cols[g.get("col", 1)].append('<div class="skill-group a-%s"><h3>%s</h3>%s<ul>%s</ul></div>'
+                                         % (g["tone"], esc(g["title"][lang]), note, "".join(lis)))
         skills = ('<section class="block skills" id="skills"><h2>%s</h2><p class="skills-lead">%s</p><div class="skill-groups">%s</div></section>'
-                  % (esc(S["title"][lang]), esc(S["lead"][lang]), "".join(groups)))
+                  % (esc(S["title"][lang]), esc(S["lead"][lang]),
+                     "".join('<div class="skill-col">%s</div>' % "".join(cols[k]) for k in (1, 2))))
     secs = []
     for sec in P["sections"]:
         items = []
