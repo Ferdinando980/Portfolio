@@ -49,7 +49,7 @@ UI = {
         credential="View the credential", source="Source", courses_n="%d courses",
         proj_kicker="Software", proj_title="Projects",
         proj_lead=("Software projects developed independently or as part of my university studies. The source code and instructions for running each project are available on GitHub."),
-        proj_empty="Projects will be published here.", proj_code="View the code on GitHub", proj_how="How to run it",
+        proj_empty="Projects will be published here.", proj_code="View the code on GitHub", proj_how="How to run it", proj_results="Key findings",
         proj_all="View the projects", proj_teaser="Software projects, with code and instructions on GitHub.",
         notfound="Page not found", back="Back to the home page"),
     "it": dict(
@@ -76,7 +76,7 @@ UI = {
         credential="Verifica il certificato", source="Fonte", courses_n="%d corsi",
         proj_kicker="Software", proj_title="Progetti",
         proj_lead=("Progetti software sviluppati in autonomia o nell'ambito degli studi universitari. Il codice sorgente e le istruzioni per eseguire ciascun progetto sono disponibili su GitHub."),
-        proj_empty="I progetti saranno pubblicati qui.", proj_code="Vedi il codice su GitHub", proj_how="Come eseguirlo",
+        proj_empty="I progetti saranno pubblicati qui.", proj_code="Vedi il codice su GitHub", proj_how="Come eseguirlo", proj_results="Risultati principali",
         proj_all="Vedi i progetti", proj_teaser="Progetti software, con codice e istruzioni su GitHub.",
         notfound="Pagina non trovata", back="Torna alla home"),
 }
@@ -542,7 +542,7 @@ def projects_html(lang):
         cards.append('<li class="card a-%s"><a href="projects.html#%s"><span class="card-top">%s<span class="tag">%s</span></span>'
                      '<h3>%s</h3><p>%s</p><span class="skills">%s</span><span class="go">%s &rarr;</span></a></li>'
                      % (tone, esc(p["id"]), icon(tone) if tone in ICONS else "", esc(p["status"][lang]), esc(p["title"]),
-                        esc(p["summary"][lang]), esc(p["tags"][lang]), esc(u["proj_open"])))
+                        esc((p.get("teaser") or p["summary"])[lang]), esc(p["tags"][lang]), esc(u["proj_open"])))
     return ('<section class="cases" id="progetti"><div class="wrap"><p class="kicker center">%s</p><h2 class="section-title">%s</h2>'
             '<p class="section-note">%s</p><ul class="grid fit">%s</ul></div></section>'
             % (esc(u["proj_kicker"]), esc(u["proj_title"]), esc(u["proj_teaser"]), "".join(cards)))
@@ -552,6 +552,9 @@ def project_block(p, lang, u, preview=False):
     how = ""
     if p.get("how"):
         how = '<h3>%s</h3><ol class="steps">%s</ol>' % (esc(u["proj_how"]), "".join("<li>%s</li>" % esc(x) for x in p["how"][lang]))
+    results = ""
+    if p.get("highlights"):
+        results = '<h3>%s</h3><ul>%s</ul>' % (esc(u["proj_results"]), "".join("<li>%s</li>" % esc(x) for x in p["highlights"][lang]))
     note = '<p class="note">%s</p>' % esc(p["note"][lang]) if p.get("note") else ""
     if preview:
         href, label, rel = "../preview/%s/" % p["token"], u["open"], ""
@@ -561,7 +564,7 @@ def project_block(p, lang, u, preview=False):
     return (f'<article class="project a-{p.get("tone", "risk")}" id="{esc(p["id"])}">'
             f'<div class="project-meta"><span class="tag">{esc(p["status"][lang])}</span><h2>{esc(p["title"])}</h2>'
             f'<ul class="chips">{tags}</ul><a class="btn solid" href="{esc(href)}"{rel}>{esc(label)}</a></div>'
-            f'<div class="project-body"><p class="project-sum">{esc(p["summary"][lang])}</p>{how}{note}</div></article>')
+            f'<div class="project-body"><p class="project-sum">{esc(p["summary"][lang])}</p>{results}{how}{note}</div></article>')
 
 
 def build_projects(lang):
