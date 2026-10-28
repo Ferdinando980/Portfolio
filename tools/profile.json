@@ -330,7 +330,7 @@
     },
     "lead": {
       "it": "Per ogni competenza indico dove l'ho usata, così si può controllare il lavoro invece di fidarsi di un elenco.",
-      "en": "For every skill I point to where I used it, so the work can be checked instead of taking a list on trust."
+      "en": "Each skill links to work where it was used, so you can check it instead of taking a list on trust."
     },
     "groups": [
       {
@@ -638,34 +638,34 @@
         "items": [
           {
             "name": {
-              "it": "Confrontare con metodo",
-              "en": "Comparing in a structured way"
+              "it": "Confronto sperimentale",
+              "en": "Experimental comparison"
             },
             "text": {
-              "it": "Provare la stessa cosa in modi diversi e guardare cosa cambia davvero, senza fidarsi dell'impressione.",
-              "en": "Trying the same thing in different ways and looking at what really changes, without trusting a hunch."
+              "it": "Metto a confronto più varianti della stessa soluzione e valuto le differenze sui dati, non sull'impressione.",
+              "en": "I compare several variants of the same solution and judge the differences from the data, not from impressions."
             },
             "href": "projects.html#procedural-memory-lab"
           },
           {
             "name": {
-              "it": "Cambiare una cosa alla volta",
-              "en": "Changing one thing at a time"
+              "it": "Isolare le variabili",
+              "en": "Isolating variables"
             },
             "text": {
-              "it": "Per capire cosa produce un risultato, modifico un solo elemento e controllo se il risultato lo segue.",
-              "en": "To understand what produces a result, I change a single element and check whether the result follows."
+              "it": "Per capire cosa determina un risultato modifico un solo parametro per volta e verifico che il risultato lo segua.",
+              "en": "To find out what drives a result, I change one parameter at a time and check that the result follows."
             },
             "href": ""
           },
           {
             "name": {
-              "it": "Dire anche cosa non funziona",
-              "en": "Being open about what does not work"
+              "it": "Rendicontare i limiti",
+              "en": "Reporting limitations"
             },
             "text": {
-              "it": "Nel mio progetto di ricerca ho scritto i limiti e i risultati negativi accanto ai numeri.",
-              "en": "In my research project I wrote the limits and the negative results next to the numbers."
+              "it": "Nel progetto di ricerca riporto i limiti e i risultati negativi accanto ai dati.",
+              "en": "In my research project I report the limitations and the negative results alongside the data."
             },
             "href": ""
           }
@@ -681,45 +681,45 @@
         "items": [
           {
             "name": {
-              "it": "Coordinare un team",
-              "en": "Coordinating a team"
+              "it": "Coordinamento di un team",
+              "en": "Team coordination"
             },
             "text": {
-              "it": "Coach nel settore E-Sports: guidare una squadra amatoriale e collaborare da remoto con un team in una lega, insieme ad assistant coach e analyst.",
-              "en": "Coach in E-Sports: leading an amateur team and working remotely with a team in a league, together with assistant coaches and analysts."
+              "it": "Coach nel settore E-Sports: ho guidato una squadra amatoriale e collaborato da remoto con un team di lega, insieme ad assistant coach e analyst.",
+              "en": "E-Sports coach: I led an amateur team and worked remotely with a league team, alongside assistant coaches and analysts."
             },
             "href": "#experience"
           },
           {
             "name": {
-              "it": "Lavoro di gruppo sul software",
-              "en": "Team work on software"
+              "it": "Sviluppo software in team",
+              "en": "Software development in teams"
             },
             "text": {
-              "it": "Progetti da tre e da quattro persone, con ruoli e contributi dichiarati nei README.",
-              "en": "Projects with three and with four people, with roles and contributions stated in the READMEs."
+              "it": "Progetti da tre e da quattro persone, con ruoli e contributi documentati nei README.",
+              "en": "Projects with three and with four people, with roles and contributions documented in the READMEs."
             },
             "href": "projects.html"
           },
           {
             "name": {
-              "it": "Pianificare e adattarsi",
-              "en": "Planning and adapting"
+              "it": "Organizzazione del lavoro",
+              "en": "Work planning"
             },
             "text": {
-              "it": "Faccio un piano prima di iniziare e, se le cose cambiano, mi adatto senza perdere di vista l'obiettivo.",
-              "en": "I make a plan before starting and, if things change, I adapt without losing sight of the goal."
+              "it": "Pianifico le attività prima di iniziare e aggiorno il piano quando cambiano i requisiti, tenendo fermo l'obiettivo.",
+              "en": "I plan the work before starting and update the plan when requirements change, keeping the goal fixed."
             },
             "href": ""
           },
           {
             "name": {
-              "it": "Due lingue",
-              "en": "Two languages"
+              "it": "Comunicazione bilingue",
+              "en": "Bilingual communication"
             },
             "text": {
-              "it": "Tutti i testi di questo portfolio sono scritti in italiano e in inglese.",
-              "en": "Every text in this portfolio is written in Italian and in English."
+              "it": "Tutti i contenuti di questo portfolio sono scritti in italiano e in inglese.",
+              "en": "All content in this portfolio is written in Italian and in English."
             },
             "href": ""
           }
