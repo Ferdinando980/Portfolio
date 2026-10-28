@@ -41,13 +41,17 @@
           "Nei primi cinque run completi la libreria di procedure ha superato la base di confronto in tutti e cinque, con 7,8 punti percentuali in più su 116 tentativi. Il risultato è incoraggiante ma non conclusivo: i run non sono repliche indipendenti e la libreria è cambiata nel tempo.",
           "Nel run iniziale più ampio solo due dei dieci pattern coperti hanno portato un beneficio. Un miglioramento complessivo non basta a giustificare ogni singola procedura.",
           "Controllo causale: cambiando un valore dentro la procedura recuperata la risposta lo seguiva 12 volte su 12, mentre cambiare un valore non correlato non produceva effetti (6 su 6). Il modello sceglieva la regola giusta, ma ricopiava un valore.",
-          "Dopo aver riscritto la procedura chiedendo di derivare il valore, il modello ha calcolato tolleranze su sette ordini di grandezza."
+          "Dopo aver riscritto la procedura chiedendo di derivare il valore, il modello ha calcolato tolleranze su sette ordini di grandezza.",
+          "Costo: usare una procedura già pronta costa in media da 116 a 343 token di input in più rispetto al modello nudo, mentre costruirne una nuova costa circa 1000-2000 token una tantum per pattern.",
+          "Le stesse idee sono state portate in Aria, un'app di studio per un utente reale con ADHD, come secondo terreno di prova. Con l'uso reale il confronto tra gruppi ha un bias di composizione, quindi si usa un confronto appaiato alla cieca. Su 22 coppie confrontabili con un modello locale il recupero ha ottenuto 17 su 22 contro 13 su 22 del prompt nudo, un risultato non ancora conclusivo."
         ],
         "en": [
           "In the first five complete runs the procedure library finished ahead of the baseline every time, with 7.8 percentage points more accuracy over 116 attempts. The result is encouraging but not conclusive: the runs are not independent replications and the library changed over time.",
           "In the largest early run only two of the ten covered patterns paid off. An overall improvement is not enough to justify every single procedure.",
           "Causal check: changing a value inside the retrieved procedure made the answer follow it 12 times out of 12, while changing an unrelated value had no effect (6 out of 6). The model chose the right rule but recited a value.",
-          "After rewriting the procedure to ask for a derivation, the model computed tolerances across seven orders of magnitude."
+          "After rewriting the procedure to ask for a derivation, the model computed tolerances across seven orders of magnitude.",
+          "Cost: using a ready made procedure costs on average 116 to 343 more input tokens than the bare model, while building a new one costs about 1000 to 2000 tokens once per pattern.",
+          "The same ideas were carried over into Aria, a study app for a real user with ADHD, as a second testing ground. In real use a comparison between groups has a composition bias, so a blind paired comparison is used. On 22 comparable pairs with a local model, retrieval scored 17 of 22 against 13 of 22 for the bare prompt, a result that is not conclusive yet."
         ]
       },
       "teaser": {
