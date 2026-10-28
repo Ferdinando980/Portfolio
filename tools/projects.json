@@ -84,28 +84,28 @@
         "en": "University project"
       },
       "summary": {
-        "it": "Gioco di carte a turni sviluppato in gruppo da quattro persone. Comprende account e accesso, partite con turni e carte speciali, classifica globale, obiettivi e raccolta di feedback, con la documentazione di progetto (RAD, SDD, ODD).",
-        "en": "A turn-based card game developed by a team of four. It includes accounts and login, matches with turns and special cards, a global leaderboard, achievements and feedback collection, with the project documentation (RAD, SDD, ODD)."
+        "it": "Progetto accademico sviluppato in gruppo da quattro persone: un gioco di carte a turni con timer, da due a quattro giocatori. Comprende registrazione e accesso, partite con carte speciali, classifica locale e globale, obiettivi e feedback, con la documentazione di progetto (RAD, SDD, ODD).",
+        "en": "An academic project developed by a team of four: a turn-based card game with a timer, for two to four players. It includes registration and login, matches with special cards, local and global leaderboards, achievements and feedback, with the project documentation (RAD, SDD, ODD)."
       },
       "tags": {
-        "it": "Java 23, Spring Boot, JSP, JavaScript, MySQL",
-        "en": "Java 23, Spring Boot, JSP, JavaScript, MySQL"
+        "it": "Java 23, Spring Boot, Thymeleaf, JavaScript, MySQL",
+        "en": "Java 23, Spring Boot, Thymeleaf, JavaScript, MySQL"
       },
       "how": {
         "it": [
-          "Servono Java 23 e un server MySQL in locale. Il database justintime viene creato da solo; l'accesso si imposta in application.properties.",
+          "Servono Java 23 e un server MySQL in locale. Il database justintime viene creato da solo; utente e password si impostano in application.properties.",
           "Dalla cartella ProgettoIs JustInTime si avvia l'applicazione con ./mvnw spring-boot:run.",
-          "Il gioco si apre nel browser sull'indirizzo locale indicato da Spring Boot."
+          "Il gioco si apre nel browser all'indirizzo stampato da Spring Boot, di norma http://localhost:8080."
         ],
         "en": [
-          "Java 23 and a local MySQL server are required. The justintime database is created automatically; the connection is set in application.properties.",
+          "Java 23 and a local MySQL server are required. The justintime database is created automatically; the user and password are set in application.properties.",
           "From the ProgettoIs JustInTime folder the application is started with ./mvnw spring-boot:run.",
-          "The game opens in the browser at the local address printed by Spring Boot."
+          "The game opens in the browser at the address printed by Spring Boot, normally http://localhost:8080."
         ]
       },
       "note": {
-        "it": "Lavoro di gruppo: il repository originale è di un compagno di squadra. Il mio contributo riguarda soprattutto la logica di partita lato server: turni, sessione, stato dei giocatori, podio ed eliminazione dell'utenza.",
-        "en": "Team project: the original repository belongs to a teammate. My contribution is mostly the server-side match logic: turns, session, player state, podium and account deletion."
+        "it": "Progetto accademico svolto in gruppo, come VinylWaves. Il repository originale è di un compagno di squadra e questo è il mio fork. Il mio contributo riguarda soprattutto la logica di partita lato server: turni, sessione, stato dei giocatori, podio ed eliminazione dell'utenza.",
+        "en": "An academic team project, like VinylWaves. The original repository belongs to a teammate and this is my fork. My contribution is mostly the server-side match logic: turns, session, player state, podium and account deletion."
       },
       "url": "https://github.com/Ferdinando980/Progetto-JustInTime"
     },
