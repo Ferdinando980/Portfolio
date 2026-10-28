@@ -213,11 +213,18 @@
           "it": "Escalation degli incidenti, partecipazione alla community e preparazione ai colloqui.",
           "en": "Incident escalation, community engagement and interview preparation."
         }
+      },
+      {
+        "title": "Accelerate Your Job Search with AI",
+        "text": {
+          "it": "Individuare le proprie competenze, organizzare le candidature, preparare il curriculum e un piano di ricerca e simulare i colloqui.",
+          "en": "Identifying your skills, organizing applications, building a resume and a job search plan, and practicing interviews."
+        }
       }
     ],
     "courses_note": {
-      "it": "I corsi principali, come elencati nel programma su Coursera.",
-      "en": "The main courses, as listed in the program on Coursera."
+      "it": "I nove corsi del programma, come elencati su Coursera.",
+      "en": "The nine courses of the program, as listed on Coursera."
     }
   },
   "sections": [

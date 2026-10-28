@@ -354,3 +354,9 @@ td .q { margin-bottom: .4em; }
 .courses li span { line-height: 1.5; }
 .courses li b { font-weight: 600; }
 @media (max-width: 760px) { .skill-groups { grid-template-columns: 1fr; } }
+
+/* freccia dei collegamenti nelle competenze */
+.skill-group li a { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-left: 8px; vertical-align: middle;
+  border: 2px solid var(--c, var(--azure)); border-radius: 50%; color: var(--c, var(--azure)); background: var(--card);
+  font: 700 .95rem/1 var(--sans); text-decoration: none; transition: background .15s, color .15s; }
+.skill-group li a:hover, .skill-group li a:focus-visible { background: var(--c, var(--azure)); color: #fff; }
