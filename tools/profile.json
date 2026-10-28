@@ -330,7 +330,7 @@
     },
     "lead": {
       "it": "Per ogni competenza indico dove l'ho usata, così si può controllare il lavoro invece di fidarsi di un elenco.",
-      "en": "Each skill links to work where it was used, so you can check it instead of taking a list on trust."
+      "en": "Every skill is backed by real work you can explore, not just a claim on a list."
     },
     "groups": [
       {
@@ -700,17 +700,6 @@
               "en": "Projects with three and with four people, with roles and contributions documented in the READMEs."
             },
             "href": "projects.html"
-          },
-          {
-            "name": {
-              "it": "Organizzazione del lavoro",
-              "en": "Work planning"
-            },
-            "text": {
-              "it": "Pianifico le attività prima di iniziare e aggiorno il piano quando cambiano i requisiti, tenendo fermo l'obiettivo.",
-              "en": "I plan the work before starting and update the plan when requirements change, keeping the goal fixed."
-            },
-            "href": ""
           },
           {
             "name": {
