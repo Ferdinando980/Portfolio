@@ -114,27 +114,6 @@ CASES = [
          skills=dict(en="Hardening, MFA, password policy, firewall maintenance", it="Hardening, MFA, policy delle password, manutenzione del firewall")),
 ]
 
-# Funzioni del CSF che un case study tocca oltre a quella principale (verificate leggendo il contenuto)
-ALSO = {
-    "botium-toys-review": ["protect", "detect"],
-    "risk-register-bank": ["govern"],
-    "pasta-threat-model": ["protect"],
-    "access-controls-payroll": ["respond"],
-    "data-leak-least-privilege": ["respond"],
-    "usb-parking-lot": ["identify"],
-    "hardening-risk-assessment": ["identify"],
-    "syn-flood": ["respond"],
-    "dns-icmp-traffic": ["respond"],
-    "phishing-alert-ticket": ["respond"],
-    "icmp-flood-incident": ["identify", "protect", "detect", "recover"],
-    "phishing-incident": ["identify", "protect", "detect", "recover"],
-    "http-malware-incident": ["detect", "protect"],
-    "incident-final-report": ["identify", "protect"],
-    "incident-handler-journal": ["detect"],
-}
-for _c in CASES:
-    _c["also"] = ALSO.get(_c["slug"], [])
-
 # Ordine delle funzioni NIST CSF 2.0; a parità di funzione resta l'ordine di scrittura
 CASES.sort(key=lambda c: list(AREAS).index(c["area"]))
 

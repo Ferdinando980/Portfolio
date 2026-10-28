@@ -38,7 +38,7 @@ UI = {
         btn_cases="View the case studies", btn_about="About me", cert_kicker="Training", cert_more="Learn more about the program",
         about_kicker="Profile", about_title="About me", skills="Skills", links="Links",
         cases_kicker="Selected work", cases_title="Case studies",
-        cases_note="Each case study sits under the NIST Cybersecurity Framework 2.0 function that describes it best. Under each function, the Reference block lists the ones that only touch it.", also="Also touches", ref="Reference", ref_title="Reference: also touch this function", recover_note="No case study is only about recovery. The two below cover it in their own section, as part of the incident response.",
+        cases_note="Each case study sits under the NIST Cybersecurity Framework 2.0 function that describes it best.", empty_fn="No case study for this function yet.",
         n_cs="case studies", n_ar="CSF functions", n_lg="languages", all="All", read="Read the case study",
         crumb="All case studies", pdf="Download as PDF", prev="Previous", next="Next",
         foot1="Personal portfolio. The cybersecurity case studies are educational and based on simulated scenarios from the Google Cybersecurity Certificate: no live systems were tested and no real data is used.",
@@ -65,7 +65,7 @@ UI = {
         btn_cases="Vai ai case study", btn_about="Profilo", cert_kicker="Formazione", cert_more="Approfondisci il percorso",
         about_kicker="Profilo", about_title="Riguardo me", skills="Competenze", links="Link",
         cases_kicker="Lavori selezionati", cases_title="Case study",
-        cases_note="Ogni case study sta sotto la funzione del NIST Cybersecurity Framework 2.0 che lo descrive meglio. Sotto ogni funzione, il blocco Reference elenca quelli che la toccano soltanto.", also="Tocca anche", ref="Riferimento", ref_title="Reference: toccano anche questa funzione", recover_note="Nessun case study riguarda solo il ripristino. I due qui sotto lo trattano in una sezione dedicata, dentro la risposta all'incidente.",
+        cases_note="Ogni case study sta sotto la funzione del NIST Cybersecurity Framework 2.0 che lo descrive meglio.", empty_fn="Per questa funzione non c'è ancora nessun case study.",
         n_cs="case study", n_ar="funzioni CSF", n_lg="lingue", all="Tutti", read="Leggi il case study",
         crumb="Tutti i case study", pdf="Scarica il PDF", prev="Precedente", next="Successivo",
         foot1="Portfolio personale. I case study di cybersecurity sono didattici e basati su scenari simulati del Google Cybersecurity Certificate: non sono stati testati sistemi reali e non si usano dati reali.",
@@ -645,25 +645,19 @@ def build_cyber(lang):
     chips = ['<button class="chip" data-filter="all" aria-pressed="true">%s</button>' % esc(u["all"])]
     for k, v in AREAS.items():
         chips.append('<button class="chip c-%s" data-filter="%s" aria-pressed="false">%s</button>' % (k, k, esc(v[lang])))
-    def card(c, ref=False):
-        also_names = ", ".join(AREAS[k][lang] for k in c.get("also", []))
-        also_line = '<span class="also">%s: %s</span>' % (esc(u["also"]), esc(also_names)) if (also_names and not ref) else ""
-        badge = '<span class="refbadge">%s</span>' % esc(u["ref"]) if ref else ""
-        return ('<li class="card a-%s%s"><a href="%s.html"><span class="card-top">%s<span class="tag">%s</span></span>'
-                '<h3>%s</h3><p>%s</p>%s<span class="skills">%s</span><span class="go">%s &rarr;</span>%s</a></li>'
-                % (c["area"], " is-ref" if ref else "", c["slug"], icon(c["area"]), esc(AREAS[c["area"]][lang]), esc(c["title"][lang]),
-                   esc(c["summary"][lang]), also_line, esc(c["skills"][lang]), esc(u["read"]), badge))
+    def card(c):
+        return ('<li class="card a-%s"><a href="%s.html"><span class="card-top">%s<span class="tag">%s</span></span>'
+                '<h3>%s</h3><p>%s</p><span class="skills">%s</span><span class="go">%s &rarr;</span></a></li>'
+                % (c["area"], c["slug"], icon(c["area"]), esc(AREAS[c["area"]][lang]), esc(c["title"][lang]),
+                   esc(c["summary"][lang]), esc(c["skills"][lang]), esc(u["read"])))
     sections = []
     for k, v in AREAS.items():
         main = [c for c in CASES if c["area"] == k]
-        refs = [c for c in CASES if k in c.get("also", [])]
         parts = ['<h3 class="fn-title a-%s">%s</h3>' % (k, esc(v[lang]))]
         if main:
             parts.append('<ul class="grid">%s</ul>' % "".join(card(c) for c in main))
         else:
-            parts.append('<p class="fn-empty">%s</p>' % esc(u["recover_note"]))
-        if refs:
-            parts.append('<h4 class="ref-title">%s</h4><ul class="grid">%s</ul>' % (esc(u["ref_title"]), "".join(card(c, True) for c in refs)))
+            parts.append('<p class="fn-empty">%s</p>' % esc(u["empty_fn"]))
         sections.append('<section class="fn a-%s" data-fn="%s" id="fn-%s">%s</section>' % (k, k, k, "".join(parts)))
     body = f"""<div class="wrap">
 <header class="about-head">
@@ -789,7 +783,7 @@ def build_case(lang, i):
     body = f"""<div class="wrap">
 <header class="article-head a-{c['area']}">
 <p class="crumbs"><a href="cybersecurity.html">&larr; {esc(u['crumb'])}</a></p>
-<span class="tag a-{c['area']}">{esc(AREAS[c['area']][lang])}</span>{('<span class="also-line">%s: %s</span>' % (esc(u['also']), esc(", ".join(AREAS[k][lang] for k in c.get('also', []))))) if c.get('also') else ''}
+<span class="tag a-{c['area']}">{esc(AREAS[c['area']][lang])}</span>
 <h1>{esc(c['title'][lang])}</h1>
 <hr class="rule">
 <p class="lead">{esc(c['summary'][lang])}</p>
