@@ -11,7 +11,7 @@
 <meta property="og:title" content="Diario dell&#x27;incident handler | Ferdinando Gregorio Fernandez">
 <meta property="og:description" content="Quattro voci di diario su incidenti e strumenti: un caso di ransomware, un ticket di phishing, tcpdump e Wireshark, e la Piramide del dolore.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/style.css?v=dbc077a0">
+<link rel="stylesheet" href="../assets/style.css?v=df23b7c3">
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
@@ -24,7 +24,7 @@
 <div class="wrap">
 <header class="article-head a-respond">
 <p class="crumbs"><a href="cybersecurity.html">&larr; Tutti i case study</a></p>
-<span class="tag a-respond">Rispondere</span>
+<span class="tag a-respond">Rispondere</span><span class="also-line">Tocca anche: Rilevare</span>
 <h1>Diario dell&#x27;incident handler</h1>
 <hr class="rule">
 <p class="lead">Quattro voci di diario su incidenti e strumenti: un caso di ransomware, un ticket di phishing, tcpdump e Wireshark, e la Piramide del dolore.</p>
@@ -37,7 +37,7 @@
 <div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#2</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>Esame di un ticket di allerta per phishing (A-2703)</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>VirusTotal, per cercare l&#x27;hash del file.</p></td></tr><tr><td class="label"><p>I 5 W</p></td><td><p>Chi: un mittente sconosciuto che usa il nome Clyde West, con un indirizzo .su</p><p>Cosa: un&#x27;email di phishing con un allegato eseguibile chiamato bfsvc.exe</p><p>Dove: la casella delle risorse umane dell&#x27;azienda</p><p>Quando: mercoledì 20 luglio 2022, ore 09:30</p><p>Perché: l&#x27;attaccante vuole che il file venga eseguito su un computer aziendale. La password scritta nell&#x27;email serve a impedire agli antivirus della posta di aprire il file.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>Cercare un hash è veloce e qui ha dato una risposta chiara. Ho meno certezze per un file il cui hash nessuno ha ancora visto, perché un malware nuovo non ha reputazione. In quel caso mi servirebbero una sandbox o l&#x27;aiuto di un analista più esperto.</p></td></tr></table></div>
 <div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#3</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>Confronto tra tcpdump e Wireshark</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>tcpdump e Wireshark.</p></td></tr><tr><td class="label"><p>Punti chiave</p></td><td><p>tcpdump è leggero e funziona da riga di comando su un server. Wireshark è più pesante ma molto più leggibile, con colori e filtri. Entrambi salvano e leggono file di cattura, quindi posso catturare con uno e analizzare con l&#x27;altro.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>Devo esercitarmi di più con le opzioni di tcpdump. Continuo a dimenticare quale opzione disattiva la risoluzione dei nomi (-nn).</p></td></tr></table></div>
 <div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#4</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>La Piramide del dolore applicata a un hash</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>VirusTotal.</p></td></tr><tr><td class="label"><p>Punti chiave</p></td><td><p>L&#x27;hash è l&#x27;indicatore più facile da trovare e il più facile da cambiare per un attaccante. Nomi di dominio e indirizzi IP sono un po&#x27; più difficili da cambiare. Strumenti e TTP sono i più difficili, e sono quelli che vale la pena rilevare.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>La prossima volta che guardo un indicatore voglio chiedermi a che livello della piramide si trova, e non solo se è dannoso.</p></td></tr></table></div>
-<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-final-report.html"><small>&larr; Precedente</small>Rapporto finale: violazione di dati tramite forced browsing</a><a class="next" href="phishing-incident.html"><small>Successivo &rarr;</small>Analisi di un incidente: phishing e account rubato</a></nav>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-final-report.html"><small>&larr; Precedente</small>Rapporto finale: violazione di dati tramite forced browsing</a></nav>
 </article>
 </div>
 </main>
@@ -45,6 +45,6 @@
 <div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Portfolio personale. I case study di cybersecurity sono didattici e basati su scenari simulati del Google Cybersecurity Certificate: non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
 <ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
 </div></footer>
-<script src="../assets/site.js?v=dbc077a0" defer></script>
+<script src="../assets/site.js?v=df23b7c3" defer></script>
 </body>
 </html>

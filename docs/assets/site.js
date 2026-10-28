@@ -8,7 +8,8 @@
       var f = chip.getAttribute('data-filter');
       chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
       cards.forEach(function (card) {
-        card.hidden = !(f === 'all' || card.getAttribute('data-area') === f);
+        var also = (card.getAttribute('data-also') || '').split(' ');
+        card.hidden = !(f === 'all' || card.getAttribute('data-area') === f || also.indexOf(f) !== -1);
       });
     });
   });

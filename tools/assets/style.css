@@ -370,3 +370,7 @@ td .q { margin-bottom: .4em; }
 .skill-links { display: flex !important; flex-wrap: wrap; gap: 6px; margin-top: 8px !important; }
 .skill-group li a.pill { margin: 0; font-style: normal; }
 .skill-group li a.pill i { font-style: normal; }
+
+/* funzioni del CSF toccate */
+.card .also { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+.also-line { display: block; margin-top: 8px; color: var(--muted); font-size: .86rem; letter-spacing: .02em; }

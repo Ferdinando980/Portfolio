@@ -32,7 +32,7 @@ CASES = [
          summary=dict(en="Walking through a DDoS caused by an ICMP flood with the five NIST CSF functions, from identification to recovery.",
                       it="Analisi di un DDoS causato da un ICMP flood con le cinque funzioni del NIST CSF, dall'identificazione al ripristino."),
          skills=dict(en="NIST CSF, incident response, firewall rules, IDS/IPS", it="NIST CSF, risposta agli incidenti, regole del firewall, IDS/IPS")),
-    dict(slug="phishing-incident", area="recover", stem="CaseStudy_Incident-Report-Analysis_Phishing-Intern-Account", kind="docx",
+    dict(slug="phishing-incident", area="respond", stem="CaseStudy_Incident-Report-Analysis_Phishing-Intern-Account", kind="docx",
          title=dict(en="Incident report analysis: phishing and a stolen account", it="Analisi di un incidente: phishing e account rubato"),
          summary=dict(en="A phishing email gives an attacker access to a customer database. Analysis of the breach and a recovery plan based on NIST CSF.",
                       it="Un'email di phishing dà a un attaccante accesso a un database di clienti. Analisi della violazione e piano di recupero basato sul NIST CSF."),
@@ -113,6 +113,27 @@ CASES = [
                       it="Scelta di tre misure di hardening (MFA, policy delle password, manutenzione del firewall) e spiegazione di come riducono il rischio."),
          skills=dict(en="Hardening, MFA, password policy, firewall maintenance", it="Hardening, MFA, policy delle password, manutenzione del firewall")),
 ]
+
+# Funzioni del CSF che un case study tocca oltre a quella principale (verificate leggendo il contenuto)
+ALSO = {
+    "botium-toys-review": ["protect", "detect", "recover"],
+    "risk-register-bank": ["govern"],
+    "pasta-threat-model": ["protect"],
+    "access-controls-payroll": ["respond"],
+    "data-leak-least-privilege": ["respond"],
+    "usb-parking-lot": ["identify"],
+    "hardening-risk-assessment": ["identify"],
+    "syn-flood": ["respond"],
+    "dns-icmp-traffic": ["respond"],
+    "phishing-alert-ticket": ["respond"],
+    "icmp-flood-incident": ["identify", "protect", "detect", "recover"],
+    "phishing-incident": ["identify", "protect", "detect", "recover"],
+    "http-malware-incident": ["detect", "protect"],
+    "incident-final-report": ["identify", "protect"],
+    "incident-handler-journal": ["detect"],
+}
+for _c in CASES:
+    _c["also"] = ALSO.get(_c["slug"], [])
 
 # Ordine delle funzioni NIST CSF 2.0; a parità di funzione resta l'ordine di scrittura
 CASES.sort(key=lambda c: list(AREAS).index(c["area"]))

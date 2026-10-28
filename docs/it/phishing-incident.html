@@ -11,7 +11,7 @@
 <meta property="og:title" content="Analisi di un incidente: phishing e account rubato | Ferdinando Gregorio Fernandez">
 <meta property="og:description" content="Un&#x27;email di phishing dà a un attaccante accesso a un database di clienti. Analisi della violazione e piano di recupero basato sul NIST CSF.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/style.css?v=dbc077a0">
+<link rel="stylesheet" href="../assets/style.css?v=df23b7c3">
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
@@ -22,18 +22,18 @@
 </div></header>
 <main id="main">
 <div class="wrap">
-<header class="article-head a-recover">
+<header class="article-head a-respond">
 <p class="crumbs"><a href="cybersecurity.html">&larr; Tutti i case study</a></p>
-<span class="tag a-recover">Ripristinare</span>
+<span class="tag a-respond">Rispondere</span><span class="also-line">Tocca anche: Identificare, Proteggere, Rilevare, Ripristinare</span>
 <h1>Analisi di un incidente: phishing e account rubato</h1>
 <hr class="rule">
 <p class="lead">Un&#x27;email di phishing dà a un attaccante accesso a un database di clienti. Analisi della violazione e piano di recupero basato sul NIST CSF.</p>
 <ul class="skill-list"><li>NIST CSF</li><li>phishing</li><li>MFA</li><li>backup e ripristino</li></ul>
 <a class="btn" href="../pdf/it/phishing-incident.pdf" download>Scarica il PDF</a>
 </header>
-<article class="article a-recover">
+<article class="article a-respond">
 <div class="tablewrap"><table><tr><td class="label"><p>Riepilogo</p></td><td><p>Una stagista ha detto al reparto IT di non riuscire ad accedere al suo account. I log di accesso mostravano che l&#x27;account stava ancora leggendo record del database dei clienti, anche se lei era bloccata fuori. Quella mattina aveva ricevuto un&#x27;email che le chiedeva di accedere a un sito esterno con le credenziali aziendali per leggere un messaggio, quindi pensiamo che le sue credenziali siano state rubate con un attacco di phishing. Alcuni dipendenti hanno anche notato record di clienti mancanti o sbagliati, il che significa che l&#x27;attaccante non si è limitato a leggere i dati: una parte è stata cancellata o modificata.</p></td></tr><tr><td class="label"><p>Identificare</p></td><td><p>Il team dell&#x27;incidente ha esaminato i sistemi, i dispositivi e le policy di accesso coinvolti. La lacuna era che bastavano un nome utente e una password per raggiungere il database dei clienti, e che i dipendenti non erano formati a riconoscere un&#x27;email di phishing.</p></td></tr><tr><td class="label"><p>Proteggere</p></td><td><p>Nuove regole di autenticazione: autenticazione a più fattori (MFA), un limite di tre tentativi di accesso e una formazione per tutti i dipendenti su come proteggere le proprie credenziali. Verrà migliorata anche la configurazione del firewall e l&#x27;azienda investirà in un sistema di prevenzione delle intrusioni (IPS).</p></td></tr><tr><td class="label"><p>Rilevare</p></td><td><p>Uno strumento di log del firewall e un sistema di rilevamento delle intrusioni (IDS) monitoreranno il traffico in arrivo da internet, così i tentativi di accesso non autorizzato verranno notati prima.</p></td></tr><tr><td class="label"><p>Rispondere</p></td><td><p>L&#x27;account della stagista è stato disattivato. Stagisti e dipendenti hanno ricevuto una formazione su come proteggere le credenziali di accesso. La direzione è stata informata e scriverà ai clienti coinvolti e contatterà le forze dell&#x27;ordine e gli altri enti previsti dalle leggi locali.</p></td></tr><tr><td class="label"><p>Ripristinare</p></td><td><p>I dati cancellati verranno ripristinati dal backup completo della notte scorsa. Quello che è stato inserito o modificato questa mattina non è nel backup, quindi al personale è stato detto che dovrà reinserirlo dopo il ripristino.</p></td></tr><tr><td class="label"><p>Riflessioni / Note</p></td><td><p>Una password rubata non dovrebbe mai bastare per entrare nei dati dei clienti. Il backup è ciò che ha limitato il danno in questo caso, quindi deve essere recente e testato.</p></td></tr></table></div>
-<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-handler-journal.html"><small>&larr; Precedente</small>Diario dell&#x27;incident handler</a></nav>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="icmp-flood-incident.html"><small>&larr; Precedente</small>Analisi di un incidente: ICMP flood</a><a class="next" href="http-malware-incident.html"><small>Successivo &rarr;</small>Rapporto di sicurezza: malware da un sito compromesso</a></nav>
 </article>
 </div>
 </main>
@@ -41,6 +41,6 @@
 <div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Portfolio personale. I case study di cybersecurity sono didattici e basati su scenari simulati del Google Cybersecurity Certificate: non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
 <ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
 </div></footer>
-<script src="../assets/site.js?v=dbc077a0" defer></script>
+<script src="../assets/site.js?v=df23b7c3" defer></script>
 </body>
 </html>

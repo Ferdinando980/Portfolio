@@ -11,7 +11,7 @@
 <meta property="og:title" content="Incident report analysis: phishing and a stolen account | Ferdinando Gregorio Fernandez">
 <meta property="og:description" content="A phishing email gives an attacker access to a customer database. Analysis of the breach and a recovery plan based on NIST CSF.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/style.css?v=dbc077a0">
+<link rel="stylesheet" href="../assets/style.css?v=df23b7c3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -22,18 +22,18 @@
 </div></header>
 <main id="main">
 <div class="wrap">
-<header class="article-head a-recover">
+<header class="article-head a-respond">
 <p class="crumbs"><a href="cybersecurity.html">&larr; All case studies</a></p>
-<span class="tag a-recover">Recover</span>
+<span class="tag a-respond">Respond</span><span class="also-line">Also touches: Identify, Protect, Detect, Recover</span>
 <h1>Incident report analysis: phishing and a stolen account</h1>
 <hr class="rule">
 <p class="lead">A phishing email gives an attacker access to a customer database. Analysis of the breach and a recovery plan based on NIST CSF.</p>
 <ul class="skill-list"><li>NIST CSF</li><li>phishing</li><li>MFA</li><li>backup and recovery</li></ul>
 <a class="btn" href="../pdf/en/phishing-incident.pdf" download>Download as PDF</a>
 </header>
-<article class="article a-recover">
+<article class="article a-respond">
 <div class="tablewrap"><table><tr><td class="label"><p>Summary</p></td><td><p>An intern told the IT department that she could not log in to her account. The access logs showed that the account was still reading records in the customer database even though she was locked out. She had received an email that morning asking her to log in to an external website with her company credentials to read a message, so we believe her credentials were stolen by phishing. A few employees also noticed customer records that were missing or wrong, which means the attacker did not only read the data: some of it was deleted or changed.</p></td></tr><tr><td class="label"><p>Identify</p></td><td><p>The incident team reviewed the systems, devices and access policies involved. The gap was that a username and a password were enough to reach the customer database, and that employees were not trained to recognize a phishing email.</p></td></tr><tr><td class="label"><p>Protect</p></td><td><p>New authentication rules: multifactor authentication (MFA), a limit of three login attempts, and training for all employees on how to protect their credentials. The firewall configuration will also be improved and the company will invest in an intrusion prevention system (IPS).</p></td></tr><tr><td class="label"><p>Detect</p></td><td><p>A firewall logging tool and an intrusion detection system (IDS) will monitor the traffic coming from the internet, so unauthorized access attempts are noticed earlier.</p></td></tr><tr><td class="label"><p>Respond</p></td><td><p>The intern&#x27;s account was disabled. Interns and employees received training on how to protect their login credentials. Upper management was informed, and they will write to the affected customers and contact law enforcement and any other body required by local laws.</p></td></tr><tr><td class="label"><p>Recover</p></td><td><p>The deleted data will be restored from last night&#x27;s full backup. Anything entered or changed this morning is not in that backup, so staff were told they will have to enter it again after the restore.</p></td></tr><tr><td class="label"><p>Reflections/Notes</p></td><td><p>A stolen password should never be enough to get into customer data. The backup is what limited the damage here, so it needs to be recent and tested.</p></td></tr></table></div>
-<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-handler-journal.html"><small>&larr; Previous</small>Incident handler&#x27;s journal</a></nav>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="icmp-flood-incident.html"><small>&larr; Previous</small>Incident report analysis: ICMP flood</a><a class="next" href="http-malware-incident.html"><small>Next &rarr;</small>Security incident report: malware via a hijacked website</a></nav>
 </article>
 </div>
 </main>
@@ -41,6 +41,6 @@
 <div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Personal portfolio. The cybersecurity case studies are educational and based on simulated scenarios from the Google Cybersecurity Certificate: no live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
 <ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
 </div></footer>
-<script src="../assets/site.js?v=dbc077a0" defer></script>
+<script src="../assets/site.js?v=df23b7c3" defer></script>
 </body>
 </html>

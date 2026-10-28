@@ -11,7 +11,7 @@
 <meta property="og:title" content="Incident report analysis: ICMP flood | Ferdinando Gregorio Fernandez">
 <meta property="og:description" content="Walking through a DDoS caused by an ICMP flood with the five NIST CSF functions, from identification to recovery.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/style.css?v=dbc077a0">
+<link rel="stylesheet" href="../assets/style.css?v=df23b7c3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -24,7 +24,7 @@
 <div class="wrap">
 <header class="article-head a-respond">
 <p class="crumbs"><a href="cybersecurity.html">&larr; All case studies</a></p>
-<span class="tag a-respond">Respond</span>
+<span class="tag a-respond">Respond</span><span class="also-line">Also touches: Identify, Protect, Detect, Recover</span>
 <h1>Incident report analysis: ICMP flood</h1>
 <hr class="rule">
 <p class="lead">Walking through a DDoS caused by an ICMP flood with the five NIST CSF functions, from identification to recovery.</p>
@@ -33,7 +33,7 @@
 </header>
 <article class="article a-respond">
 <div class="tablewrap"><table><tr><td class="label"><p>Summary</p></td><td><p>The company&#x27;s internal network stopped responding for a while and nobody could use the network services. The security team found that the cause was a flood of ICMP packets coming from outside, which makes it a distributed denial of service (DDoS) attack. To get back to work, the team blocked the incoming ICMP traffic and shut down the non-critical services, so the critical ones could be restored first.</p></td></tr><tr><td class="label"><p>Identify</p></td><td><p>The company was hit by an ICMP flood. The weak point was a firewall that did not limit incoming ICMP packets, so the attacker could overload the whole internal network. Everything that depends on the network was affected, which means the critical resources have to be identified in advance and protected first.</p></td></tr><tr><td class="label"><p>Protect</p></td><td><p>A new firewall rule now limits how fast ICMP packets can enter the network. The team also added an IDS/IPS that filters out ICMP traffic with suspicious characteristics.</p></td></tr><tr><td class="label"><p>Detect</p></td><td><p>The firewall now checks the source IP address of incoming ICMP packets to catch spoofed addresses. Network monitoring software was added to spot abnormal traffic patterns early.</p></td></tr><tr><td class="label"><p>Respond</p></td><td><p>Next time we will isolate the affected systems first, so the problem does not spread. Then we restore the critical systems and services, read the network logs looking for anything strange, and report the incident to management and, when the law requires it, to the authorities.</p></td></tr><tr><td class="label"><p>Recover</p></td><td><p>To recover from an ICMP flood, the external ICMP traffic is blocked at the firewall and the non-critical services are stopped to lower the load inside the network. The critical services come back first. When the flood has timed out, the rest of the services can be restored.</p></td></tr><tr><td class="label"><p>Reflections/Notes</p></td><td><p>One firewall rule and one monitoring tool could have saved the company a long outage. I also learned that a response needs an order: block the traffic, lower the load, bring back what is critical, then the rest.</p></td></tr></table></div>
-<nav class="pager" aria-label="Case studies"><a class="prev" href="pyramid-of-pain.html"><small>&larr; Previous</small>File hash analysis with the Pyramid of Pain</a><a class="next" href="http-malware-incident.html"><small>Next &rarr;</small>Security incident report: malware via a hijacked website</a></nav>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="pyramid-of-pain.html"><small>&larr; Previous</small>File hash analysis with the Pyramid of Pain</a><a class="next" href="phishing-incident.html"><small>Next &rarr;</small>Incident report analysis: phishing and a stolen account</a></nav>
 </article>
 </div>
 </main>
@@ -41,6 +41,6 @@
 <div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Personal portfolio. The cybersecurity case studies are educational and based on simulated scenarios from the Google Cybersecurity Certificate: no live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
 <ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
 </div></footer>
-<script src="../assets/site.js?v=dbc077a0" defer></script>
+<script src="../assets/site.js?v=df23b7c3" defer></script>
 </body>
 </html>

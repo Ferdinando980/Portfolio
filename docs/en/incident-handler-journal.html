@@ -11,7 +11,7 @@
 <meta property="og:title" content="Incident handler&#x27;s journal | Ferdinando Gregorio Fernandez">
 <meta property="og:description" content="Four journal entries on incidents and tools: a ransomware case, a phishing ticket, tcpdump and Wireshark, and the Pyramid of Pain.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/style.css?v=dbc077a0">
+<link rel="stylesheet" href="../assets/style.css?v=df23b7c3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -24,7 +24,7 @@
 <div class="wrap">
 <header class="article-head a-respond">
 <p class="crumbs"><a href="cybersecurity.html">&larr; All case studies</a></p>
-<span class="tag a-respond">Respond</span>
+<span class="tag a-respond">Respond</span><span class="also-line">Also touches: Detect</span>
 <h1>Incident handler&#x27;s journal</h1>
 <hr class="rule">
 <p class="lead">Four journal entries on incidents and tools: a ransomware case, a phishing ticket, tcpdump and Wireshark, and the Pyramid of Pain.</p>
@@ -37,7 +37,7 @@
 <div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#2</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Reviewing a phishing alert ticket (A-2703)</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>VirusTotal, to look up the file hash.</p></td></tr><tr><td class="label"><p>The 5 W&#x27;s</p></td><td><p>Who: an unknown sender using the name Clyde West, from a .su address</p><p>What: a phishing email with an executable attachment called bfsvc.exe</p><p>Where: the HR mailbox of the company</p><p>When: Wednesday, July 20, 2022, 09:30 a.m.</p><p>Why: the attacker wants the file to run on a company computer. The password written in the email is there to stop mail scanners from opening the file.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>A hash lookup is quick and here it gave a clear answer. What I am less sure about is a file whose hash nobody has seen yet, because new malware has no reputation. For that I would need a sandbox or help from a more senior analyst.</p></td></tr></table></div>
 <div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#3</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Comparing tcpdump and Wireshark</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>tcpdump and Wireshark.</p></td></tr><tr><td class="label"><p>Key takeaways</p></td><td><p>tcpdump is light and works on a server from the command line. Wireshark is heavier but much easier to read, with colors and filters. Both can save and read capture files, so I can capture with one and analyze with the other.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>I need to practice the tcpdump options more. I keep forgetting which flag turns off name resolution (-nn).</p></td></tr></table></div>
 <div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#4</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Using the Pyramid of Pain on a file hash</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>VirusTotal.</p></td></tr><tr><td class="label"><p>Key takeaways</p></td><td><p>A hash is the easiest indicator to find and the easiest for an attacker to change. Domain names and IP addresses are a bit harder to change. Tools and TTPs are the hardest, and they are the ones worth detecting.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>Next time I look at an indicator I want to ask which level of the pyramid it sits on, and not just whether it is malicious.</p></td></tr></table></div>
-<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-final-report.html"><small>&larr; Previous</small>Incident final report: data breach through forced browsing</a><a class="next" href="phishing-incident.html"><small>Next &rarr;</small>Incident report analysis: phishing and a stolen account</a></nav>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-final-report.html"><small>&larr; Previous</small>Incident final report: data breach through forced browsing</a></nav>
 </article>
 </div>
 </main>
@@ -45,6 +45,6 @@
 <div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Personal portfolio. The cybersecurity case studies are educational and based on simulated scenarios from the Google Cybersecurity Certificate: no live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
 <ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
 </div></footer>
-<script src="../assets/site.js?v=dbc077a0" defer></script>
+<script src="../assets/site.js?v=df23b7c3" defer></script>
 </body>
 </html>
