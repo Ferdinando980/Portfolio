@@ -401,3 +401,16 @@ td .q { margin-bottom: .4em; }
   .card:hover { transform: none; }
 }
 .cert-band + .contact-band { margin-top: 0; }
+
+/* piu' colore, sempre sobrio */
+:root { --s-govern: #8a6fa8; --s-identify: #b58a36; --s-protect: #5f9a72; --s-detect: #4a8cc0; --s-respond: #c25a68; --s-recover: #4a9a9e; }
+.topbar::after { content: ""; display: block; height: 4px;
+  background: linear-gradient(90deg, var(--s-govern) 0 16.66%, var(--s-identify) 0 33.33%, var(--s-protect) 0 50%, var(--s-detect) 0 66.66%, var(--s-respond) 0 83.33%, var(--s-recover) 0 100%); }
+.hero { background: linear-gradient(135deg, #cfe2f0 0%, var(--sky) 45%, #e4eef6 100%); }
+.card { background: color-mix(in srgb, var(--c, var(--card)) 3%, var(--card)); }
+.card:hover { background: color-mix(in srgb, var(--c, var(--card)) 6%, var(--card)); }
+.card-img { filter: none; }
+.contact-band { background: color-mix(in srgb, var(--azure) 9%, var(--cream)); border-top: 3px solid var(--azure); }
+.project-shot img { border: 0; border-radius: 10px; box-shadow: 0 14px 34px rgba(20,38,58,.16); }
+.skill-group { background: color-mix(in srgb, var(--c, var(--ink)) 3%, transparent); padding: 14px 18px 8px; border-radius: 2px; }
+.cert-panel { background: color-mix(in srgb, var(--azure) 4%, var(--card)); }
