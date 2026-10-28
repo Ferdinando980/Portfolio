@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Parking lot USB exercise | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Thinking like an attacker about a USB drive found in a parking lot, and proposing technical, operational and managerial controls.">
+<meta property="og:title" content="Parking lot USB exercise | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Thinking like an attacker about a USB drive found in a parking lot, and proposing technical, operational and managerial controls.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/usb-parking-lot.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-protect">Protect</span>
+<h1>Parking lot USB exercise</h1>
+<hr class="rule">
+<p class="lead">Thinking like an attacker about a USB drive found in a parking lot, and proposing technical, operational and managerial controls.</p>
+<ul class="skill-list"><li>Social engineering</li><li>USB baiting</li><li>PII</li><li>security awareness</li></ul>
+<a class="btn" href="../pdf/en/usb-parking-lot.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-protect">
+<div class="tablewrap"><table><tr><td class="label"><p>Contents</p></td><td><p class="q">Write 2-3 sentences about the types of information found on this device.</p><ul class="qlist"><li>Are there files that can contain PII?</li><li>Are there sensitive work files?</li><li>Is it safe to store personal files with work files?</li></ul><p>The drive mixes personal files and work files. Some personal documents are things Jorge would not want to be public, and the work files contain personal data of other employees together with details about how the hospital operates. Keeping both kinds of files on the same device is not a safe habit.</p></td></tr><tr><td class="label"><p>Attacker mindset</p></td><td><p class="q">Write 2-3 sentences about how this information could be used against Jorge or the hospital.</p><ul class="qlist"><li>Could the information be used against other employees?</li><li>Could the information be used against relatives?</li><li>Could the information provide access to the business?</li></ul><p>The timesheets show who Jorge works with and when, so an attacker could write a convincing email that looks like it comes from a coworker or from a relative. Personal details could also be used to guess his passwords or to put pressure on him. The hospital information could even help someone find a way into the business.</p></td></tr><tr><td class="label"><p>Risk analysis</p></td><td><p class="q">Write 3 or 4 sentences describing technical, operational, or managerial controls that could mitigate these types of attacks:</p><ul class="qlist"><li>What types of malicious software could be hidden on these devices? What could have happened if the device were infected and discovered by another employee?</li><li>What sensitive information could a threat actor find on a device like this?</li><li>How might that information be used against an individual or an organization?</li></ul><p>A drive like this could hide malware, for example a keylogger or ransomware, that runs as soon as it is plugged in. If another employee found it and used it at work, the infection could spread through the hospital network. The best defense is a mix of controls. As a managerial control, staff should be trained to never plug in an unknown drive and to hand it over to IT. As an operational control, antivirus scans should run regularly. As a technical control, AutoPlay can be disabled on company computers, so nothing starts on its own.</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="data-leak-least-privilege.html"><small>&larr; Previous</small>Data leak worksheet: least privilege</a><a class="next" href="linux-file-permissions.html"><small>Next &rarr;</small>File permissions in Linux</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

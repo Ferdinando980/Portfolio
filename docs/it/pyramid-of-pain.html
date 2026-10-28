@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Analisi di un hash di file con la Piramide del dolore | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Ricerca di un hash di file su VirusTotal e classificazione degli indicatori in base a quanto è difficile per un attaccante cambiarli.">
+<meta property="og:title" content="Analisi di un hash di file con la Piramide del dolore | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Ricerca di un hash di file su VirusTotal e classificazione degli indicatori in base a quanto è difficile per un attaccante cambiarli.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/pyramid-of-pain.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-detect">Rilevare</span>
+<h1>Analisi di un hash di file con la Piramide del dolore</h1>
+<hr class="rule">
+<p class="lead">Ricerca di un hash di file su VirusTotal e classificazione degli indicatori in base a quanto è difficile per un attaccante cambiarli.</p>
+<ul class="skill-list"><li>VirusTotal</li><li>indicatori di compromissione</li><li>Piramide del dolore</li><li>TTP</li></ul>
+<a class="btn" href="../pdf/it/pyramid-of-pain.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-detect">
+<div class="tablewrap"><table><tr><td class="label"><p>Scenario</p></td><td><p>Un&#x27;allerta segnalava un file sospetto. Dovevo capire se il suo hash fosse già noto come dannoso e poi collocare gli indicatori trovati sulla Piramide del dolore (Pyramid of Pain), per vedere quanto ciascuno farebbe male a un attaccante se lo bloccassi.</p></td></tr><tr><td class="label"><p>Il file è stato identificato come dannoso?</p></td><td><p>Sì. Ho cercato l&#x27;hash SHA-256 su VirusTotal e molti fornitori di sicurezza lo segnalano. I rilevamenti lo chiamano trojan, con nomi come Trojan.Flagpro e Fragtor. Flagpro è una famiglia di malware collegata a un gruppo di attaccanti chiamato BlackTech, quindi non è un malware comune qualunque.</p></td></tr></table></div>
+<h2>Gli indicatori sulla piramide</h2>
+<div class="tablewrap"><table><tr><th><p>Livello</p></th><th><p>Indicatore trovato</p></th><th><p>Quanto è difficile per l&#x27;attaccante cambiarlo</p></th><th><p>Cosa dà a chi difende</p></th></tr><tr><td><p>TTP</p></td><td><p>Command and control</p></td><td><p>Molto difficile. L&#x27;attaccante deve cambiare il proprio modo di lavorare.</p></td><td><p>Il rilevamento più duraturo, perché segue il comportamento e non un singolo campione.</p></td></tr><tr><td><p>Strumenti</p></td><td><p>Input capture (registrare ciò che l&#x27;utente digita)</p></td><td><p>Impegnativo. Serve uno strumento nuovo o una riscrittura.</p></td><td><p>Bloccarlo costringe a un vero sforzo, ma servono buone regole di rilevamento.</p></td></tr><tr><td><p>Artefatti di rete e host</p></td><td><p>Richieste HTTP usate per comunicare con l&#x27;attaccante</p></td><td><p>Fastidioso. Lo schema del traffico va ripensato.</p></td><td><p>Utile per regole che riconoscono la stessa famiglia anche dopo piccole modifiche.</p></td></tr><tr><td><p>Nomi di dominio</p></td><td><p>org.misecure.com</p></td><td><p>Semplice. Un dominio nuovo costa poco, ma va configurato.</p></td><td><p>Blocca la campagna in corso finché non cambiano.</p></td></tr><tr><td><p>Indirizzi IP</p></td><td><p>207.148.109.242</p></td><td><p>Facile. Un nuovo server si noleggia in fretta.</p></td><td><p>Utile nel breve periodo e invecchia presto.</p></td></tr><tr><td><p>Valori hash</p></td><td><p>MD5 287d612e29b71c90aa54947313810a25</p></td><td><p>Banale. Cambiando un byte si ottiene un hash nuovo.</p></td><td><p>Ferma solo questo preciso file.</p></td></tr></table></div>
+<p>La piramide usa il valore MD5 della scheda del laboratorio. La ricerca su VirusTotal l&#x27;ho fatta con l&#x27;hash SHA-256.</p>
+<h2>Cosa ne ho ricavato</h2>
+<p>L&#x27;hash era la cosa più facile da trovare ed è anche la meno utile da bloccare. Un attaccante può ricompilare lo stesso malware in un minuto e l&#x27;hash non corrisponde più. Ora capisco perché i team cercano di salire lungo la piramide. Rilevare il comportamento, per esempio un programma che registra i tasti premuti e poi contatta l&#x27;attaccante via HTTP, costa molto di più da evitare.</p>
+<p>Si collega anche al case study sul ticket di allerta, dove il controllo dell&#x27;hash è stato uno dei passaggi che hanno portato all&#x27;escalation. Controllare l&#x27;hash è un buon primo passo, ma non mi fermerei lì.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="phishing-alert-ticket.html"><small>&larr; Precedente</small>Ticket di allerta: email di phishing con allegato dannoso</a><a class="next" href="icmp-flood-incident.html"><small>Successivo &rarr;</small>Analisi di un incidente: ICMP flood</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

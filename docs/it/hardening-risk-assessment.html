@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Valutazione del rischio: strumenti di hardening | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Scelta di tre misure di hardening (MFA, policy delle password, manutenzione del firewall) e spiegazione di come riducono il rischio.">
+<meta property="og:title" content="Valutazione del rischio: strumenti di hardening | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Scelta di tre misure di hardening (MFA, policy delle password, manutenzione del firewall) e spiegazione di come riducono il rischio.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/hardening-risk-assessment.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-protect">Proteggere</span>
+<h1>Valutazione del rischio: strumenti di hardening</h1>
+<hr class="rule">
+<p class="lead">Scelta di tre misure di hardening (MFA, policy delle password, manutenzione del firewall) e spiegazione di come riducono il rischio.</p>
+<ul class="skill-list"><li>Hardening</li><li>MFA</li><li>policy delle password</li><li>manutenzione del firewall</li></ul>
+<a class="btn" href="../pdf/it/hardening-risk-assessment.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-protect">
+<h2 class="step"><span class="num">Parte 1</span>Scegliere fino a tre strumenti e metodi di hardening da attuare</h2>
+<p class="q">Le vulnerabilità trovate erano: password deboli o condivise tra più persone, mancanza di un secondo passaggio di verifica all&#x27;accesso e regole del firewall non aggiornate. Tre misure di hardening che le affrontano sono:</p>
+<ol class="steps"><li>L&#x27;autenticazione a più fattori (MFA), che chiede all&#x27;utente più di una prova della propria identità, per esempio una password più un&#x27;impronta digitale, una tessera o un codice.</li><li>Una policy delle password, con regole su lunghezza e caratteri ammessi, il divieto di condividere le password e un limite ai tentativi di accesso falliti (per esempio, l&#x27;account viene bloccato dopo cinque errori).</li><li>Una manutenzione regolare del firewall, cioè controllare le regole e aggiornarle perché siano adatte alle minacce attuali.</li></ol>
+<h2 class="step"><span class="num">Parte 2</span>Spiegare le raccomandazioni</h2>
+<p>L&#x27;MFA aggiunge un livello sopra la password. Un attacco a forza bruta da solo non basta più, perché all&#x27;attaccante serve anche il secondo fattore. Inoltre rende inutile condividere una password, perché l&#x27;altra persona non avrebbe il secondo fattore.</p>
+<p>Una policy delle password rende la rete più difficile da violare. Bloccare un account dopo pochi tentativi falliti ferma gli attacchi a forza bruta, e password più lunghe e complesse, che non si possono riusare né condividere, rendono molto più difficile indovinarle. Le persone sbaglieranno comunque, ma la policy elimina gli errori più comuni.</p>
+<p>La manutenzione del firewall mantiene aggiornate le regole sul traffico consentito e negato. Le fonti sospette vanno in una lista di blocco, e le regole vengono riviste dopo ogni evento di sicurezza, soprattutto se ha lasciato passare traffico sospetto. Questo aiuta contro gli attacchi DoS e DDoS.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="linux-file-permissions.html"><small>&larr; Precedente</small>Permessi dei file in Linux</a><a class="next" href="syn-flood.html"><small>Successivo &rarr;</small>Analisi di un attacco SYN flood</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>DNS and ICMP network traffic analysis | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Investigating a website that would not load using a tcpdump capture, and tracing the failure to an unreachable DNS port.">
+<meta property="og:title" content="DNS and ICMP network traffic analysis | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Investigating a website that would not load using a tcpdump capture, and tracing the failure to an unreachable DNS port.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/dns-icmp-traffic.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-detect">Detect</span>
+<h1>DNS and ICMP network traffic analysis</h1>
+<hr class="rule">
+<p class="lead">Investigating a website that would not load using a tcpdump capture, and tracing the failure to an unreachable DNS port.</p>
+<ul class="skill-list"><li>tcpdump</li><li>DNS</li><li>UDP</li><li>ICMP</li><li>incident reporting</li></ul>
+<a class="btn" href="../pdf/en/dns-icmp-traffic.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-detect">
+<h2 class="step"><span class="num">Part 1</span>Summary of the problem</h2><p class="q">Provide a summary of the problem found in the DNS and ICMP traffic log.</p><div class="boxes">
+<div class="box"><p>Several users reported that they could not access www.yummyrecipesforme.com and received a &quot;destination port unreachable&quot; error. I reproduced the problem and captured the traffic with tcpdump.</p><p>The capture showed DNS queries leaving the client through UDP toward the DNS server. Instead of a normal DNS response, the client received ICMP messages reporting &quot;udp port 53 unreachable.&quot;</p><p>Because port 53 is used by DNS, the traffic shows that the DNS service could not be reached. ICMP was reporting the failure rather than causing it.</p></div>
+<div class="box"><h3>KEY EVIDENCE</h3><p>UDP request to DNS  |  ICMP response  |  &quot;udp port 53 unreachable&quot;</p><p>Affected service: DNS</p></div>
+</div>
+<h2 class="step"><span class="num">Part 2</span>Analysis and likely cause</h2><p class="q">Explain your analysis of the data and provide at least one possible cause of the incident.</p><div class="boxes">
+<div class="box"><h3>TIME INCIDENT OCCURRED</h3><p>The traffic capture shows the incident at approximately 1:24 p.m.</p></div>
+<div class="box"><h3>HOW THE TEAM BECAME AWARE</h3><p>Customers reported that the website would not load and displayed a destination port unreachable error. The same problem was reproduced during the investigation.</p></div>
+<div class="box"><h3>ACTIONS TAKEN TO INVESTIGATE</h3><p>I opened tcpdump and tried to load the website again so I could observe the packets sent and received during the failure.</p></div>
+<div class="box"><h3>KEY FINDINGS</h3><p>The client sent DNS queries through UDP to the DNS server. The replies were ICMP error messages stating that UDP port 53 was unreachable. The same result appeared more than once.</p></div>
+<div class="box"><h3>LIKELY CAUSE</h3><p>The immediate issue is that the DNS service was unavailable or could not be reached on port 53. A service failure or a firewall configuration could cause this. A DoS attack is also possible, but this capture alone does not prove that one occurred.</p></div>
+<div class="box"><h3>NEXT CHECK</h3><p>I would verify that the DNS service is running and then check the firewall rules for port 53. If those look normal, I would review server and network logs for signs of abnormal traffic.</p></div>
+</div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="syn-flood.html"><small>&larr; Previous</small>SYN flood network attack analysis</a><a class="next" href="tcpdump-vs-wireshark.html"><small>Next &rarr;</small>tcpdump and Wireshark compared</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

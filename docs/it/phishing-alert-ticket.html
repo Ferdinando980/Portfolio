@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Ticket di allerta: email di phishing con allegato dannoso | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Valutazione di un&#x27;allerta di phishing seguendo un playbook, individuazione dei segnali sospetti, controllo dell&#x27;hash del file ed escalation al secondo livello.">
+<meta property="og:title" content="Ticket di allerta: email di phishing con allegato dannoso | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Valutazione di un&#x27;allerta di phishing seguendo un playbook, individuazione dei segnali sospetti, controllo dell&#x27;hash del file ed escalation al secondo livello.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/phishing-alert-ticket.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-detect">Rilevare</span>
+<h1>Ticket di allerta: email di phishing con allegato dannoso</h1>
+<hr class="rule">
+<p class="lead">Valutazione di un&#x27;allerta di phishing seguendo un playbook, individuazione dei segnali sospetti, controllo dell&#x27;hash del file ed escalation al secondo livello.</p>
+<ul class="skill-list"><li>Triage delle allerte</li><li>phishing</li><li>playbook</li><li>threat intelligence</li><li>escalation</li></ul>
+<a class="btn" href="../pdf/it/phishing-alert-ticket.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-detect">
+<div class="tablewrap"><table><tr><th><p>ID ticket</p></th><th><p>Messaggio di allerta</p></th><th><p>Gravità</p></th><th><p>Dettagli</p></th><th><p>Stato del ticket</p></th></tr><tr><td><p>A-2703</p></td><td><p>SERVER-MAIL Phishing attempt possible download of malware</p></td><td><p>Media</p></td><td><p>L&#x27;utente potrebbe aver aperto un&#x27;email dannosa e averne aperto gli allegati o cliccato sui link.</p></td><td><p>Escalation</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Commenti al ticket</p></td><td><p>Passo il ticket a un analista SOC di secondo livello. L&#x27;allerta è scattata per una possibile email di phishing arrivata alla casella delle risorse umane. Dopo aver letto il messaggio e controllato l&#x27;allegato penso che sia un attacco vero e non un falso positivo.</p><p>Ecco cosa non torna. Il nome visualizzato del mittente è &quot;Def Communications&quot;, ma il messaggio è firmato &quot;Clyde West&quot;. L&#x27;indirizzo del mittente è una lunga sequenza di caratteri casuali su un dominio .su, che non è quello che userebbe chi si candida a un lavoro. L&#x27;oggetto e il testo hanno errori di ortografia e di grammatica (&quot;Egnieer&quot;, &quot;Ingergy&quot;, &quot;writing for to express&quot;), e il nome dell&#x27;azienda nel saluto non è scritto come il dominio a cui è stato mandato il messaggio. L&#x27;email dice che sono allegati un curriculum e una lettera di presentazione, ma l&#x27;unico allegato è bfsvc.exe, un file eseguibile. Nel testo c&#x27;è anche la password per aprirlo, un trucco noto per impedire agli antivirus della posta di guardare dentro il file.</p><p>L&#x27;hash del file indicato nel ticket corrisponde a un file dannoso già noto nella ricerca sulla threat intelligence. Il ticket dice che l&#x27;utente potrebbe aver aperto l&#x27;allegato, e finché non si dimostra il contrario considero quel computer compromesso. La gravità dell&#x27;allerta è media, ma un file dannoso che forse è stato eseguito è più serio di così, quindi propongo di portarla ad alta. Il secondo livello dovrebbe isolare il computer, controllare cosa ha fatto il file dopo l&#x27;esecuzione e cercare altre copie della stessa email nelle altre caselle.</p></td></tr></table></div>
+<h2>Informazioni aggiuntive</h2>
+<div class="tablewrap"><table><tr><td class="label"><p>Mittente</p></td><td><p>Def Communications, 76tguyhh6tgftrt7tg.su (114.114.114.114)</p></td></tr><tr><td class="label"><p>Destinatario</p></td><td><p>hr@inergy.com (176.157.125.93)</p></td></tr><tr><td class="label"><p>Inviata</p></td><td><p>Mercoledì 20 luglio 2022, 09:30:14</p></td></tr><tr><td class="label"><p>Oggetto</p></td><td><p>Re: Infrastructure Egnieer role</p></td></tr><tr><td class="label"><p>Allegato</p></td><td><p>bfsvc.exe</p></td></tr><tr><td class="label"><p>Hash del file (SHA-256)</p></td><td><p>54e6ea47eb04634d3e87fd7787e2136ccfbcc80ade34f246a12cf93bab527f6b</p></td></tr><tr><td class="label"><p>Nota</p></td><td><p>Il testo dell&#x27;email contiene la password dell&#x27;allegato. L&#x27;ho lasciata fuori da questo documento di proposito.</p></td></tr></table></div>
+<h2>Come ho seguito il playbook sul phishing</h2>
+<div class="tablewrap"><table><tr><th><p>Passo del playbook</p></th><th><p>Cosa ho fatto</p></th><th><p>Esito</p></th></tr><tr><td><p>2. Valutare l&#x27;allerta</p></td><td><p>Ho letto la gravità, i dati di mittente e destinatario, l&#x27;oggetto e il testo. Non ho aperto nulla sul mio dispositivo.</p></td><td><p>Diversi segnali sospetti, elencati nei commenti al ticket</p></td></tr><tr><td><p>3.0 Link o allegati?</p></td><td><p>Ho guardato cosa accompagnava l&#x27;email.</p></td><td><p>Un allegato eseguibile, nessun link</p></td></tr><tr><td><p>3.1 Sono dannosi?</p></td><td><p>Ho controllato l&#x27;hash del file con uno strumento di threat intelligence.</p></td><td><p>File dannoso già noto</p></td></tr><tr><td><p>3.2 Aggiornare ed escalare</p></td><td><p>Ho scritto un riepilogo dei risultati, messo lo stato su Escalation e passato il ticket al secondo livello.</p></td><td><p>Fatto</p></td></tr><tr><td><p>4. Chiudere il ticket</p></td><td><p>Non si applica, perché l&#x27;allegato è dannoso.</p></td><td><p>Il ticket resta aperto</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="tcpdump-vs-wireshark.html"><small>&larr; Precedente</small>tcpdump e Wireshark a confronto</a><a class="next" href="pyramid-of-pain.html"><small>Successivo &rarr;</small>Analisi di un hash di file con la Piramide del dolore</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

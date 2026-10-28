@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Access controls worksheet: payroll incident | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Tracing a payroll event to a contractor account that was still active years after the contract ended, and recommending fixes.">
+<meta property="og:title" content="Access controls worksheet: payroll incident | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Tracing a payroll event to a contractor account that was still active years after the contract ended, and recommending fixes.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/access-controls-payroll.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-protect">Protect</span>
+<h1>Access controls worksheet: payroll incident</h1>
+<hr class="rule">
+<p class="lead">Tracing a payroll event to a contractor account that was still active years after the contract ended, and recommending fixes.</p>
+<ul class="skill-list"><li>Authentication and authorization</li><li>least privilege</li><li>log review</li></ul>
+<a class="btn" href="../pdf/en/access-controls-payroll.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-protect">
+<div class="tablewrap"><table><tr><th></th><th><p>Note(s)</p></th><th><p>Issue(s)</p></th><th><p>Recommendation(s)</p></th></tr><tr><td class="label"><p>Authorization /authentication</p></td><td><p class="q">Objective: Make 1-2 notes of information that can help identify the threat:</p><ul><li>Who: the account Legal\Administrator, which matches Robert Taylor Jr., a legal attorney working as a contractor.</li><li>When: 10/03/2023 at 8:29:57 AM. The event was a payroll event added in the FAUX_BANK system.</li><li>Device: the computer Up2-NoGud, with IP address 152.207.255.255.</li></ul></td><td><p class="q">Objective: Based on your notes, list 1-2 authorization issues:</p><ul><li>Robert Taylor Jr. has Admin authorization, the highest level, even if he is only a contractor and a lawyer. In the user list almost every account is Admin, from the graphic designer to the sales associates.</li><li>No. His contract ended on 12/27/2019, but his account was still active almost four years later and was used to add a payroll event. Joanne Phelps and Lei Chu also have an end date in 2020 in the list, and Lei Chu&#x27;s account was used only two days ago.</li></ul></td><td><p class="q">Objective: Make at least 1 recommendation that could prevent this kind of incident:</p><ul><li>Technical: disable an account on the day the contract ends, and make contractor accounts expire automatically, for example after 30 days unless someone renews them.</li><li>Technical: turn on multifactor authentication (MFA) for every admin account.</li><li>Operational: apply least privilege with role-based access, so that only the people who work with payroll can reach it.</li><li>Managerial: review the list of users and their permissions on a regular schedule, for example every quarter.</li></ul></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="home-asset-inventory.html"><small>&larr; Previous</small>Home network asset inventory</a><a class="next" href="data-leak-least-privilege.html"><small>Next &rarr;</small>Data leak worksheet: least privilege</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

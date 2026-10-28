@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Security risk assessment: hardening tools | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Choosing three hardening measures (MFA, password policy, firewall maintenance) and explaining how each reduces risk.">
+<meta property="og:title" content="Security risk assessment: hardening tools | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Choosing three hardening measures (MFA, password policy, firewall maintenance) and explaining how each reduces risk.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/hardening-risk-assessment.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-protect">Protect</span>
+<h1>Security risk assessment: hardening tools</h1>
+<hr class="rule">
+<p class="lead">Choosing three hardening measures (MFA, password policy, firewall maintenance) and explaining how each reduces risk.</p>
+<ul class="skill-list"><li>Hardening</li><li>MFA</li><li>password policy</li><li>firewall maintenance</li></ul>
+<a class="btn" href="../pdf/en/hardening-risk-assessment.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-protect">
+<h2 class="step"><span class="num">Part 1</span>Select up to three hardening tools and methods to implement</h2>
+<p class="q">The vulnerabilities found were passwords that are weak or shared between people, no second step of verification at login, and firewall rules that were not kept up to date. Three hardening measures that address them are:</p>
+<ol class="steps"><li>Multifactor authentication (MFA), which asks the user for more than one proof of identity, for example a password plus a fingerprint, an ID card or a code.</li><li>A password policy, with rules on length and allowed characters, a ban on sharing passwords, and a limit on failed login attempts (for example, the account is locked after five wrong tries).</li><li>Regular firewall maintenance, which means checking the rules and updating them so they match current threats.</li></ol>
+<h2 class="step"><span class="num">Part 2</span>Explain your recommendations</h2>
+<p>MFA adds a layer on top of the password. A brute force attack alone is no longer enough, because the attacker also needs the second factor. It also makes sharing a password pointless, since the other person would not have the second factor.</p>
+<p>A password policy makes the network harder to get into. Locking an account after a few failed attempts stops brute force attacks, and longer, more complex passwords that cannot be reused or shared make guessing much harder. People will still make mistakes, but the policy removes the most common ones.</p>
+<p>Firewall maintenance keeps the allowed and denied traffic rules current. Suspicious sources go on a deny list, and the rules are reviewed after every security event, especially if it let suspicious traffic in. This helps against DoS and DDoS attacks.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="linux-file-permissions.html"><small>&larr; Previous</small>File permissions in Linux</a><a class="next" href="syn-flood.html"><small>Next &rarr;</small>SYN flood network attack analysis</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

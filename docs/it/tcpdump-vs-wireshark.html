@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>tcpdump e Wireshark a confronto | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Un confronto tra due analizzatori di pacchetti, con i comandi e i filtri che ho usato e quando sceglierei l&#x27;uno o l&#x27;altro.">
+<meta property="og:title" content="tcpdump e Wireshark a confronto | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Un confronto tra due analizzatori di pacchetti, con i comandi e i filtri che ho usato e quando sceglierei l&#x27;uno o l&#x27;altro.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/tcpdump-vs-wireshark.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-detect">Rilevare</span>
+<h1>tcpdump e Wireshark a confronto</h1>
+<hr class="rule">
+<p class="lead">Un confronto tra due analizzatori di pacchetti, con i comandi e i filtri che ho usato e quando sceglierei l&#x27;uno o l&#x27;altro.</p>
+<ul class="skill-list"><li>tcpdump</li><li>Wireshark</li><li>cattura dei pacchetti</li><li>filtri per protocollo</li></ul>
+<a class="btn" href="../pdf/it/tcpdump-vs-wireshark.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-detect">
+<p>Entrambi gli strumenti catturano e leggono il traffico di rete. Ho usato tcpdump per il rapporto su DNS e ICMP e Wireshark per il log del SYN flood, quindi questo è un confronto mio, fatto dopo aver provato ciascuno.</p>
+<div class="tablewrap"><table><tr><th><p>Aspetto</p></th><th><p>tcpdump</p></th><th><p>Wireshark</p></th></tr><tr><td><p>Interfaccia</p></td><td><p>Riga di comando (CLI)</p></td><td><p>Interfaccia grafica (GUI)</p></td></tr><tr><td><p>Risorse</p></td><td><p>Leggero, funziona bene su un server senza desktop</p></td><td><p>Richiede più memoria e CPU</p></td></tr><tr><td><p>Funzioni</p></td><td><p>Filtri e opzioni di base, output in testo semplice</p></td><td><p>Colori, filtri avanzati, seguire una conversazione, statistiche</p></td></tr><tr><td><p>Curva di apprendimento</p></td><td><p>Devo ricordare le opzioni e la sintassi dei filtri</p></td><td><p>Più facile da esplorare cliccando</p></td></tr></table></div>
+<h2>Cosa hanno in comune</h2>
+<p>Entrambi sono analizzatori di protocolli di rete. Entrambi sono open source e gratuiti. Entrambi possono filtrare un protocollo specifico e salvare una cattura su file per rileggerla più tardi.</p>
+<h2>Alcuni comandi che ho usato</h2>
+<p class="q">tcpdump, catturare solo il traffico DNS su una interfaccia e mostrare i numeri invece dei nomi:</p>
+<pre>tcpdump -i eth0 -nn udp port 53</pre>
+<p class="q">tcpdump, salvare una cattura su file e poi rileggerla:</p>
+<pre>tcpdump -i eth0 -w capture.pcap
+tcpdump -r capture.pcap</pre>
+<p class="q">Filtro di visualizzazione di Wireshark, mostrare solo i pacchetti DNS:</p>
+<pre>dns</pre>
+<p class="q">Filtro di visualizzazione di Wireshark, mostrare il primo pacchetto di ogni handshake TCP (utile per notare un SYN flood):</p>
+<pre>tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</pre>
+<h2>Quando userei l&#x27;uno o l&#x27;altro</h2>
+<p>Userei tcpdump quando sono su un server con una connessione remota, o quando mi serve solo una cattura veloce salvata su file. Aprirei quel file in Wireshark quando devo seguire una conversazione o guardare molti pacchetti insieme, perché leggerli lì stanca molto meno che in un terminale.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="dns-icmp-traffic.html"><small>&larr; Precedente</small>Analisi del traffico di rete DNS e ICMP</a><a class="next" href="phishing-alert-ticket.html"><small>Successivo &rarr;</small>Ticket di allerta: email di phishing con allegato dannoso</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

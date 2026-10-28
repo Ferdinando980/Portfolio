@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>File hash analysis with the Pyramid of Pain | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Looking up a file hash on VirusTotal and sorting the indicators by how hard they are for an attacker to change.">
+<meta property="og:title" content="File hash analysis with the Pyramid of Pain | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Looking up a file hash on VirusTotal and sorting the indicators by how hard they are for an attacker to change.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/pyramid-of-pain.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-detect">Detect</span>
+<h1>File hash analysis with the Pyramid of Pain</h1>
+<hr class="rule">
+<p class="lead">Looking up a file hash on VirusTotal and sorting the indicators by how hard they are for an attacker to change.</p>
+<ul class="skill-list"><li>VirusTotal</li><li>indicators of compromise</li><li>Pyramid of Pain</li><li>TTPs</li></ul>
+<a class="btn" href="../pdf/en/pyramid-of-pain.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-detect">
+<div class="tablewrap"><table><tr><td class="label"><p>Scenario</p></td><td><p>An alert pointed at a suspicious file. I had to find out whether its hash was already known as malicious, and then place the indicators I found on the Pyramid of Pain, to see how much each one would hurt an attacker if I blocked it.</p></td></tr><tr><td class="label"><p>Has this file been identified as malicious?</p></td><td><p>Yes. I searched the SHA-256 hash on VirusTotal and a large number of security vendors flag it. The detections call it a trojan, with names such as Trojan.Flagpro and Fragtor. Flagpro is a malware family that has been linked to a threat group called BlackTech, so this is not a random piece of commodity malware.</p></td></tr></table></div>
+<h2>Indicators on the pyramid</h2>
+<div class="tablewrap"><table><tr><th><p>Level</p></th><th><p>Indicator found</p></th><th><p>How hard it is for the attacker to change</p></th><th><p>What it gives a defender</p></th></tr><tr><td><p>TTPs</p></td><td><p>Command and control</p></td><td><p>Tough. The attacker has to change the way they work.</p></td><td><p>The most lasting detection, because it follows the behavior and not one sample.</p></td></tr><tr><td><p>Tools</p></td><td><p>Input capture (recording what a user types)</p></td><td><p>Challenging. They need a new tool or a rewrite.</p></td><td><p>Blocking it forces real effort, but it needs good detection rules.</p></td></tr><tr><td><p>Network/host artifacts</p></td><td><p>HTTP requests used to talk to the attacker</p></td><td><p>Annoying. The traffic pattern has to be redesigned.</p></td><td><p>Good for detection rules that catch the same family even after small changes.</p></td></tr><tr><td><p>Domain names</p></td><td><p>org.misecure.com</p></td><td><p>Simple. A new domain costs little, but it has to be set up.</p></td><td><p>Blocks the current campaign until they switch.</p></td></tr><tr><td><p>IP addresses</p></td><td><p>207.148.109.242</p></td><td><p>Easy. A new server is quick to rent.</p></td><td><p>Useful in the short term, and it ages fast.</p></td></tr><tr><td><p>Hash values</p></td><td><p>MD5 287d612e29b71c90aa54947313810a25</p></td><td><p>Trivial. Changing one byte gives a new hash.</p></td><td><p>Catches only this exact file.</p></td></tr></table></div>
+<p>The pyramid uses the MD5 value from the lab sheet. The VirusTotal search itself was done with the SHA-256 hash.</p>
+<h2>What I took from it</h2>
+<p>The hash was the easiest thing to find and it is also the least useful to block. An attacker can recompile the same malware in a minute and the hash no longer matches. I now see why teams try to climb the pyramid. Detecting behavior, such as a program that records keystrokes and then calls home over HTTP, costs the attacker much more to avoid.</p>
+<p>It also connects to the alert ticket case study, where the hash check was one of the steps that led to the escalation. Checking the hash is a good first step, but I would not stop there.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="phishing-alert-ticket.html"><small>&larr; Previous</small>Alert ticket: phishing email with a malicious attachment</a><a class="next" href="icmp-flood-incident.html"><small>Next &rarr;</small>Incident report analysis: ICMP flood</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

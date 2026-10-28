@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Alert ticket: phishing email with a malicious attachment | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Evaluating a phishing alert following a playbook, spotting the red flags, checking the file hash and escalating the ticket to level two.">
+<meta property="og:title" content="Alert ticket: phishing email with a malicious attachment | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Evaluating a phishing alert following a playbook, spotting the red flags, checking the file hash and escalating the ticket to level two.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/phishing-alert-ticket.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-detect">Detect</span>
+<h1>Alert ticket: phishing email with a malicious attachment</h1>
+<hr class="rule">
+<p class="lead">Evaluating a phishing alert following a playbook, spotting the red flags, checking the file hash and escalating the ticket to level two.</p>
+<ul class="skill-list"><li>Alert triage</li><li>phishing</li><li>playbooks</li><li>threat intelligence</li><li>escalation</li></ul>
+<a class="btn" href="../pdf/en/phishing-alert-ticket.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-detect">
+<div class="tablewrap"><table><tr><th><p>Ticket ID</p></th><th><p>Alert message</p></th><th><p>Severity</p></th><th><p>Details</p></th><th><p>Ticket status</p></th></tr><tr><td><p>A-2703</p></td><td><p>SERVER-MAIL Phishing attempt possible download of malware</p></td><td><p>Medium</p></td><td><p>The user may have opened a malicious email and opened attachments or clicked links.</p></td><td><p>Escalated</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Ticket comments</p></td><td><p>I am escalating this ticket to a level-two SOC analyst. The alert fired on a possible phishing email sent to the HR mailbox. After reading the message and checking the attachment I think it is a real attack and not a false positive.</p><p>Here is what does not add up. The sender&#x27;s display name is &quot;Def Communications&quot;, but the message is signed &quot;Clyde West&quot;. The sender address is a long string of random characters on a .su domain, which is not what a job applicant would use. The subject and the body have spelling and grammar mistakes (&quot;Egnieer&quot;, &quot;Ingergy&quot;, &quot;writing for to express&quot;), and the company name in the greeting is not spelled like the domain the message was sent to. The email says a resume and a cover letter are attached, but the only attachment is bfsvc.exe, which is an executable file. The body also gives a password to open it, which is a known way to keep mail scanners from looking inside a file.</p><p>The file hash in the ticket matches a known malicious file in the threat intelligence lookup. The ticket says the user may have opened the attachment, and until someone shows otherwise I am treating that machine as compromised. The alert severity is medium, but a malicious file that may have been run is more serious than that, so I suggest raising it to high. Level two should isolate the host, check what the file did once it ran, and look for other copies of this email in other mailboxes.</p></td></tr></table></div>
+<h2>Additional information</h2>
+<div class="tablewrap"><table><tr><td class="label"><p>Sender</p></td><td><p>Def Communications, 76tguyhh6tgftrt7tg.su (114.114.114.114)</p></td></tr><tr><td class="label"><p>Recipient</p></td><td><p>hr@inergy.com (176.157.125.93)</p></td></tr><tr><td class="label"><p>Sent</p></td><td><p>Wednesday, July 20, 2022, 09:30:14 AM</p></td></tr><tr><td class="label"><p>Subject</p></td><td><p>Re: Infrastructure Egnieer role</p></td></tr><tr><td class="label"><p>Attachment</p></td><td><p>bfsvc.exe</p></td></tr><tr><td class="label"><p>File hash (SHA-256)</p></td><td><p>54e6ea47eb04634d3e87fd7787e2136ccfbcc80ade34f246a12cf93bab527f6b</p></td></tr><tr><td class="label"><p>Note</p></td><td><p>The email body contains the password for the attachment. I left it out of this document on purpose.</p></td></tr></table></div>
+<h2>How I followed the phishing playbook</h2>
+<div class="tablewrap"><table><tr><th><p>Playbook step</p></th><th><p>What I did</p></th><th><p>Result</p></th></tr><tr><td><p>2. Evaluate the alert</p></td><td><p>Read the severity, the sender and receiver details, the subject line and the body. I did not open anything on my own device.</p></td><td><p>Several red flags, listed in the ticket comments</p></td></tr><tr><td><p>3.0 Links or attachments?</p></td><td><p>Looked at what came with the email.</p></td><td><p>One executable attachment, no links</p></td></tr><tr><td><p>3.1 Malicious?</p></td><td><p>Checked the file hash with a threat intelligence tool.</p></td><td><p>Known malicious file</p></td></tr><tr><td><p>3.2 Update and escalate</p></td><td><p>Wrote a summary of the findings, set the status to Escalated and passed it to level two.</p></td><td><p>Done</p></td></tr><tr><td><p>4. Close the ticket</p></td><td><p>Does not apply, because the attachment is malicious.</p></td><td><p>Ticket stays open</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="tcpdump-vs-wireshark.html"><small>&larr; Previous</small>tcpdump and Wireshark compared</a><a class="next" href="pyramid-of-pain.html"><small>Next &rarr;</small>File hash analysis with the Pyramid of Pain</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Rapporto finale: violazione di dati tramite forced browsing | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Stesura del rapporto finale su una violazione di dati dei clienti, con cronologia, causa trovata nei log, rimedi e raccomandazioni.">
+<meta property="og:title" content="Rapporto finale: violazione di dati tramite forced browsing | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Stesura del rapporto finale su una violazione di dati dei clienti, con cronologia, causa trovata nei log, rimedi e raccomandazioni.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/incident-final-report.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-respond">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-respond">Rispondere</span>
+<h1>Rapporto finale: violazione di dati tramite forced browsing</h1>
+<hr class="rule">
+<p class="lead">Stesura del rapporto finale su una violazione di dati dei clienti, con cronologia, causa trovata nei log, rimedi e raccomandazioni.</p>
+<ul class="skill-list"><li>Rapporti sugli incidenti</li><li>analisi dei log</li><li>forced browsing</li><li>controllo degli accessi</li></ul>
+<a class="btn" href="../pdf/it/incident-final-report.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-respond">
+<p>Scenario simulato, scritto a partire dalle note sull&#x27;incidente del corso. Date, importi e cifre sono quelli dello scenario.</p>
+<h2>Sintesi</h2>
+<p>Il 28 dicembre 2022, alle 19:20 PT, l&#x27;organizzazione ha confermato che qualcuno aveva avuto accesso non autorizzato ai dati personali e alle informazioni finanziarie dei clienti. Sono stati esposti circa 50.000 record di clienti. Il costo diretto è stimato in 100.000 dollari, senza contare i ricavi che potremmo perdere. L&#x27;incidente è stato indagato ed è ora chiuso.</p>
+<h2>Cronologia</h2>
+<div class="tablewrap"><table><tr><td class="label"><p>Quando</p></td><td><p>Cosa è successo</p></td></tr><tr><td><p>22 dicembre 2022, circa le 15:13 PT</p></td><td><p>Un dipendente ha ricevuto un&#x27;email da un indirizzo esterno. Il mittente diceva di aver rubato dati dei clienti e chiedeva 25.000 dollari in criptovaluta per tenerli riservati. Il dipendente l&#x27;ha presa per spam e l&#x27;ha cancellata.</p></td></tr><tr><td><p>28 dicembre 2022</p></td><td><p>Lo stesso mittente ha scritto di nuovo, questa volta con un campione dei dati rubati e una richiesta di 50.000 dollari. Il dipendente lo ha segnalato al team di sicurezza lo stesso giorno e l&#x27;indagine è partita.</p></td></tr><tr><td><p>Dal 28 al 31 dicembre 2022</p></td><td><p>Il team di sicurezza ha lavorato per capire come erano stati presi i dati e in quale quantità.</p></td></tr></table></div>
+<h2>Indagine</h2>
+<p>Il team di sicurezza è venuto in sede appena è arrivata l&#x27;allerta. La causa all&#x27;origine era una debolezza dell&#x27;applicazione web dell&#x27;e-commerce. La pagina di conferma dell&#x27;acquisto mostrava un numero d&#x27;ordine nell&#x27;URL e l&#x27;applicazione non verificava che l&#x27;ordine appartenesse a chi lo richiedeva. Cambiando il numero, l&#x27;attaccante poteva aprire le pagine di conferma di altri clienti. Si chiama forced browsing.</p>
+<p>I log di accesso del server web lo hanno confermato. Una sola origine aveva richiesto migliaia di pagine di conferma, un ordine dopo l&#x27;altro, a una frequenza che nessun cliente normale raggiungerebbe. È lo schema di uno script che raccoglie dati e corrisponde al campione che l&#x27;attaccante ci ha mandato.</p>
+<h2>Risposta e rimedi</h2>
+<p>L&#x27;organizzazione ha collaborato con l&#x27;ufficio comunicazione per informare i clienti coinvolti della violazione, e ha offerto loro servizi gratuiti di protezione dell&#x27;identità.</p>
+<h2>Raccomandazioni</h2>
+<ol class="steps"><li>Eseguire scansioni delle vulnerabilità e penetration test con regolarità, così un difetto come questo lo troviamo prima noi.</li><li>Usare l&#x27;allowlisting, in modo che l&#x27;applicazione serva solo un insieme definito di URL e blocchi automaticamente il resto.</li><li>Assicurarsi che solo gli utenti autenticati accedano ai contenuti e verificare sul server che ogni ordine appartenga all&#x27;utente che lo richiede.</li><li>Aggiungere un rilevamento per lo schema visto nei log, molte richieste sequenziali da una sola origine, e rallentarlo con un limite di richieste.</li><li>Dire ai dipendenti di segnalare le email di estorsione, anche quando sembrano spam. Il primo messaggio è arrivato sei giorni prima del secondo e l&#x27;indagine poteva partire allora.</li></ol>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="http-malware-incident.html"><small>&larr; Precedente</small>Rapporto di sicurezza: malware da un sito compromesso</a><a class="next" href="incident-handler-journal.html"><small>Successivo &rarr;</small>Diario dell&#x27;incident handler</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

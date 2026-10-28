@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Controlli di accesso: incidente sul payroll | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Un evento sul payroll ricondotto all&#x27;account di un collaboratore ancora attivo anni dopo la fine del contratto, con raccomandazioni correttive.">
+<meta property="og:title" content="Controlli di accesso: incidente sul payroll | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Un evento sul payroll ricondotto all&#x27;account di un collaboratore ancora attivo anni dopo la fine del contratto, con raccomandazioni correttive.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/access-controls-payroll.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-protect">Proteggere</span>
+<h1>Controlli di accesso: incidente sul payroll</h1>
+<hr class="rule">
+<p class="lead">Un evento sul payroll ricondotto all&#x27;account di un collaboratore ancora attivo anni dopo la fine del contratto, con raccomandazioni correttive.</p>
+<ul class="skill-list"><li>Autenticazione e autorizzazione</li><li>privilegio minimo</li><li>lettura dei log</li></ul>
+<a class="btn" href="../pdf/it/access-controls-payroll.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-protect">
+<div class="tablewrap"><table><tr><th></th><th><p>Note</p></th><th><p>Problemi</p></th><th><p>Raccomandazioni</p></th></tr><tr><td class="label"><p>Autorizzazione / autenticazione</p></td><td><p class="q">Obiettivo: scrivi 1 o 2 note con le informazioni utili a identificare la minaccia:</p><ul><li>Chi: l&#x27;account Legal\Administrator, che corrisponde a Robert Taylor Jr., un avvocato che lavorava come collaboratore esterno.</li><li>Quando: il 3 ottobre 2023 alle 8:29:57 (nel log la data è scritta 10/03/2023, in formato statunitense). L&#x27;evento è stato l&#x27;inserimento di un evento payroll nel sistema FAUX_BANK.</li><li>Dispositivo: il computer Up2-NoGud, con indirizzo IP 152.207.255.255.</li></ul></td><td><p class="q">Obiettivo: in base alle note, elenca 1 o 2 problemi di autorizzazione:</p><ul><li>Robert Taylor Jr. ha l&#x27;autorizzazione Admin, il livello più alto, anche se è solo un collaboratore esterno e un avvocato. Nell&#x27;elenco utenti quasi tutti gli account sono Admin, dal grafico ai venditori.</li><li>No. Il suo contratto è finito il 27/12/2019, ma il suo account era ancora attivo quasi quattro anni dopo ed è stato usato per aggiungere un evento payroll. Anche Joanne Phelps e Lei Chu hanno nell&#x27;elenco una data di fine nel 2020, e l&#x27;account di Lei Chu è stato usato solo due giorni fa.</li></ul></td><td><p class="q">Obiettivo: scrivi almeno 1 raccomandazione che potrebbe evitare un incidente di questo tipo:</p><ul><li>Tecnico: disattivare un account il giorno in cui finisce il contratto e far scadere in automatico gli account dei collaboratori esterni, per esempio dopo 30 giorni se nessuno li rinnova.</li><li>Tecnico: attivare l&#x27;autenticazione a più fattori (MFA) per tutti gli account admin.</li><li>Operativo: applicare il privilegio minimo con accessi basati sul ruolo, così che solo chi lavora sul payroll possa raggiungerlo.</li><li>Gestionale: controllare a scadenze fisse l&#x27;elenco degli utenti e dei loro permessi, per esempio ogni trimestre.</li></ul></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="home-asset-inventory.html"><small>&larr; Precedente</small>Inventario dei beni della rete domestica</a><a class="next" href="data-leak-least-privilege.html"><small>Successivo &rarr;</small>Fuga di dati: privilegio minimo</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

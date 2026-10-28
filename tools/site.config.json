@@ -1,0 +1,11 @@
+{
+  "name": "Ferdinando Gregorio Fernandez",
+  "site_title": {
+    "en": "Cybersecurity case studies",
+    "it": "Case study di cybersecurity"
+  },
+  "source_dir": "../../Security Audit/01_Case-Studies",
+  "base_path": "/portfolio",
+  "show_public_projects": true,
+  "show_previews": false
+}

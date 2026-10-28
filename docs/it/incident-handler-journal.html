@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Diario dell&#x27;incident handler | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Quattro voci di diario su incidenti e strumenti: un caso di ransomware, un ticket di phishing, tcpdump e Wireshark, e la Piramide del dolore.">
+<meta property="og:title" content="Diario dell&#x27;incident handler | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Quattro voci di diario su incidenti e strumenti: un caso di ransomware, un ticket di phishing, tcpdump e Wireshark, e la Piramide del dolore.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/incident-handler-journal.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-respond">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-respond">Rispondere</span>
+<h1>Diario dell&#x27;incident handler</h1>
+<hr class="rule">
+<p class="lead">Quattro voci di diario su incidenti e strumenti: un caso di ransomware, un ticket di phishing, tcpdump e Wireshark, e la Piramide del dolore.</p>
+<ul class="skill-list"><li>Documentazione degli incidenti</li><li>i 5 W</li><li>ransomware</li><li>appunti</li></ul>
+<a class="btn" href="../pdf/it/incident-handler-journal.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-respond">
+<p>Tengo questo diario per annotare ciò che imparo da ogni attività, sempre nello stesso formato. Ogni voce dice qual era l&#x27;attività, quale strumento ho usato e cosa mi resta in mente.</p>
+<div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#1</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>Documentare un incidente di cybersecurity</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>Nessuno. Ho lavorato sulla descrizione dell&#x27;incidente del corso.</p></td></tr><tr><td class="label"><p>I 5 W</p></td><td><p>Chi: un gruppo organizzato di attaccanti</p><p>Cosa: un incidente ransomware che ha cifrato i file della clinica</p><p>Dove: una piccola clinica</p><p>Quando: martedì mattina, verso le 9:00</p><p>Perché: i dipendenti hanno ricevuto email di phishing con un allegato dannoso, e aprirlo ha dato agli attaccanti una via d&#x27;ingresso. Poi hanno lanciato il ransomware e lasciato un messaggio che chiedeva denaro per la chiave di decifrazione, quindi il motivo sembra economico.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>Come potrebbe la clinica evitare che succeda di nuovo? Aiuterebbero la formazione del personale per riconoscere il phishing, il filtro degli allegati sul server di posta e copie di backup offline e collaudate.</p><p>Dovrebbe pagare il riscatto? Io non pagherei per principio. Non c&#x27;è garanzia che la chiave funzioni e il pagamento alimenta gli attaccanti. È una decisione della direzione, con consulenza legale e forze dell&#x27;ordine, e dei buoni backup rendono la domanda meno urgente.</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#2</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>Esame di un ticket di allerta per phishing (A-2703)</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>VirusTotal, per cercare l&#x27;hash del file.</p></td></tr><tr><td class="label"><p>I 5 W</p></td><td><p>Chi: un mittente sconosciuto che usa il nome Clyde West, con un indirizzo .su</p><p>Cosa: un&#x27;email di phishing con un allegato eseguibile chiamato bfsvc.exe</p><p>Dove: la casella delle risorse umane dell&#x27;azienda</p><p>Quando: mercoledì 20 luglio 2022, ore 09:30</p><p>Perché: l&#x27;attaccante vuole che il file venga eseguito su un computer aziendale. La password scritta nell&#x27;email serve a impedire agli antivirus della posta di aprire il file.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>Cercare un hash è veloce e qui ha dato una risposta chiara. Ho meno certezze per un file il cui hash nessuno ha ancora visto, perché un malware nuovo non ha reputazione. In quel caso mi servirebbero una sandbox o l&#x27;aiuto di un analista più esperto.</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#3</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>Confronto tra tcpdump e Wireshark</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>tcpdump e Wireshark.</p></td></tr><tr><td class="label"><p>Punti chiave</p></td><td><p>tcpdump è leggero e funziona da riga di comando su un server. Wireshark è più pesante ma molto più leggibile, con colori e filtri. Entrambi salvano e leggono file di cattura, quindi posso catturare con uno e analizzare con l&#x27;altro.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>Devo esercitarmi di più con le opzioni di tcpdump. Continuo a dimenticare quale opzione disattiva la risoluzione dei nomi (-nn).</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Data</p></td><td><p>23 ottobre 2026</p></td></tr><tr><td class="label"><p>Voce</p></td><td><p>#4</p></td></tr><tr><td class="label"><p>Descrizione</p></td><td><p>La Piramide del dolore applicata a un hash</p></td></tr><tr><td class="label"><p>Strumenti usati</p></td><td><p>VirusTotal.</p></td></tr><tr><td class="label"><p>Punti chiave</p></td><td><p>L&#x27;hash è l&#x27;indicatore più facile da trovare e il più facile da cambiare per un attaccante. Nomi di dominio e indirizzi IP sono un po&#x27; più difficili da cambiare. Strumenti e TTP sono i più difficili, e sono quelli che vale la pena rilevare.</p></td></tr><tr><td class="label"><p>Note aggiuntive</p></td><td><p>La prossima volta che guardo un indicatore voglio chiedermi a che livello della piramide si trova, e non solo se è dannoso.</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-final-report.html"><small>&larr; Precedente</small>Rapporto finale: violazione di dati tramite forced browsing</a><a class="next" href="phishing-incident.html"><small>Successivo &rarr;</small>Analisi di un incidente: phishing e account rubato</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

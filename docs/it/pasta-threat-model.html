@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Modello di minacce PASTA: app di un&#x27;azienda di sneaker | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="L&#x27;analisi di un&#x27;app attraverso le sette fasi di PASTA, dagli obiettivi di business ai controlli, con un albero degli attacchi per il furto di dati.">
+<meta property="og:title" content="Modello di minacce PASTA: app di un&#x27;azienda di sneaker | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="L&#x27;analisi di un&#x27;app attraverso le sette fasi di PASTA, dagli obiettivi di business ai controlli, con un albero degli attacchi per il furto di dati.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/pasta-threat-model.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-identify">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-identify">Identificare</span>
+<h1>Modello di minacce PASTA: app di un&#x27;azienda di sneaker</h1>
+<hr class="rule">
+<p class="lead">L&#x27;analisi di un&#x27;app attraverso le sette fasi di PASTA, dagli obiettivi di business ai controlli, con un albero degli attacchi per il furto di dati.</p>
+<ul class="skill-list"><li>PASTA</li><li>threat modeling</li><li>SQL injection</li><li>alberi degli attacchi</li></ul>
+<a class="btn" href="../pdf/it/pasta-threat-model.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-identify">
+<div class="tablewrap"><table><tr><td class="label"><p>Scenario</p></td><td><p>Un&#x27;azienda di sneaker sta costruendo un&#x27;app in cui i clienti possono registrarsi, cercare nel catalogo e pagare. Ho usato PASTA (Process for Attack Simulation and Threat Analysis) per guardare l&#x27;app dagli obiettivi di business fino ai controlli, una fase alla volta.</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>I. Definire gli obiettivi di business e di sicurezza</p></td><td><p>I clienti possono creare un profilo nell&#x27;app o accedere con un account di un altro servizio.</p><p>L&#x27;app accetta pagamenti, quindi gestisce dati di carte e deve rispettare PCI DSS.</p><p>Ricerca ed elenchi si usano di continuo, quindi il back end deve restare veloce, disponibile e corretto.</p></td></tr><tr><td class="label"><p>II. Definire il perimetro tecnico</p></td><td><p>Tecnologie usate dall&#x27;applicazione: interfaccia di programmazione (API), infrastruttura a chiave pubblica (PKI), SHA-256, SQL.</p><p>Metterei l&#x27;API al primo posto. Quasi tutto passa da lì: accesso, ricerca, pagamenti e collegamento con servizi esterni. Quindi tocca molti dati sensibili e ha la superficie d&#x27;attacco più ampia. Il database viene secondo, perché è lì che finiscono i dati, ma un&#x27;API debole apre la strada verso di esso.</p></td></tr><tr><td class="label"><p>III. Scomporre l&#x27;applicazione</p></td><td><p>Processo di ricerca dei prodotti, l&#x27;unico flusso che ho mappato:</p><p>1. Il cliente scrive una ricerca nell&#x27;app.</p><p>2. L&#x27;app invia la richiesta all&#x27;API.</p><p>3. L&#x27;API interroga il database dei prodotti.</p><p>4. Il database restituisce gli annunci attuali.</p><p>5. L&#x27;API rimanda i risultati al cliente.</p><p>Un vero diagramma dei flussi di dati per un&#x27;app così è molto più grande. Questo è un solo processo.</p></td></tr><tr><td class="label"><p>IV. Analisi delle minacce</p></td><td><p>Esterna: SQL injection tramite il campo di ricerca o un altro input, per leggere o modificare i dati.</p><p>Interna: un dipendente o collaboratore con più accessi di quelli che servono al suo lavoro, che copia o modifica i dati dei clienti di proposito o per errore.</p></td></tr><tr><td class="label"><p>V. Analisi delle vulnerabilità</p></td><td><p>Query al database costruite incollando l&#x27;input dell&#x27;utente nel testo SQL, invece di usare istruzioni preparate (prepared statements).</p><p>Token API che non scadono mai e non sono legati a una sola sessione, quindi un token rubato continua a funzionare finché l&#x27;attaccante vuole.</p></td></tr><tr><td class="label"><p>VI. Modellazione degli attacchi</p></td><td><p class="q">Obiettivo: rubare i dati degli utenti.</p><p>Ramo 1: SQL injection, possibile perché le query non usano prepared statements.</p><p>Ramo 2: furto di un account con un token di sessione rubato o una password debole, possibile perché i token non scadono e le password non vengono controllate.</p></td></tr><tr><td class="label"><p>VII. Analisi del rischio e dell&#x27;impatto</p></td><td><p>1. Prepared statements e validazione dell&#x27;input, per chiudere la strada all&#x27;injection.</p><p>2. Principio del privilegio minimo, così un account raggiunge solo i dati che gli servono.</p><p>3. Una policy delle password con autenticazione a più fattori, e token che scadono.</p><p>4. Registrazione degli eventi e procedura di risposta agli incidenti, per accorgersi in fretta di un attacco e gestirlo.</p></td></tr></table></div>
+<h2>Cosa ne ho ricavato</h2>
+<p>PASTA parte da ciò che serve al business e non dalla tecnologia, e questo mi è piaciuto. Una volta chiari gli obiettivi è stato facile capire perché l&#x27;API meritasse più attenzione, e le due vulnerabilità scelte corrispondono ai due rami dell&#x27;albero degli attacchi. Ogni controllo finale risponde a una delle due.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="risk-register-bank.html"><small>&larr; Precedente</small>Registro dei rischi: una banca</a><a class="next" href="home-asset-inventory.html"><small>Successivo &rarr;</small>Inventario dei beni della rete domestica</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

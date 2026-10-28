@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>SYN flood network attack analysis | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Reading a Wireshark log to find out why a website timed out, and explaining how a SYN flood exhausts a server.">
+<meta property="og:title" content="SYN flood network attack analysis | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Reading a Wireshark log to find out why a website timed out, and explaining how a SYN flood exhausts a server.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/syn-flood.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-detect">Detect</span>
+<h1>SYN flood network attack analysis</h1>
+<hr class="rule">
+<p class="lead">Reading a Wireshark log to find out why a website timed out, and explaining how a SYN flood exhausts a server.</p>
+<ul class="skill-list"><li>Network traffic analysis</li><li>TCP handshake</li><li>DoS vs DDoS</li></ul>
+<a class="btn" href="../pdf/en/syn-flood.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-detect">
+<h2 class="step"><span class="num">Section 1</span>Identify the type of attack that may have caused this network interruption</h2>
+<p><span class="lead-in">One potential explanation for the website&#x27;s connection timeout error message is:</span> a denial of service (DoS) attack, most likely a SYN flood.</p>
+<p><span class="lead-in">The logs show that:</span> one IP address, 203.0.113.0, keeps sending SYN requests to the web server (192.0.2.1) and never finishes the handshake. Entries 52 to 83 show it sending SYN packets again and again, while normal visitors from the 198.51.100.x range first connect without trouble and then start to get reset (RST, ACK) or stay without an answer. In the last entry the server replies with a 504 Gateway Time-out.</p>
+<p><span class="lead-in">This event could be:</span> a direct DoS SYN flood, because all the malicious packets come from one single source address. If they came from many addresses it would be a distributed attack (DDoS).</p>
+<h2 class="step"><span class="num">Section 2</span>Explain how the attack is causing the website to malfunction</h2>
+<p class="q">When website visitors try to establish a connection with the web server, a three-way handshake occurs using the TCP protocol. Explain the three steps of the handshake:</p>
+<ol class="steps"><li>The visitor&#x27;s computer sends a SYN packet to the web server to ask for a connection.</li><li>The server answers with a SYN, ACK packet to accept the request, and it keeps some resources reserved for that connection.</li><li>The visitor&#x27;s computer sends a final ACK packet. The connection is now open and the page can be requested.</li></ol>
+<p class="q">Explain what happens when a malicious actor sends a large number of SYN packets all at once:</p>
+<p>The attacker sends so many SYN packets in a short time that the server tries to answer every one of them with a SYN, ACK. For each of them it reserves memory and waits for an ACK that never comes. These half-open connections pile up until the server has no resources left, and it can&#x27;t accept new visitors anymore.</p>
+<p class="q">Explain what the logs indicate and how that affects the server:</p>
+<p>In the log the address 203.0.113.0 repeats the SYN request dozens of times, at an abnormal speed. In the beginning the server still manages to serve real employees (for example 198.51.100.14 loads sales.html), but later the connections from other employees such as 198.51.100.5 and 198.51.100.16 are reset or time out. Finally the server answers with 504 Gateway Time-out. The result is that employees can&#x27;t open the website, and the service is down until the traffic stops. As a first step I would block 203.0.113.0 on the firewall and turn on SYN cookies or rate limiting on the server.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="hardening-risk-assessment.html"><small>&larr; Previous</small>Security risk assessment: hardening tools</a><a class="next" href="dns-icmp-traffic.html"><small>Next &rarr;</small>DNS and ICMP network traffic analysis</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

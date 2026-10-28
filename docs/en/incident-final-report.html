@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Incident final report: data breach through forced browsing | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Writing the final report of a breach of customer data, with timeline, root cause found in the logs, remediation and recommendations.">
+<meta property="og:title" content="Incident final report: data breach through forced browsing | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Writing the final report of a breach of customer data, with timeline, root cause found in the logs, remediation and recommendations.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/incident-final-report.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-respond">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-respond">Respond</span>
+<h1>Incident final report: data breach through forced browsing</h1>
+<hr class="rule">
+<p class="lead">Writing the final report of a breach of customer data, with timeline, root cause found in the logs, remediation and recommendations.</p>
+<ul class="skill-list"><li>Incident reporting</li><li>log analysis</li><li>forced browsing</li><li>access control</li></ul>
+<a class="btn" href="../pdf/en/incident-final-report.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-respond">
+<p>Simulated scenario written from the incident notes of the course. The dates, amounts and figures are the ones in the scenario.</p>
+<h2>Executive summary</h2>
+<p>On December 28, 2022, at 7:20 p.m. PT, the organization confirmed that someone had gained unauthorized access to customer personal data and financial information. About 50,000 customer records were exposed. The direct cost is estimated at $100,000, not counting the revenue we may lose. The incident has been investigated and is now closed.</p>
+<h2>Timeline</h2>
+<div class="tablewrap"><table><tr><td class="label"><p>When</p></td><td><p>What happened</p></td></tr><tr><td><p>December 22, 2022, about 3:13 p.m. PT</p></td><td><p>An employee received an email from an outside address. The sender said they had stolen customer data and asked for $25,000 in cryptocurrency to keep it private. The employee took it for spam and deleted it.</p></td></tr><tr><td><p>December 28, 2022</p></td><td><p>The same sender wrote again, this time with a sample of the stolen data and a demand of $50,000. The employee reported it to the security team the same day, and the investigation started.</p></td></tr><tr><td><p>December 28 to 31, 2022</p></td><td><p>The security team worked on how the data was taken and how much of it.</p></td></tr></table></div>
+<h2>Investigation</h2>
+<p>The security team came on site as soon as the alert arrived. The root cause was a weakness in the e-commerce web application. The purchase confirmation page showed an order number in its URL, and the application did not check that the order belonged to the person asking for it. By changing the number, the attacker could open other customers&#x27; confirmation pages. This is called forced browsing.</p>
+<p>The web server access logs confirmed it. One single source had requested thousands of confirmation pages, one order after the other, at a rate no normal customer would reach. That is the pattern of a script collecting data, and it matches the sample the attacker sent us.</p>
+<h2>Response and remediation</h2>
+<p>The organization worked with the public relations department to tell the affected customers about the breach, and offered them free identity protection services.</p>
+<h2>Recommendations</h2>
+<ol class="steps"><li>Run vulnerability scans and penetration tests on a regular schedule, so a flaw like this is found by us first.</li><li>Use allowlisting, so the application only serves a defined set of URLs and blocks the rest automatically.</li><li>Make sure only authenticated users can reach content, and check on the server that each order belongs to the user who asks for it.</li><li>Add detection for the pattern we saw in the logs, many sequential requests from one source, and slow it down with rate limiting.</li><li>Tell employees to report extortion emails, even when they look like spam. The first message arrived six days before the second one, and the investigation could have started then.</li></ol>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="http-malware-incident.html"><small>&larr; Previous</small>Security incident report: malware via a hijacked website</a><a class="next" href="incident-handler-journal.html"><small>Next &rarr;</small>Incident handler&#x27;s journal</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

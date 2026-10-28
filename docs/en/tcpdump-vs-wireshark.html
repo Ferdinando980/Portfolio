@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>tcpdump and Wireshark compared | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="A side by side comparison of two packet analyzers, with the commands and filters I used and when I would pick each one.">
+<meta property="og:title" content="tcpdump and Wireshark compared | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="A side by side comparison of two packet analyzers, with the commands and filters I used and when I would pick each one.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/tcpdump-vs-wireshark.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-detect">Detect</span>
+<h1>tcpdump and Wireshark compared</h1>
+<hr class="rule">
+<p class="lead">A side by side comparison of two packet analyzers, with the commands and filters I used and when I would pick each one.</p>
+<ul class="skill-list"><li>tcpdump</li><li>Wireshark</li><li>packet capture</li><li>protocol filters</li></ul>
+<a class="btn" href="../pdf/en/tcpdump-vs-wireshark.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-detect">
+<p>Both tools capture and read network traffic. I used tcpdump for the DNS and ICMP report and Wireshark for the SYN flood log, so this is my own comparison after using each one.</p>
+<div class="tablewrap"><table><tr><th><p>Aspect</p></th><th><p>tcpdump</p></th><th><p>Wireshark</p></th></tr><tr><td><p>Interface</p></td><td><p>Command line (CLI)</p></td><td><p>Graphical interface (GUI)</p></td></tr><tr><td><p>Resources</p></td><td><p>Lightweight, runs fine on a server with no desktop</p></td><td><p>Needs more memory and CPU</p></td></tr><tr><td><p>Features</p></td><td><p>Basic filters and options, plain text output</p></td><td><p>Color coding, advanced filtering, following a conversation, statistics</p></td></tr><tr><td><p>Learning curve</p></td><td><p>I have to remember the options and the filter syntax</p></td><td><p>Easier to explore by clicking around</p></td></tr></table></div>
+<h2>What they have in common</h2>
+<p>Both are network protocol analyzers. Both are open source and free. Both can filter for a specific protocol and both can save a capture to a file and read it again later.</p>
+<h2>A few commands I used</h2>
+<p class="q">tcpdump, capture only DNS traffic on one interface and show numbers instead of names:</p>
+<pre>tcpdump -i eth0 -nn udp port 53</pre>
+<p class="q">tcpdump, save a capture to a file, then read it back:</p>
+<pre>tcpdump -i eth0 -w capture.pcap
+tcpdump -r capture.pcap</pre>
+<p class="q">Wireshark display filter, show only DNS packets:</p>
+<pre>dns</pre>
+<p class="q">Wireshark display filter, show the first packet of each TCP handshake (useful to spot a SYN flood):</p>
+<pre>tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</pre>
+<h2>When I would use which</h2>
+<p>I would use tcpdump when I am on a server over a remote connection, or when I just need a quick capture saved to a file. I would open that file in Wireshark when I need to follow one conversation or look at a lot of packets at once, because reading them there is much less tiring than in a terminal.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="dns-icmp-traffic.html"><small>&larr; Previous</small>DNS and ICMP network traffic analysis</a><a class="next" href="phishing-alert-ticket.html"><small>Next &rarr;</small>Alert ticket: phishing email with a malicious attachment</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Data leak worksheet: least privilege | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Analyzing how a shared link exposed an internal folder, and applying NIST SP 800-53 control AC-6 to prevent it.">
+<meta property="og:title" content="Data leak worksheet: least privilege | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Analyzing how a shared link exposed an internal folder, and applying NIST SP 800-53 control AC-6 to prevent it.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/data-leak-least-privilege.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-protect">Protect</span>
+<h1>Data leak worksheet: least privilege</h1>
+<hr class="rule">
+<p class="lead">Analyzing how a shared link exposed an internal folder, and applying NIST SP 800-53 control AC-6 to prevent it.</p>
+<ul class="skill-list"><li>Least privilege</li><li>NIST SP 800-53</li><li>data protection</li></ul>
+<a class="btn" href="../pdf/en/data-leak-least-privilege.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-protect">
+<p>Incident summary: A sales manager shared access to a folder of internal-only documents with their team during a meeting. The folder contained files associated with a new product that has not been publicly announced. It also included customer analytics and promotional materials. After the meeting, the manager did not revoke access to the internal folder, but warned the team to wait for approval before sharing the promotional materials with others.</p>
+<p>During a video call with a business partner, a member of the sales team forgot the warning from their manager. The sales representative intended to share a link to the promotional materials so that the business partner could circulate the materials to their customers. However, the sales representative accidentally shared a link to the internal folder instead. Later, the business partner posted the link on their company&#x27;s social media page assuming that it was the promotional materials.</p>
+<div class="tablewrap"><table><tr><th><p>Control</p></th><th colspan="3"><p>Least privilege</p></th></tr><tr><td class="label"><p>Issue(s)</p></td><td colspan="3"><p class="q">What factors contributed to the information leak?</p><p class="q">Several things went wrong together. The manager left the whole internal folder open after the meeting, even if the team only needed the promotional files, and the folder also had the unannounced product and customer analytics. The only protection was a spoken warning. The sharing settings also allowed a link to the folder to be sent to people outside the company. The sales representative picked the wrong link by mistake, and the business partner posted it publicly without checking what it was.</p></td></tr><tr><td class="label"><p>Review</p></td><td colspan="3"><p class="q">What does NIST SP 800-53: AC-6 address?</p><p class="q">AC-6 is the least privilege control. It says that users should get only the minimum access and authorization they need to do their task, and nothing more. Accounts, roles and processes should be set up so that nobody works with higher privileges than necessary.</p></td></tr><tr><td class="label"><p>Recommendation(s)</p></td><td colspan="3"><p class="q">How might the principle of least privilege be improved at the company?</p><p class="q">Access to the folder should depend on the job. The promotional materials should live in a separate folder that is safe to share, and the internal folder should stay restricted to the people who need it. Access given for a meeting should expire at the end of it, or be removed by the manager right after. Links to internal files should work only for company accounts, and sharing with external people should need an approval. Regular reviews of who can open what, and short training on sharing links, would also help.</p></td></tr><tr><td class="label"><p>Justification</p></td><td colspan="3"><p class="q">How might these improvements address the issues?</p><p class="q">A separate folder for public material means that a wrong click shares something harmless. Automatic expiry removes the problem of a manager forgetting to revoke access. Blocking links for external users would have stopped the leak even after the mistake, and the review and the training lower the chance that the same thing happens again.</p></td></tr></table></div>
+<h3>Security plan snapshot</h3>
+<p>The NIST Cybersecurity Framework (CSF) uses a hierarchical, tree-like structure to organize information. From left to right, it describes a broad security function, then becomes more specific as it branches out to a category, subcategory, and individual security controls.</p>
+<div class="tablewrap"><table><tr><th><p>Function</p></th><th><p>Category</p></th><th><p>Subcategory</p></th><th><p>Reference(s)</p></th></tr><tr><td class="label"><p>Protect</p></td><td><p>PR.DS: Data security</p></td><td><p>PR.DS-5: Protections against data leaks.</p></td><td><p>NIST SP 800-53: AC-6</p></td></tr></table></div>
+<p>In this example, the implemented controls that are used by the manufacturer to protect against data leaks are defined in NIST SP 800-53—a set of guidelines for securing the privacy of information systems.</p>
+<p>Note: References are commonly hyperlinked to the guidelines or regulations they relate to. This makes it easy to learn more about how a particular control should be implemented. It&#x27;s common to find multiple links to different sources in the references columns.</p>
+<h3>NIST SP 800-53: AC-6</h3>
+<p class="q">NIST developed SP 800-53 to provide businesses with a customizable information privacy plan. It&#x27;s a comprehensive resource that describes a wide range of control categories. Each control provides a few key pieces of information:</p>
+<ul><li>Control: A definition of the security control.</li><li>Discussion: A description of how the control should be implemented.</li><li>Control enhancements: A list of suggestions to improve the effectiveness of the control.</li></ul>
+<div class="tablewrap"><table><tr><td class="label"><p>AC-6</p></td><td><p>Least Privilege</p></td></tr><tr><td></td><td><p>Control:</p><p>Only the minimal access and authorization required to complete a task or function should be provided to users.</p></td></tr><tr><td></td><td><p>Discussion:</p><p>Processes, user accounts, and roles should be enforced as necessary to achieve least privilege. The intention is to prevent a user from operating at privilege levels higher than what is necessary to accomplish business objectives.</p></td></tr><tr><td></td><td><p class="q">Control enhancements:</p><ul><li>Restrict access to sensitive resources based on user role.</li><li>Automatically revoke access to information after a period of time.</li><li>Keep activity logs of provisioned user accounts.</li><li>Regularly audit user privileges.</li></ul></td></tr></table></div>
+<p>Note: In the category of access controls, SP 800-53 lists least privilege sixth, i.e. AC-6.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="access-controls-payroll.html"><small>&larr; Previous</small>Access controls worksheet: payroll incident</a><a class="next" href="usb-parking-lot.html"><small>Next &rarr;</small>Parking lot USB exercise</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

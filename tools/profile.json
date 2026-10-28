@@ -1,0 +1,227 @@
+{
+  "_help": "Contenuto della pagina Profilo. Modifica i testi e rilancia: python tools/build_site.py. Non inserire telefono, indirizzo o data di nascita. La foto va in tools/photo/ (profile.jpg, .png o .webp).",
+  "role": {
+    "it": "Studente di Informatica",
+    "en": "Computer Science student"
+  },
+  "photo_alt": {
+    "it": "Ritratto",
+    "en": "Portrait"
+  },
+  "intro": {
+    "it": [
+      "Sono studente di Informatica presso l'Università degli Studi di Salerno. Tra gli insegnamenti che ho seguito con maggiore interesse figurano Ingegneria del software, Programmazione orientata agli oggetti e Grafica ed interattività.",
+      "Ho affiancato agli studi universitari un percorso dedicato alla sicurezza informatica, il Google Cybersecurity Certificate. I case study pubblicati in questo sito derivano da quel percorso.",
+      "In ambito lavorativo ho maturato esperienza nel settore degli E-Sports come head coach, con attività di coordinamento di un team e di cura di un ambiente di lavoro ordinato e collaborativo."
+    ],
+    "en": [
+      "I am a Computer Science student at the University of Salerno. The courses I followed with the greatest interest include Software Engineering, Object Oriented Programming and Graphics and Interactivity.",
+      "Alongside my university studies I followed a course dedicated to cybersecurity, the Google Cybersecurity Certificate. The case studies published on this site come from that course.",
+      "In my working life I gained experience in E-Sports as a head coach, coordinating a team and maintaining an orderly and collaborative working environment."
+    ]
+  },
+  "side": {
+    "title": {
+      "it": "In sintesi",
+      "en": "At a glance"
+    },
+    "items": [
+      {
+        "label": {
+          "it": "Studi",
+          "en": "Studies"
+        },
+        "value": {
+          "it": "Informatica, Università degli Studi di Salerno",
+          "en": "Computer Science, University of Salerno"
+        }
+      },
+      {
+        "label": {
+          "it": "Formazione in sicurezza",
+          "en": "Security training"
+        },
+        "value": {
+          "it": "Google Cybersecurity Certificate",
+          "en": "Google Cybersecurity Certificate"
+        }
+      },
+      {
+        "label": {
+          "it": "Lingue",
+          "en": "Languages"
+        },
+        "value": {
+          "it": "Italiano, inglese (B1 e B2)",
+          "en": "Italian, English (B1 and B2)"
+        }
+      }
+    ]
+  },
+  "certificate": {
+    "title": {
+      "it": "Google Cybersecurity Certificate",
+      "en": "Google Cybersecurity Certificate"
+    },
+    "band": {
+      "it": "Programma di formazione online di livello base, sviluppato da Google e offerto su Coursera, rivolto a chi intende accedere a ruoli di ingresso nella sicurezza informatica. Alterna lezioni, verifiche e laboratori pratici basati su scenari simulati.",
+      "en": "An entry-level online training program developed by Google and offered on Coursera, aimed at those who intend to enter the field of cybersecurity. It combines lessons, assessments and hands-on labs based on simulated scenarios."
+    },
+    "facts": [
+      {
+        "label": {
+          "it": "Ente",
+          "en": "Provider"
+        },
+        "value": {
+          "it": "Google, tramite Coursera",
+          "en": "Google, through Coursera"
+        }
+      },
+      {
+        "label": {
+          "it": "Livello",
+          "en": "Level"
+        },
+        "value": {
+          "it": "Base, senza prerequisiti",
+          "en": "Beginner, no prerequisites"
+        }
+      },
+      {
+        "label": {
+          "it": "Durata",
+          "en": "Duration"
+        },
+        "value": {
+          "it": "Circa 170 ore di formazione",
+          "en": "About 170 hours of instruction"
+        }
+      },
+      {
+        "label": {
+          "it": "Formato",
+          "en": "Format"
+        },
+        "value": {
+          "it": "Lezioni, verifiche e laboratori pratici",
+          "en": "Lessons, assessments and hands-on labs"
+        }
+      }
+    ],
+    "paragraphs": {
+      "it": [
+        "Il programma, sviluppato da Google e offerto su Coursera, introduce i fondamenti della sicurezza informatica: gestione dei rischi, sicurezza delle reti, Linux e SQL, rilevamento e risposta agli incidenti. Non richiede conoscenze preliminari."
+      ],
+      "en": [
+        "The program, developed by Google and offered on Coursera, introduces the foundations of cybersecurity: risk management, network security, Linux and SQL, incident detection and response. It requires no prior knowledge."
+      ]
+    },
+    "link": {
+      "it": "I case study di questo sito derivano dalle esercitazioni del corso e riguardano in particolare l'analisi del traffico di rete, la risposta agli incidenti, la valutazione del rischio, il controllo degli accessi e la conformità.",
+      "en": "The case studies on this site come from the course exercises and cover in particular network traffic analysis, incident response, risk assessment, access control and compliance."
+    },
+    "sources": {
+      "it": "Fonte delle informazioni sul programma: pagina del corso su Coursera.",
+      "en": "Source of the program information: the course page on Coursera."
+    },
+    "source_url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+    "credential_url": "https://www.coursera.org/account/accomplishments/professional-cert/YRQSFY9HC7DL"
+  },
+  "sections": [
+    {
+      "id": "education",
+      "title": {
+        "it": "Formazione",
+        "en": "Education"
+      },
+      "items": [
+        {
+          "title": {
+            "it": "Corso di laurea in Informatica",
+            "en": "Degree program in Computer Science"
+          },
+          "meta": {
+            "it": "Università degli Studi di Salerno",
+            "en": "University of Salerno"
+          },
+          "text": {
+            "it": "Insegnamenti più significativi: Ingegneria del software, Programmazione I, Tecnologie software per il web, Programmazione orientata agli oggetti, Grafica ed interattività.",
+            "en": "Most significant courses: Software Engineering, Programming I, Web Software Technologies, Object Oriented Programming, Graphics and Interactivity."
+          }
+        },
+        {
+          "title": {
+            "it": "Google Cybersecurity Certificate",
+            "en": "Google Cybersecurity Certificate"
+          },
+          "meta": {
+            "it": "Google, Coursera",
+            "en": "Google, Coursera"
+          },
+          "text": {
+            "it": "Percorso di livello base sulla sicurezza informatica, con esercitazioni su scenari simulati.",
+            "en": "Entry-level program on cybersecurity, with exercises on simulated scenarios."
+          }
+        },
+        {
+          "title": {
+            "it": "Diploma di maturità scientifica",
+            "en": "Scientific high school diploma"
+          },
+          "meta": {
+            "it": "Liceo Scientifico Armando Diaz, Caserta, 2019",
+            "en": "Liceo Scientifico Armando Diaz, Caserta, 2019"
+          },
+          "text": {
+            "it": "",
+            "en": ""
+          }
+        }
+      ],
+      "tone": "compliance"
+    },
+    {
+      "id": "experience",
+      "title": {
+        "it": "Esperienze",
+        "en": "Experience"
+      },
+      "items": [
+        {
+          "title": {
+            "it": "Head coach",
+            "en": "Head coach"
+          },
+          "meta": {
+            "it": "Settore E-Sports",
+            "en": "E-Sports"
+          },
+          "text": {
+            "it": "Coordinamento di un team e cura di un ambiente di lavoro tranquillo e professionale.",
+            "en": "Coordination of a team and care for a calm, professional working environment."
+          }
+        },
+        {
+          "title": {
+            "it": "Operatore telematico, Click Day INAIL",
+            "en": "Online operator, INAIL Click Day"
+          },
+          "meta": {
+            "it": "Eutecna Engineering Environment S.r.l., Caserta, gennaio e febbraio 2021",
+            "en": "Eutecna Engineering Environment S.r.l., Caserta, January and February 2021"
+          },
+          "text": {
+            "it": "Addestramento su simulatore e partecipazione al Click Day INAIL (bando ISI 2021), con click vincente validato.",
+            "en": "Training on a simulator and participation in the INAIL Click Day (ISI 2021 call), with a winning click validated."
+          }
+        }
+      ],
+      "tone": "incident"
+    }
+  ],
+  "links": {
+    "github": "https://github.com/Ferdinando980",
+    "linkedin": "https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315"
+  }
+}

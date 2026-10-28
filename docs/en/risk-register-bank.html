@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Risk register: a bank | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Scoring five risks for a bank by likelihood and severity and explaining the priorities in light of its environment.">
+<meta property="og:title" content="Risk register: a bank | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Scoring five risks for a bank by likelihood and severity and explaining the priorities in light of its environment.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/risk-register-bank.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-identify">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-identify">Identify</span>
+<h1>Risk register: a bank</h1>
+<hr class="rule">
+<p class="lead">Scoring five risks for a bank by likelihood and severity and explaining the priorities in light of its environment.</p>
+<ul class="skill-list"><li>Risk assessment</li><li>prioritization</li><li>risk matrix</li></ul>
+<a class="btn" href="../pdf/en/risk-register-bank.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-identify">
+<h3>Operational environment:</h3>
+<p>The bank is located in a coastal area with low crime rates. Many people and systems handle the bank&#x27;s data—100 on-premise employees and 20 remote employees. The customer base of the bank includes 2,000 individual accounts and 200 commercial accounts. The bank&#x27;s services are marketed by a professional sports team and ten local businesses in the community. There are strict financial regulations that require the bank to secure their data and funds, like having enough cash available each day to meet Federal Reserve requirements.</p>
+<div class="tablewrap"><table><tr><th><p>Asset</p></th><th><p>Risk(s)</p></th><th><p>Description</p></th><th><p>Likelihood</p></th><th><p>Severity</p></th><th><p>Priority</p></th></tr><tr><td><p>Funds</p></td><td><p>Business email compromise</p></td><td><p class="q">An employee is tricked into sharing confidential information.</p></td><td><p>3</p></td><td><p>2</p></td><td><p>6</p></td></tr><tr><td></td><td><p>Compromised user database</p></td><td><p class="q">Customer data is poorly encrypted.</p></td><td><p>2</p></td><td><p>3</p></td><td><p>6</p></td></tr><tr><td></td><td><p>Financial records leak</p></td><td><p class="q">A database server of backed up data is publicly accessible.</p></td><td><p>3</p></td><td><p>3</p></td><td><p>9</p></td></tr><tr><td></td><td><p>Theft</p></td><td><p class="q">The bank&#x27;s safe is left unlocked.</p></td><td><p>1</p></td><td><p>3</p></td><td><p>3</p></td></tr><tr><td></td><td><p>Supply chain disruption</p></td><td><p class="q">Delivery delays due to natural disasters.</p></td><td><p>2</p></td><td><p>1</p></td><td><p>2</p></td></tr><tr><td><p>Notes</p></td><td colspan="5"><p class="q">How are security events possible considering the risks the asset faces in its operating environment?</p><p class="q">Business email compromise is the most likely risk because the bank has 120 people and many of them work remotely, and one convincing email is enough. The damage is moderate if caught early, but it can reach the funds. Poorly encrypted customer data is a serious problem with 2,200 accounts and strict financial regulations, so the impact is high even if an attack is not certain. A publicly accessible server with backups is the top priority: it is easy to find and it exposes full financial records, so likelihood and severity are both high. Theft from an unlocked safe is unlikely in an area with low crime, but the loss would be big, which is why it still needs a lock and a rule. Delivery delays from storms are possible on the coast, but they hurt operations more than they hurt the security of the funds, so the priority is low.</p></td></tr></table></div>
+<p>Asset: The asset at risk of being harmed, damaged, or stolen.</p>
+<p>Risk(s): A potential risk to the organization&#x27;s information systems and data.</p>
+<p>Description: A vulnerability that might lead to a security incident.</p>
+<p>Likelihood: Score from 1-3 of the chances of a vulnerability being exploited. A 1 means there&#x27;s a low likelihood, a 2 means there&#x27;s a moderate likelihood, and a 3 means there&#x27;s a high likelihood.</p>
+<p>Severity: Score from 1-3 of the potential damage the threat would cause to the business. A 1 means a low severity impact, a 2 is a moderate severity impact, and a 3 is a high severity impact.</p>
+<p>Priority: How quickly a risk should be addressed to avoid the potential incident. Use the following formula to calculate the overall score: Likelihood x Impact Severity = Risk</p>
+<h2>Sample risk matrix</h2>
+<div class="tablewrap"><table><tr><td></td><td><p>Low</p><p>1</p></td><td><p>Moderate</p><p>2</p></td><td><p>Catastrophic</p><p>3</p></td></tr><tr><td><p>Certain</p><p>3</p></td><td><p>3</p></td><td><p>6</p></td><td><p>9</p></td></tr><tr><td><p>Likely</p><p>2</p></td><td><p>2</p></td><td><p>4</p></td><td><p>6</p></td></tr><tr><td><p>Rare</p><p>1</p></td><td><p>1</p></td><td><p>2</p></td><td><p>3</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="vulnerability-assessment.html"><small>&larr; Previous</small>Vulnerability assessment: database server</a><a class="next" href="pasta-threat-model.html"><small>Next &rarr;</small>PASTA threat model: sneaker company app</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

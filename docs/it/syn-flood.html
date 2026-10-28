@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Analisi di un attacco SYN flood | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Lettura di un log Wireshark per capire perché un sito andava in timeout, e spiegazione di come un SYN flood esaurisce un server.">
+<meta property="og:title" content="Analisi di un attacco SYN flood | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Lettura di un log Wireshark per capire perché un sito andava in timeout, e spiegazione di come un SYN flood esaurisce un server.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/syn-flood.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-detect">Rilevare</span>
+<h1>Analisi di un attacco SYN flood</h1>
+<hr class="rule">
+<p class="lead">Lettura di un log Wireshark per capire perché un sito andava in timeout, e spiegazione di come un SYN flood esaurisce un server.</p>
+<ul class="skill-list"><li>Analisi del traffico di rete</li><li>handshake TCP</li><li>DoS e DDoS</li></ul>
+<a class="btn" href="../pdf/it/syn-flood.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-detect">
+<h2 class="step"><span class="num">Sezione 1</span>Individuare il tipo di attacco che può aver causato questa interruzione della rete</h2>
+<p><span class="lead-in">Una possibile spiegazione dell&#x27;errore di timeout della connessione al sito web è:</span> un attacco di negazione del servizio (DoS), con ogni probabilità un SYN flood.</p>
+<p><span class="lead-in">I log mostrano che:</span> un solo indirizzo IP, 203.0.113.0, continua a mandare richieste SYN al server web (192.0.2.1) e non completa mai l&#x27;handshake. Le voci dalla 52 alla 83 lo mostrano mentre invia pacchetti SYN senza sosta, mentre i visitatori normali dell&#x27;intervallo 198.51.100.x prima si collegano senza problemi e poi iniziano a ricevere un reset (RST, ACK) o restano senza risposta. Nell&#x27;ultima voce il server risponde con 504 Gateway Time-out.</p>
+<p><span class="lead-in">Questo evento potrebbe essere:</span> un SYN flood DoS diretto, perché tutti i pacchetti dannosi arrivano da un solo indirizzo di origine. Se arrivassero da molti indirizzi sarebbe un attacco distribuito (DDoS).</p>
+<h2 class="step"><span class="num">Sezione 2</span>Spiegare come l&#x27;attacco provoca il malfunzionamento del sito web</h2>
+<p class="q">Quando i visitatori del sito provano a collegarsi al server web, avviene un handshake a tre vie con il protocollo TCP. Spiega i tre passaggi dell&#x27;handshake:</p>
+<ol class="steps"><li>Il computer del visitatore invia un pacchetto SYN al server web per chiedere una connessione.</li><li>Il server risponde con un pacchetto SYN, ACK per accettare la richiesta e riserva alcune risorse per quella connessione.</li><li>Il computer del visitatore invia un ultimo pacchetto ACK. Ora la connessione è aperta e si può richiedere la pagina.</li></ol>
+<p class="q">Spiega cosa succede quando un attaccante invia un gran numero di pacchetti SYN tutti insieme:</p>
+<p>L&#x27;attaccante invia così tanti pacchetti SYN in poco tempo che il server cerca di rispondere a ciascuno con un SYN, ACK. Per ognuno riserva memoria e aspetta un ACK che non arriva mai. Queste connessioni a metà si accumulano finché il server non ha più risorse, e non riesce più ad accettare nuovi visitatori.</p>
+<p class="q">Spiega cosa indicano i log e come questo colpisce il server:</p>
+<p>Nel log l&#x27;indirizzo 203.0.113.0 ripete la richiesta SYN decine di volte, a una velocità anomala. All&#x27;inizio il server riesce ancora a servire i dipendenti veri (per esempio 198.51.100.14 carica sales.html), ma più avanti le connessioni di altri dipendenti come 198.51.100.5 e 198.51.100.16 vengono resettate o vanno in timeout. Alla fine il server risponde con 504 Gateway Time-out. Il risultato è che i dipendenti non riescono ad aprire il sito, e il servizio resta fermo finché il traffico non si ferma. Come primo passo bloccherei 203.0.113.0 sul firewall e attiverei i SYN cookie o un limite alla frequenza delle richieste sul server.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="hardening-risk-assessment.html"><small>&larr; Precedente</small>Valutazione del rischio: strumenti di hardening</a><a class="next" href="dns-icmp-traffic.html"><small>Successivo &rarr;</small>Analisi del traffico di rete DNS e ICMP</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

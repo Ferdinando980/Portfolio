@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Analisi del traffico di rete DNS e ICMP | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Indagine su un sito che non si caricava a partire da una cattura tcpdump, con il problema ricondotto a una porta DNS irraggiungibile.">
+<meta property="og:title" content="Analisi del traffico di rete DNS e ICMP | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Indagine su un sito che non si caricava a partire da una cattura tcpdump, con il problema ricondotto a una porta DNS irraggiungibile.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/dns-icmp-traffic.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-detect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-detect">Rilevare</span>
+<h1>Analisi del traffico di rete DNS e ICMP</h1>
+<hr class="rule">
+<p class="lead">Indagine su un sito che non si caricava a partire da una cattura tcpdump, con il problema ricondotto a una porta DNS irraggiungibile.</p>
+<ul class="skill-list"><li>tcpdump</li><li>DNS</li><li>UDP</li><li>ICMP</li><li>redazione di rapporti sugli incidenti</li></ul>
+<a class="btn" href="../pdf/it/dns-icmp-traffic.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-detect">
+<h2 class="step"><span class="num">Parte 1</span>Riepilogo del problema</h2><p class="q">Fai un riepilogo del problema trovato nel log del traffico DNS e ICMP.</p><div class="boxes">
+<div class="box"><p>Diversi utenti hanno segnalato di non riuscire ad accedere a www.yummyrecipesforme.com e di ricevere un errore “destination port unreachable”. Ho riprodotto il problema e ho catturato il traffico con tcpdump.</p><p>La cattura mostrava query DNS che partivano dal client via UDP verso il server DNS. Invece di una normale risposta DNS, il client riceveva messaggi ICMP che segnalavano “udp port 53 unreachable”.</p><p>Poiché la porta 53 è usata dal DNS, il traffico indica che il servizio DNS non era raggiungibile. L’ICMP stava segnalando il guasto, non lo stava causando.</p></div>
+<div class="box"><h3>PROVE PRINCIPALI</h3><p>Richiesta UDP al DNS  |  risposta ICMP  |  “udp port 53 unreachable”</p><p>Servizio colpito: DNS</p></div>
+</div>
+<h2 class="step"><span class="num">Parte 2</span>Analisi dei dati e causa probabile</h2><p class="q">Spiega la tua analisi dei dati e indica almeno una possibile causa dell’incidente.</p><div class="boxes">
+<div class="box"><h3>ORARIO DELL’INCIDENTE</h3><p>La cattura del traffico mostra l’incidente intorno alle 13:24.</p></div>
+<div class="box"><h3>COME IL TEAM SE NE È ACCORTO</h3><p>I clienti hanno segnalato che il sito non si caricava e mostrava un errore di destination port unreachable. Lo stesso problema è stato riprodotto durante l’indagine.</p></div>
+<div class="box"><h3>AZIONI SVOLTE PER INDAGARE</h3><p>Ho aperto tcpdump e ho provato a caricare di nuovo il sito, per osservare i pacchetti inviati e ricevuti durante il guasto.</p></div>
+<div class="box"><h3>RISULTATI PRINCIPALI</h3><p>Il client ha inviato query DNS tramite UDP al server DNS. Le risposte erano messaggi di errore ICMP che dicevano che la porta UDP 53 era irraggiungibile. Lo stesso risultato è comparso più volte.</p></div>
+<div class="box"><h3>CAUSA PROBABILE</h3><p>Il problema immediato è che il servizio DNS non era disponibile o non era raggiungibile sulla porta 53. Possono causarlo un guasto del servizio o una configurazione del firewall. È possibile anche un attacco DoS, ma questa sola cattura non dimostra che ci sia stato.</p></div>
+<div class="box"><h3>PROSSIMO CONTROLLO</h3><p>Verificherei che il servizio DNS sia in funzione e poi controllerei le regole del firewall per la porta 53. Se sembrano normali, esaminerei i log del server e della rete per cercare segni di traffico anomalo.</p></div>
+</div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="syn-flood.html"><small>&larr; Precedente</small>Analisi di un attacco SYN flood</a><a class="next" href="tcpdump-vs-wireshark.html"><small>Successivo &rarr;</small>tcpdump e Wireshark a confronto</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

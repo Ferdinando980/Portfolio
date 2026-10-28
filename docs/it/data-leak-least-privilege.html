@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Fuga di dati: privilegio minimo | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Analisi di come un link condiviso ha esposto una cartella interna, e applicazione del controllo AC-6 di NIST SP 800-53 per evitarlo.">
+<meta property="og:title" content="Fuga di dati: privilegio minimo | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Analisi di come un link condiviso ha esposto una cartella interna, e applicazione del controllo AC-6 di NIST SP 800-53 per evitarlo.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/data-leak-least-privilege.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-protect">Proteggere</span>
+<h1>Fuga di dati: privilegio minimo</h1>
+<hr class="rule">
+<p class="lead">Analisi di come un link condiviso ha esposto una cartella interna, e applicazione del controllo AC-6 di NIST SP 800-53 per evitarlo.</p>
+<ul class="skill-list"><li>Privilegio minimo</li><li>NIST SP 800-53</li><li>protezione dei dati</li></ul>
+<a class="btn" href="../pdf/it/data-leak-least-privilege.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-protect">
+<p>Riepilogo dell&#x27;incidente: durante una riunione, un responsabile vendite ha dato al suo team accesso a una cartella di documenti riservati all&#x27;uso interno. La cartella conteneva file legati a un nuovo prodotto non ancora annunciato, oltre ad analisi sui clienti e materiali promozionali. Dopo la riunione il responsabile non ha tolto l&#x27;accesso alla cartella, ma ha avvisato il team di aspettare l&#x27;approvazione prima di condividere i materiali promozionali con altri.</p>
+<p>Durante una videochiamata con un partner commerciale, un membro del team vendite ha dimenticato l&#x27;avviso del responsabile. Voleva condividere il link ai materiali promozionali, perché il partner li diffondesse ai suoi clienti, ma per errore ha mandato il link alla cartella interna. Più tardi il partner ha pubblicato il link sulla pagina social della sua azienda, convinto che fossero i materiali promozionali.</p>
+<div class="tablewrap"><table><tr><th><p>Controllo</p></th><th colspan="3"><p>Privilegio minimo</p></th></tr><tr><td class="label"><p>Problemi</p></td><td colspan="3"><p class="q">Quali fattori hanno contribuito alla fuga di informazioni?</p><p class="q">Sono andate storte più cose insieme. Il responsabile ha lasciato aperta tutta la cartella interna dopo la riunione, anche se al team servivano solo i file promozionali, e nella cartella c&#x27;erano anche il prodotto non annunciato e le analisi sui clienti. L&#x27;unica protezione era un avviso a voce. Le impostazioni di condivisione permettevano inoltre di mandare il link alla cartella anche a persone esterne all&#x27;azienda. Il rappresentante vendite ha scelto per errore il link sbagliato, e il partner lo ha pubblicato senza controllare cosa fosse.</p></td></tr><tr><td class="label"><p>Verifica</p></td><td colspan="3"><p class="q">Di cosa si occupa NIST SP 800-53: AC-6?</p><p class="q">AC-6 è il controllo sul privilegio minimo. Dice che gli utenti devono ricevere solo l&#x27;accesso e l&#x27;autorizzazione minimi che servono a svolgere il loro compito, e nulla di più. Account, ruoli e processi vanno impostati in modo che nessuno lavori con privilegi più alti del necessario.</p></td></tr><tr><td class="label"><p>Raccomandazioni</p></td><td colspan="3"><p class="q">Come si potrebbe migliorare il principio del privilegio minimo in azienda?</p><p class="q">L&#x27;accesso alla cartella dovrebbe dipendere dal ruolo. I materiali promozionali dovrebbero stare in una cartella separata, sicura da condividere, e la cartella interna dovrebbe restare limitata a chi ne ha bisogno. L&#x27;accesso dato per una riunione dovrebbe scadere alla fine della riunione, oppure essere tolto dal responsabile subito dopo. I link ai file interni dovrebbero funzionare solo con account aziendali, e condividere con persone esterne dovrebbe richiedere un&#x27;approvazione. Aiuterebbero anche controlli regolari su chi può aprire cosa e una breve formazione sulla condivisione dei link.</p></td></tr><tr><td class="label"><p>Motivazione</p></td><td colspan="3"><p class="q">In che modo questi miglioramenti risolvono i problemi?</p><p class="q">Una cartella separata per il materiale pubblico fa sì che un clic sbagliato condivida qualcosa di innocuo. La scadenza automatica elimina il problema del responsabile che dimentica di togliere l&#x27;accesso. Bloccare i link per gli utenti esterni avrebbe fermato la fuga anche dopo l&#x27;errore, mentre i controlli periodici e la formazione riducono la probabilità che succeda di nuovo.</p></td></tr></table></div>
+<h3>Quadro del piano di sicurezza</h3>
+<p>Il NIST Cybersecurity Framework (CSF) organizza le informazioni in una struttura gerarchica ad albero. Da sinistra a destra descrive una funzione di sicurezza generale, poi diventa più specifico passando a una categoria, una sottocategoria e ai singoli controlli di sicurezza.</p>
+<div class="tablewrap"><table><tr><th><p>Funzione</p></th><th><p>Categoria</p></th><th><p>Sottocategoria</p></th><th><p>Riferimenti</p></th></tr><tr><td class="label"><p>Proteggere</p></td><td><p>PR.DS: sicurezza dei dati</p></td><td><p>PR.DS-5: protezioni contro le fughe di dati.</p></td><td><p>NIST SP 800-53: AC-6</p></td></tr></table></div>
+<p>In questo esempio, i controlli usati dal produttore per proteggersi dalle fughe di dati sono definiti in NIST SP 800-53, un insieme di linee guida per proteggere la privacy dei sistemi informativi.</p>
+<p>Nota: i riferimenti sono spesso collegati con un link alle linee guida o alle norme a cui si riferiscono. Questo rende facile approfondire come va attuato un certo controllo. È comune trovare più link a fonti diverse nelle colonne dei riferimenti.</p>
+<h3>NIST SP 800-53: AC-6</h3>
+<p class="q">NIST ha sviluppato SP 800-53 per dare alle aziende un piano personalizzabile sulla privacy delle informazioni. È una risorsa completa che descrive molte categorie di controlli. Ogni controllo fornisce alcune informazioni chiave:</p>
+<ul><li>Controllo: la definizione del controllo di sicurezza.</li><li>Discussione: la descrizione di come il controllo dovrebbe essere attuato.</li><li>Miglioramenti del controllo: un elenco di suggerimenti per renderlo più efficace.</li></ul>
+<div class="tablewrap"><table><tr><td class="label"><p>AC-6</p></td><td><p>Privilegio minimo</p></td></tr><tr><td></td><td><p>Controllo:</p><p>Agli utenti si dovrebbero dare solo l&#x27;accesso e l&#x27;autorizzazione minimi necessari per completare un compito o una funzione.</p></td></tr><tr><td></td><td><p>Discussione:</p><p>Processi, account utente e ruoli vanno applicati come serve per ottenere il privilegio minimo. L&#x27;obiettivo è impedire a un utente di operare con livelli di privilegio più alti di quelli necessari per svolgere le sue attività.</p></td></tr><tr><td></td><td><p class="q">Miglioramenti del controllo:</p><ul><li>Limitare l&#x27;accesso alle risorse sensibili in base al ruolo dell&#x27;utente.</li><li>Revocare automaticamente l&#x27;accesso alle informazioni dopo un certo periodo.</li><li>Conservare i log delle attività degli account utente creati.</li><li>Controllare regolarmente i privilegi degli utenti.</li></ul></td></tr></table></div>
+<p>Nota: nella categoria dei controlli di accesso, SP 800-53 mette il privilegio minimo al sesto posto, cioè AC-6.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="access-controls-payroll.html"><small>&larr; Precedente</small>Controlli di accesso: incidente sul payroll</a><a class="next" href="usb-parking-lot.html"><small>Successivo &rarr;</small>Esercizio sulla chiavetta USB nel parcheggio</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

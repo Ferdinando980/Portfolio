@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Analisi di un incidente: ICMP flood | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Analisi di un DDoS causato da un ICMP flood con le cinque funzioni del NIST CSF, dall&#x27;identificazione al ripristino.">
+<meta property="og:title" content="Analisi di un incidente: ICMP flood | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Analisi di un DDoS causato da un ICMP flood con le cinque funzioni del NIST CSF, dall&#x27;identificazione al ripristino.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">Profilo</a><a href="index.html#case-study">Case study</a><a href="projects.html">Progetti</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Studente di Informatica</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">IT</span><a href="../en/icmp-flood-incident.html" hreflang="en" lang="en">EN</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-respond">
+<p class="crumbs"><a href="index.html">&larr; Tutti i case study</a></p>
+<span class="tag a-respond">Rispondere</span>
+<h1>Analisi di un incidente: ICMP flood</h1>
+<hr class="rule">
+<p class="lead">Analisi di un DDoS causato da un ICMP flood con le cinque funzioni del NIST CSF, dall&#x27;identificazione al ripristino.</p>
+<ul class="skill-list"><li>NIST CSF</li><li>risposta agli incidenti</li><li>regole del firewall</li><li>IDS/IPS</li></ul>
+<a class="btn" href="../pdf/it/icmp-flood-incident.pdf" download>Scarica il PDF</a>
+</header>
+<article class="article a-respond">
+<div class="tablewrap"><table><tr><td class="label"><p>Riepilogo</p></td><td><p>La rete interna dell&#x27;azienda ha smesso di rispondere per un po&#x27; e nessuno poteva usare i servizi di rete. Il team di sicurezza ha scoperto che la causa era un&#x27;ondata di pacchetti ICMP arrivati dall&#x27;esterno, cioè un attacco distribuito di negazione del servizio (DDoS). Per tornare al lavoro, il team ha bloccato il traffico ICMP in ingresso e ha fermato i servizi non critici, così da ripristinare prima quelli critici.</p></td></tr><tr><td class="label"><p>Identificare</p></td><td><p>L&#x27;azienda è stata colpita da un ICMP flood. Il punto debole era un firewall che non limitava i pacchetti ICMP in ingresso, così l&#x27;attaccante ha potuto sovraccaricare l&#x27;intera rete interna. Tutto ciò che dipende dalla rete è stato colpito, quindi le risorse critiche vanno individuate in anticipo e protette per prime.</p></td></tr><tr><td class="label"><p>Proteggere</p></td><td><p>Una nuova regola del firewall ora limita la velocità con cui i pacchetti ICMP possono entrare nella rete. Il team ha anche aggiunto un IDS/IPS che filtra il traffico ICMP con caratteristiche sospette.</p></td></tr><tr><td class="label"><p>Rilevare</p></td><td><p>Il firewall ora controlla l&#x27;indirizzo IP di origine dei pacchetti ICMP in ingresso per scoprire indirizzi falsificati. È stato aggiunto anche un software di monitoraggio di rete per individuare presto schemi di traffico anomali.</p></td></tr><tr><td class="label"><p>Rispondere</p></td><td><p>La prossima volta isoleremo per prima cosa i sistemi colpiti, così il problema non si estende. Poi ripristineremo i sistemi e i servizi critici, leggeremo i log di rete cercando qualcosa di strano e segnaleremo l&#x27;incidente alla direzione e, quando la legge lo richiede, alle autorità.</p></td></tr><tr><td class="label"><p>Ripristinare</p></td><td><p>Per riprendersi da un ICMP flood si blocca il traffico ICMP esterno sul firewall e si fermano i servizi non critici per ridurre il carico dentro la rete. I servizi critici tornano per primi. Quando l&#x27;ondata è esaurita, si possono ripristinare anche gli altri servizi.</p></td></tr><tr><td class="label"><p>Riflessioni / Note</p></td><td><p>Una regola del firewall e uno strumento di monitoraggio avrebbero potuto evitare all&#x27;azienda un lungo blocco. Ho anche imparato che la risposta ha bisogno di un ordine: bloccare il traffico, ridurre il carico, rimettere in funzione ciò che è critico, poi il resto.</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="pyramid-of-pain.html"><small>&larr; Precedente</small>Analisi di un hash di file con la Piramide del dolore</a><a class="next" href="http-malware-incident.html"><small>Successivo &rarr;</small>Rapporto di sicurezza: malware da un sito compromesso</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Case study didattici basati su scenari simulati del Google Cybersecurity Certificate. Non sono stati testati sistemi reali e non si usano dati reali.</p><p>Non costituiscono un&#x27;attestazione formale, una certificazione né una valutazione legale di conformità.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

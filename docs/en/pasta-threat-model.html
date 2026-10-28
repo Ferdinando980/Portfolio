@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>PASTA threat model: sneaker company app | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Walking an app through the seven stages of PASTA, from business goals to controls, with an attack tree for stolen user data.">
+<meta property="og:title" content="PASTA threat model: sneaker company app | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Walking an app through the seven stages of PASTA, from business goals to controls, with an attack tree for stolen user data.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/pasta-threat-model.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-identify">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-identify">Identify</span>
+<h1>PASTA threat model: sneaker company app</h1>
+<hr class="rule">
+<p class="lead">Walking an app through the seven stages of PASTA, from business goals to controls, with an attack tree for stolen user data.</p>
+<ul class="skill-list"><li>PASTA</li><li>threat modeling</li><li>SQL injection</li><li>attack trees</li></ul>
+<a class="btn" href="../pdf/en/pasta-threat-model.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-identify">
+<div class="tablewrap"><table><tr><td class="label"><p>Scenario</p></td><td><p>A sneaker company is building an app where customers can sign up, search the catalog and pay. I used PASTA (Process for Attack Simulation and Threat Analysis) to look at the app from the business goals down to the controls, one stage at a time.</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>I. Define business and security objectives</p></td><td><p>Customers can create a profile in the app or sign in with an account from another service.</p><p>The app takes payments, so it handles card data and has to follow PCI DSS.</p><p>Search and listings are used all the time, so the back end has to stay fast, available and correct.</p></td></tr><tr><td class="label"><p>II. Define the technical scope</p></td><td><p>Technologies used by the application: application programming interface (API), public key infrastructure (PKI), SHA-256, SQL.</p><p>I would put the API first. Almost everything goes through it: login, search, payments and the link with outside services. That means it touches a lot of sensitive data and has the largest attack surface. The database comes second, because that is where the data ends up, but a weak API opens the way to it.</p></td></tr><tr><td class="label"><p>III. Decompose application</p></td><td><p>Product search process, the one flow I mapped:</p><p>1. The customer types a search in the app.</p><p>2. The app sends the request to the API.</p><p>3. The API queries the product database.</p><p>4. The database returns the current listings.</p><p>5. The API sends the results back to the customer.</p><p>A real data flow diagram for an app like this is much bigger. This is a single process.</p></td></tr><tr><td class="label"><p>IV. Threat analysis</p></td><td><p>External: SQL injection through the search box or another input, to read or change data.</p><p>Internal: an employee or contractor with more access than the job needs, who copies or changes customer data on purpose or by mistake.</p></td></tr><tr><td class="label"><p>V. Vulnerability analysis</p></td><td><p>Database queries that are built by pasting user input into the SQL text, instead of using prepared statements.</p><p>API tokens that never expire and are not tied to a single session, so a stolen token keeps working for as long as the attacker likes.</p></td></tr><tr><td class="label"><p>VI. Attack modeling</p></td><td><p>Goal: steal user data.</p><p>Branch 1: SQL injection, possible because the queries do not use prepared statements.</p><p>Branch 2: account takeover with a stolen session token or a weak password, possible because tokens do not expire and passwords are not checked for strength.</p></td></tr><tr><td class="label"><p>VII. Risk analysis and impact</p></td><td><p>1. Prepared statements and input validation, to close the injection path.</p><p>2. Principle of least privilege, so an account only reaches the data it needs.</p><p>3. A password policy with multifactor authentication, and tokens that expire.</p><p>4. Logging and an incident response procedure, so an attack is noticed and handled quickly.</p></td></tr></table></div>
+<h2>What I took from it</h2>
+<p>PASTA starts from what the business needs and not from the technology, and I liked that. Once the objectives were clear it was easy to see why the API deserved the most attention, and the two vulnerabilities I picked lined up with the two branches of the attack tree. Each control at the end answers one of them.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="risk-register-bank.html"><small>&larr; Previous</small>Risk register: a bank</a><a class="next" href="home-asset-inventory.html"><small>Next &rarr;</small>Home network asset inventory</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

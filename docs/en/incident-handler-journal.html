@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>Incident handler&#x27;s journal | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Four journal entries on incidents and tools: a ransomware case, a phishing ticket, tcpdump and Wireshark, and the Pyramid of Pain.">
+<meta property="og:title" content="Incident handler&#x27;s journal | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Four journal entries on incidents and tools: a ransomware case, a phishing ticket, tcpdump and Wireshark, and the Pyramid of Pain.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/incident-handler-journal.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-respond">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-respond">Respond</span>
+<h1>Incident handler&#x27;s journal</h1>
+<hr class="rule">
+<p class="lead">Four journal entries on incidents and tools: a ransomware case, a phishing ticket, tcpdump and Wireshark, and the Pyramid of Pain.</p>
+<ul class="skill-list"><li>Incident documentation</li><li>the 5 W&#x27;s</li><li>ransomware</li><li>note taking</li></ul>
+<a class="btn" href="../pdf/en/incident-handler-journal.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-respond">
+<p>I keep this journal to write down what I learn from each activity, in the same format every time. Each entry says what the activity was, which tool I used and what I would remember about it.</p>
+<div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#1</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Documenting a cybersecurity incident</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>None. I worked from the incident description in the course.</p></td></tr><tr><td class="label"><p>The 5 W&#x27;s</p></td><td><p>Who: an organized group of attackers</p><p>What: a ransomware incident that encrypted the clinic&#x27;s files</p><p>Where: a small health care clinic</p><p>When: Tuesday morning, around 9:00 a.m.</p><p>Why: employees received phishing emails with a malicious attachment, and opening it gave the attackers a way in. They then ran ransomware and left a note demanding money for the decryption key, so the motive looks financial.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>How could the clinic stop this from happening again? Training staff to spot phishing, filtering attachments on the mail server, and keeping tested offline backups would all help.</p><p>Should it pay the ransom? I would not pay by default. There is no guarantee the key will work and the payment feeds the attackers. It is a decision for management, with legal advice and law enforcement, and good backups make the question less urgent.</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#2</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Reviewing a phishing alert ticket (A-2703)</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>VirusTotal, to look up the file hash.</p></td></tr><tr><td class="label"><p>The 5 W&#x27;s</p></td><td><p>Who: an unknown sender using the name Clyde West, from a .su address</p><p>What: a phishing email with an executable attachment called bfsvc.exe</p><p>Where: the HR mailbox of the company</p><p>When: Wednesday, July 20, 2022, 09:30 a.m.</p><p>Why: the attacker wants the file to run on a company computer. The password written in the email is there to stop mail scanners from opening the file.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>A hash lookup is quick and here it gave a clear answer. What I am less sure about is a file whose hash nobody has seen yet, because new malware has no reputation. For that I would need a sandbox or help from a more senior analyst.</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#3</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Comparing tcpdump and Wireshark</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>tcpdump and Wireshark.</p></td></tr><tr><td class="label"><p>Key takeaways</p></td><td><p>tcpdump is light and works on a server from the command line. Wireshark is heavier but much easier to read, with colors and filters. Both can save and read capture files, so I can capture with one and analyze with the other.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>I need to practice the tcpdump options more. I keep forgetting which flag turns off name resolution (-nn).</p></td></tr></table></div>
+<div class="tablewrap"><table><tr><td class="label"><p>Date</p></td><td><p>October 23, 2026</p></td></tr><tr><td class="label"><p>Entry</p></td><td><p>#4</p></td></tr><tr><td class="label"><p>Description</p></td><td><p>Using the Pyramid of Pain on a file hash</p></td></tr><tr><td class="label"><p>Tool(s) used</p></td><td><p>VirusTotal.</p></td></tr><tr><td class="label"><p>Key takeaways</p></td><td><p>A hash is the easiest indicator to find and the easiest for an attacker to change. Domain names and IP addresses are a bit harder to change. Tools and TTPs are the hardest, and they are the ones worth detecting.</p></td></tr><tr><td class="label"><p>Additional notes</p></td><td><p>Next time I look at an indicator I want to ask which level of the pyramid it sits on, and not just whether it is malicious.</p></td></tr></table></div>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="incident-final-report.html"><small>&larr; Previous</small>Incident final report: data breach through forced browsing</a><a class="next" href="phishing-incident.html"><small>Next &rarr;</small>Incident report analysis: phishing and a stolen account</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>

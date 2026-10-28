@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+
+<title>File permissions in Linux | Ferdinando Gregorio Fernandez</title>
+<meta name="description" content="Checking and tightening permissions on files, a hidden file and a directory with ls and chmod.">
+<meta property="og:title" content="File permissions in Linux | Ferdinando Gregorio Fernandez">
+<meta property="og:description" content="Checking and tightening permissions on files, a hidden file and a directory with ls and chmod.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css?v=8d94939e">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap bar">
+<nav class="menu" aria-label="Menu"><a href="about.html">About</a><a href="index.html#case-study">Case studies</a><a href="projects.html">Projects</a></nav>
+<a class="brand" href="index.html">Ferdinando Gregorio Fernandez <small>Computer Science student</small></a>
+<nav class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../it/linux-file-permissions.html" hreflang="it" lang="it">IT</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<header class="article-head a-protect">
+<p class="crumbs"><a href="index.html">&larr; All case studies</a></p>
+<span class="tag a-protect">Protect</span>
+<h1>File permissions in Linux</h1>
+<hr class="rule">
+<p class="lead">Checking and tightening permissions on files, a hidden file and a directory with ls and chmod.</p>
+<ul class="skill-list"><li>Linux command line</li><li>ls</li><li>chmod</li><li>least privilege</li></ul>
+<a class="btn" href="../pdf/en/linux-file-permissions.pdf" download>Download as PDF</a>
+</header>
+<article class="article a-protect">
+<h2>Project description</h2>
+<p>The research team in my organization asked me to update the permissions of some files and directories in the projects directory. The permissions in place did not match the level of access each person should have, and fixing them keeps the system more secure. I did it in four steps: check the current permissions, then change them on a normal file, on a hidden file and on a directory.</p>
+<h2>Check file and directory details</h2>
+<p class="q">I listed the content of the projects directory with ls -la. The -l option gives the long format, with permissions, owner and group, and -a also shows hidden files:</p>
+<pre>cd /home/researcher2/projects
+ls -la</pre>
+<p>The directory holds a subdirectory called drafts, a hidden file called .project_x.txt and five regular project files. The first column of every line is a string of 10 characters that describes the permissions.</p>
+<h2>Describe the permissions string</h2>
+<p>The 10 characters are read in groups. The 1st character is the file type: d for a directory, a hyphen for a regular file. Characters 2 to 4 are the permissions of the user (the owner), 5 to 7 are for the group, and 8 to 10 are for other, which means everyone else on the system. In each group, r is read, w is write and x is execute, and a hyphen means that permission is not given.</p>
+<p>For example, project_t.txt has -rw-rw-r--. It starts with a hyphen, so it is a regular file. The user and the group can read and write it, other can only read it, and nobody can execute it.</p>
+<h2>Change file permissions</h2>
+<p class="q">The organization decided that other should not have write access to any file. In the listing, project_k.txt was the file where other could still write, so I removed that permission and checked the result:</p>
+<pre>chmod o-w project_k.txt
+ls -la</pre>
+<h2>Change file permissions on a hidden file</h2>
+<p class="q">The team archived project_x.txt. Nobody should be able to write to it, but the user and the group must be able to read it. The file name starts with a dot, which is why it is hidden and only appears with ls -a. I removed write permission from the user and the group, and added read permission for the group:</p>
+<pre>chmod u-w .project_x.txt
+chmod g-w .project_x.txt
+chmod g+r .project_x.txt
+ls -la</pre>
+<h2>Change directory permissions</h2>
+<p class="q">Only researcher2 may have access to the drafts directory and what is inside it. For a directory, the execute permission is what allows a user to enter it. The group still had it, so I removed it. The user researcher2 already had execute, so nothing had to be added:</p>
+<pre>chmod g-x drafts
+ls -la</pre>
+<h2>Summary</h2>
+<p>I changed the permissions so they follow the access rules of the organization. I first used ls -la to see the situation, and that is what told me which changes were needed. Then I used chmod three times, with the symbolic mode, on a regular file, on a hidden file and on a directory, and checked each time with ls -la.</p>
+<nav class="pager" aria-label="Case studies"><a class="prev" href="usb-parking-lot.html"><small>&larr; Previous</small>Parking lot USB exercise</a><a class="next" href="hardening-risk-assessment.html"><small>Next &rarr;</small>Security risk assessment: hardening tools</a></nav>
+</article>
+</div>
+</main>
+<footer class="site-foot"><div class="wrap foot-grid">
+<div><p class="foot-name">Ferdinando Gregorio Fernandez</p><p>Educational case studies based on simulated scenarios from the Google Cybersecurity Certificate. No live systems were tested and no real data is used.</p><p>They are not a formal attestation, certification or legal assessment of compliance.</p></div>
+<ul class="foot-links"><li><a href="https://github.com/Ferdinando980" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/ferdinando-gregorio-fernandez-986b83315" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div></footer>
+<script src="../assets/site.js?v=8d94939e" defer></script>
+</body>
+</html>
