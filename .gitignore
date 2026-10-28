@@ -1,8 +1,6 @@
 # La foto originale può contenere metadati (posizione, dispositivo): nel sito va solo la versione ripulita in docs/assets/
 tools/photo/*
 !tools/photo/.gitkeep
-# cache degli strumenti di sviluppo
-.impeccable/
 __pycache__/
 *.pyc
 

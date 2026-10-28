@@ -7,19 +7,29 @@
       "enabled": true,
       "tone": "compliance",
       "title": "Procedural Memory Lab",
-      "status": {"it": "Ricerca in corso", "en": "Ongoing research"},
+      "status": {
+        "it": "Ricerca in corso",
+        "en": "Ongoing research"
+      },
       "summary": {
         "it": "Caso di studio sperimentale per capire se i modelli linguistici piccoli migliorano recuperando procedure, oppure se si limitano a rivedere risposte simili. Il banco di prova sono funzioni Python con bug reali e verifiche automatiche con pytest, confrontate in quattro configurazioni.",
         "en": "An experimental case study on whether small language models improve by retrieving procedures, or merely by seeing similar answers again. The test bed is Python functions with real bugs and automated pytest checks, compared across four configurations."
       },
-      "tags": {"it": "Python, pytest, modelli linguistici, valutazione sperimentale", "en": "Python, pytest, language models, experimental evaluation"},
+      "tags": {
+        "it": "Python, pytest, modelli linguistici, valutazione sperimentale",
+        "en": "Python, pytest, language models, experimental evaluation"
+      },
       "how": {
-        "it": ["Servono Python 3.11 o superiore e le dipendenze elencate in requirements.txt.",
-               "Si avvia la configurazione guidata con python -m cognitive_rpg.settings_wizard.",
-               "Si lancia l'esperimento con python -m cognitive_rpg.experiment.experiment_0. Per sviluppare senza chiamate a pagamento sono disponibili adattatori simulati."],
-        "en": ["Python 3.11 or newer and the dependencies listed in requirements.txt are required.",
-               "The guided setup is started with python -m cognitive_rpg.settings_wizard.",
-               "The experiment is launched with python -m cognitive_rpg.experiment.experiment_0. Mock adapters are available to develop without paid calls."]
+        "it": [
+          "Servono Python 3.11 o superiore e le dipendenze elencate in requirements.txt.",
+          "Si avvia la configurazione guidata con python -m cognitive_rpg.settings_wizard.",
+          "Si lancia l'esperimento con python -m cognitive_rpg.experiment.experiment_0. Per sviluppare senza chiamate a pagamento sono disponibili adattatori simulati."
+        ],
+        "en": [
+          "Python 3.11 or newer and the dependencies listed in requirements.txt are required.",
+          "The guided setup is started with python -m cognitive_rpg.settings_wizard.",
+          "The experiment is launched with python -m cognitive_rpg.experiment.experiment_0. Mock adapters are available to develop without paid calls."
+        ]
       },
       "note": {
         "it": "Progetto di ricerca indipendente, non una pubblicazione sottoposta a revisione. Il codice è visibile per valutazione; il riutilizzo non è consentito.",
@@ -33,19 +43,29 @@
       "enabled": true,
       "tone": "access",
       "title": "VinylWaves",
-      "status": {"it": "Progetto universitario", "en": "University project"},
+      "status": {
+        "it": "Progetto universitario",
+        "en": "University project"
+      },
       "summary": {
         "it": "Negozio web in Java per vinili, CD e giradischi, sviluppato da un gruppo di tre persone per il corso di Tecnologie Software per il Web. Comprende catalogo con ricerca e filtri, account, carrello, ordini e gestione dei prodotti.",
         "en": "A Java web shop for vinyl records, CDs and turntables, developed by a team of three for the Web Software Technologies course. It includes a catalogue with search and filters, accounts, cart, orders and product management."
       },
-      "tags": {"it": "Java 21, Jakarta Servlet e JSP, MySQL, Maven", "en": "Java 21, Jakarta Servlet and JSP, MySQL, Maven"},
+      "tags": {
+        "it": "Java 21, Jakarta Servlet e JSP, MySQL, Maven",
+        "en": "Java 21, Jakarta Servlet and JSP, MySQL, Maven"
+      },
       "how": {
-        "it": ["Importare lo schema vnl_db.sql in MySQL e configurare la connessione locale attesa dal livello DAO: le credenziali non sono nel repository.",
-               "Dalla cartella vnl eseguire ./mvnw package per creare il file WAR.",
-               "Distribuire il WAR in un container compatibile con Jakarta Servlet, per esempio Tomcat 10."],
-        "en": ["Import the vnl_db.sql schema into MySQL and set up the local connection expected by the DAO layer: credentials are not in the repository.",
-               "From the vnl folder run ./mvnw package to build the WAR file.",
-               "Deploy the WAR to a Jakarta Servlet compatible container, for example Tomcat 10."]
+        "it": [
+          "Importare lo schema vnl_db.sql in MySQL e configurare la connessione locale attesa dal livello DAO: le credenziali non sono nel repository.",
+          "Dalla cartella vnl eseguire ./mvnw package per creare il file WAR.",
+          "Distribuire il WAR in un container compatibile con Jakarta Servlet, per esempio Tomcat 10."
+        ],
+        "en": [
+          "Import the vnl_db.sql schema into MySQL and set up the local connection expected by the DAO layer: credentials are not in the repository.",
+          "From the vnl folder run ./mvnw package to build the WAR file.",
+          "Deploy the WAR to a Jakarta Servlet compatible container, for example Tomcat 10."
+        ]
       },
       "note": {
         "it": "Lavoro di gruppo: ogni contributo è indicato nel README. Il codice è visibile per valutazione; il riutilizzo non è consentito.",
@@ -56,24 +76,37 @@
     {
       "id": "ases-scanner",
       "visibility": "public",
-      "enabled": false,
+      "enabled": true,
       "tone": "net",
       "title": "ASES, Architecture and Software Evidence Scanner",
-      "status": {"it": "In sviluppo", "en": "In development"},
+      "status": {
+        "it": "In sviluppo",
+        "en": "In development"
+      },
       "summary": {
         "it": "Scanner che ricostruisce ciò che un codice fa davvero prima di proporre come dovrebbe cambiare: classifica i file, raccoglie i fatti, conserva le prove contrarie e solo dopo deduce. Analizza progetti Java, Python, TypeScript e frontend.",
         "en": "A scanner that reconstructs what a codebase actually does before recommending how it should change: it classifies the files, collects facts, keeps counter-evidence and only then infers. It analyzes Java, Python, TypeScript and frontend projects."
       },
-      "tags": {"it": "Python, analisi del codice, architettura software", "en": "Python, code analysis, software architecture"},
-      "how": {
-        "it": ["Dalla cartella runtime: python -m pip install -e \".[test]\" e python -m pytest -q.",
-               "Scansione di un repository: ases scan https://github.com/PROPRIETARIO/REPOSITORY.",
-               "Confronto tra due scansioni: ases diff precedente.ases attuale.ases."],
-        "en": ["From the runtime folder: python -m pip install -e \".[test]\" and python -m pytest -q.",
-               "Scan a repository: ases scan https://github.com/OWNER/REPOSITORY.",
-               "Compare two scans: ases diff previous.ases current.ases."]
+      "tags": {
+        "it": "Python, analisi del codice, architettura software",
+        "en": "Python, code analysis, software architecture"
       },
-      "note": {"it": "Da attivare quando il progetto è concluso (enabled: true).", "en": "To be enabled when the project is finished (enabled: true)."},
+      "how": {
+        "it": [
+          "Servono Python 3.11 o superiore e un ambiente virtuale attivo. Dalla radice del repository: python -m pip install -e \"./runtime[documents]\".",
+          "Si apre l'interfaccia nel browser con ases ui, oppure da terminale si analizza un progetto con ases scan /percorso/del/progetto --out attuale.ases.",
+          "Per confrontare una nuova analisi con la precedente: ases scan /percorso/del/progetto --out successiva.ases --baseline attuale.ases."
+        ],
+        "en": [
+          "Python 3.11 or newer and an active virtual environment are required. From the repository root: python -m pip install -e \"./runtime[documents]\".",
+          "The interface opens in the browser with ases ui, or a project is analyzed from the terminal with ases scan /path/to/project --out current.ases.",
+          "To compare a new analysis with the previous one: ases scan /path/to/project --out next.ases --baseline current.ases."
+        ]
+      },
+      "note": {
+        "it": "Progetto personale ancora in sviluppo. Il codice è visibile per valutazione; il riutilizzo non è consentito.",
+        "en": "A personal project still in development. The code is visible for evaluation; reuse is not permitted."
+      },
       "url": "https://github.com/Ferdinando980/ases-scanner"
     }
   ]

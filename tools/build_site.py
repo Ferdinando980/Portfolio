@@ -22,7 +22,7 @@ PROJ = json.load(open(os.path.join(TOOLS, "projects.json"), encoding="utf-8"))["
 SRC = os.path.normpath(os.path.join(TOOLS, CFG["source_dir"]))
 LANGS = ("it", "en")
 import hashlib, time
-VER = hashlib.md5(str(time.time()).encode()).hexdigest()[:8]
+VER = hashlib.sha256(str(time.time()).encode()).hexdigest()[:8]
 
 UI = {
     "en": dict(
