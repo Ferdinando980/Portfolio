@@ -150,8 +150,8 @@
       ]
     },
     "roles_note": {
-      "it": "Sono i ruoli indicati dalla pagina del corso su Coursera. Il certificato prepara a questi ruoli: non è un'abilitazione e non sostituisce l'esperienza. Il percorso prepara anche all'esame CompTIA Security+, che è una certificazione separata.",
-      "en": "These are the roles listed on the course page on Coursera. The certificate prepares for these roles: it is not a license and it does not replace experience. The program also prepares for the CompTIA Security+ exam, which is a separate certification."
+      "it": "Sono i ruoli indicati dalla pagina del corso su Coursera. Il certificato prepara a questi ruoli ma non sostituisce l'esperienza. Il percorso prepara anche all'esame CompTIA Security+, che è una certificazione separata.",
+      "en": "These are the roles listed on the course page on Coursera. The certificate prepares for these roles but does not replace experience. The program also prepares for the CompTIA Security+ exam, which is a separate certification."
     },
     "courses_title": {
       "it": "I corsi del programma",
