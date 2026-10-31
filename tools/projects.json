@@ -36,20 +36,6 @@
         "en": "An independent research project, not a peer-reviewed paper. The code is visible for evaluation; reuse is not permitted."
       },
       "url": "https://github.com/Ferdinando980/Procedural-memory-lab",
-      "highlights": {
-        "it": [
-          "Una procedura aiuta? In alcuni casi sì, ma non abbastanza da dimostrare che sia meglio di un semplice esempio.",
-          "Ragiona o copia? Modificando un valore dentro la procedura, la risposta del modello lo seguiva ogni volta: un controllo causale per distinguere le due cose.",
-          "Serve sempre? Spesso il modello avrebbe risolto il compito anche senza: pertinente non significa necessario.",
-          "Chi controlla il controllore? Anche il verificatore può sbagliare, e la ricerca ha mostrato dove."
-        ],
-        "en": [
-          "Does a procedure help? In some cases, but not enough to show it beats a simple example.",
-          "Reasoning or copying? Changing a value inside the procedure made the model's answer follow it every time: a causal check to tell the two apart.",
-          "Is it always needed? Often the model would have solved the task without it: relevant does not mean necessary.",
-          "Who checks the checker? The checker can be wrong too, and the research showed where."
-        ]
-      },
       "teaser": {
         "it": "Un modello piccolo impara da una procedura, o gli basta rivedere una risposta simile? E se una regola in più lo facesse peggiorare? Ricerca sperimentale su bug Python reali, verificati da pytest.",
         "en": "Does a small model learn from a procedure, or does it only need to see a similar answer? And what if one extra rule made it worse? Experimental research on real Python bugs, checked by pytest."
