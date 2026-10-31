@@ -12,8 +12,8 @@
         "en": "Ongoing research"
       },
       "summary": {
-        "it": "Ricerca indipendente su una domanda precisa: un modello linguistico piccolo migliora davvero quando recupera una procedura scritta in tentativi precedenti, o gli basta rivedere una risposta simile? Per separare le due spiegazioni, ogni compito (funzioni Python con bug reali, verificate da pytest) viene eseguito in quattro configurazioni: modello grande, modello piccolo come base di confronto, modello piccolo con una procedura generale recuperata e modello piccolo con la soluzione di un caso simile.",
-        "en": "Independent research on a precise question: does a small language model really improve when it retrieves a procedure written in earlier attempts, or does it only need to see a similar answer again? To tell the two explanations apart, every task (Python functions with real bugs, checked by pytest) is run in four configurations: a larger model, a small model as the baseline, a small model with a general procedure retrieved, and a small model given the solution of a similar case."
+        "it": "Ricerca indipendente su una domanda precisa: un modello linguistico piccolo migliora davvero quando recupera una procedura, o gli basta rivedere la soluzione di un caso simile? Ogni compito, una funzione Python con un bug reale verificata da pytest, viene eseguito in quattro configurazioni: modello grande, modello piccolo da solo, modello piccolo con una procedura recuperata e modello piccolo con la soluzione di un caso simile.",
+        "en": "Independent research on a precise question: does a small language model really improve when it retrieves a procedure, or does it only need to see the solution of a similar case? Every task, a Python function with a real bug checked by pytest, is run in four configurations: a larger model, a small model alone, a small model with a retrieved procedure and a small model given the solution of a similar case."
       },
       "tags": {
         "it": "Python, pytest, modelli linguistici, valutazione sperimentale, verifica causale",
@@ -38,27 +38,23 @@
       "url": "https://github.com/Ferdinando980/Procedural-memory-lab",
       "highlights": {
         "it": [
-          "Il risultato di riferimento proviene da un'unica esecuzione controllata: 39 compiti, con un solo provider e un solo modello per configurazione. Il modello piccolo dotato della libreria di procedure ha risolto 38 compiti, contro i 36 del modello piccolo da solo e i 38 del modello grande. Il vantaggio corrisponde a tre fallimenti recuperati: indica una direzione, ma non è statisticamente significativo (p = 0,25). Le esecuzioni precedenti, in cui modello o provider cambiavano nel corso della prova, sono archiviate e non contribuiscono ad alcun risultato.",
-          "La procedura è stata fornita in 31 compiti su 39 e in 27 di questi il modello piccolo avrebbe comunque risolto il compito. Solo due dei dieci pattern coperti hanno prodotto un beneficio misurabile: un miglioramento complessivo non basta a giustificare ogni singola procedura.",
-          "Procedura o esempio: la soluzione di un caso simile ha prodotto gli stessi risultati della procedura generale sugli stessi compiti, quindi con questi dati le due spiegazioni non sono distinguibili.",
-          "Controllo causale: cambiando un valore dentro la procedura recuperata la risposta lo seguiva 12 volte su 12, mentre cambiare un valore non correlato non produceva effetti (6 su 6). Il modello sceglieva la regola giusta, ma ricopiava un valore.",
-          "Dopo aver riscritto la procedura chiedendo di derivare il valore, il modello ha calcolato tolleranze su sette ordini di grandezza.",
-          "Costo: l'uso di una procedura già pronta comporta in media 145 token di input aggiuntivi rispetto al modello senza aiuto; costruirne una nuova richiede circa 2000 token una tantum per pattern, e solo uno dei dieci pattern recupera in token il costo di costruzione.",
-          "Le stesse idee sono state portate in Aria, un'app di studio per un utente reale con ADHD, come secondo terreno di prova. Con l'uso reale il confronto tra gruppi ha un bias di composizione, quindi si usa un confronto appaiato alla cieca. Un primo confronto su 22 coppie con un modello locale (17 su 22 contro 13 su 22 del prompt senza recupero) è preliminare, esterno ai dati di riferimento e non conclusivo."
+          "Aiuta davvero? Su 39 compiti il modello piccolo con la libreria di procedure ne ha risolti 38, contro i 36 del modello piccolo da solo: una direzione, non ancora un effetto statisticamente significativo.",
+          "Procedura o esempio? La soluzione di un caso simile ha dato gli stessi risultati della procedura, quindi con questi dati le due spiegazioni non si distinguono.",
+          "Ragiona o copia? Cambiando una costante dentro la procedura, la risposta del modello la seguiva 12 volte su 12. Riscrivendo la procedura perché chieda di derivare il valore, il modello ha calcolato tolleranze su sette ordini di grandezza.",
+          "Serve sempre? In 27 dei 31 compiti in cui era stata fornita una procedura, il modello piccolo avrebbe comunque risolto il compito: pertinente non significa necessario.",
+          "Chi controlla il controllore? La ricerca ha trovato sei bug nel sistema di verifica e due test difettosi: un risultato ripetibile può comunque essere sbagliato."
         ],
         "en": [
-          "The reference result comes from a single controlled run: 39 tasks, with one provider and one model per configuration. The small model equipped with the procedure library solved 38 tasks, against 36 for the small model alone and 38 for the larger model. The advantage amounts to three recovered failures: it indicates a direction but is not statistically significant (p = 0.25). Earlier runs, in which the model or provider changed during the experiment, are archived and contribute to no result.",
-          "A procedure was supplied on 31 of the 39 tasks, and on 27 of them the small model would have solved the task anyway. Only two of the ten covered patterns produced a measurable benefit: an overall improvement does not justify every individual procedure.",
-          "Procedure or example: the solution of a similar case produced the same results as the general procedure on the same tasks, so with this data the two explanations cannot be distinguished.",
-          "Causal check: changing a value inside the retrieved procedure made the answer follow it 12 times out of 12, while changing an unrelated value had no effect (6 out of 6). The model chose the right rule but recited a value.",
-          "After rewriting the procedure to ask for a derivation, the model computed tolerances across seven orders of magnitude.",
-          "Cost: using a ready-made procedure adds on average 145 input tokens compared with the unassisted model; building a new one takes about 2000 tokens once per pattern, and only one of the ten patterns recovers its building cost in tokens.",
-          "The same ideas were carried over into Aria, a study app for a real user with ADHD, as a second testing ground. In real use a comparison between groups has a composition bias, so a blind paired comparison is used. A first comparison on 22 pairs with a local model (17 of 22 against 13 of 22 for the prompt without retrieval) is preliminary, lies outside the reference data and is not conclusive."
+          "Does it really help? On 39 tasks the small model with the procedure library solved 38, against 36 for the small model alone: a direction, not yet a statistically significant effect.",
+          "Procedure or example? The solution of a similar case produced the same results as the procedure, so with this data the two explanations cannot be told apart.",
+          "Reasoning or copying? Changing a constant inside the procedure made the model's answer follow it 12 times out of 12. After the procedure was rewritten to ask for a derivation, the model computed tolerances across seven orders of magnitude.",
+          "Is it always needed? On 27 of the 31 tasks where a procedure was supplied, the small model would have solved the task anyway: relevant does not mean necessary.",
+          "Who checks the checker? The research found six bugs in the verification system and two flawed tests: a repeatable result can still be wrong."
         ]
       },
       "teaser": {
-        "it": "Un modello linguistico piccolo migliora recuperando procedure, o rivede solo risposte simili? Ricerca sperimentale su funzioni Python con bug reali, verificate da pytest e confrontate in quattro configurazioni.",
-        "en": "Does a small language model improve by retrieving procedures, or does it only see similar answers again? Experimental research on Python functions with real bugs, checked by pytest and compared across four configurations."
+        "it": "Un modello piccolo impara da una procedura, o gli basta rivedere una risposta simile? E se una regola in più lo facesse peggiorare? Ricerca sperimentale su bug Python reali, verificati da pytest.",
+        "en": "Does a small model learn from a procedure, or does it only need to see a similar answer? And what if one extra rule made it worse? Experimental research on real Python bugs, checked by pytest."
       },
       "image": {
         "file": "procedural-memory-lab.webp",
