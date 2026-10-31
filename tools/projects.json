@@ -12,8 +12,8 @@
         "en": "Ongoing research"
       },
       "summary": {
-        "it": "Ricerca indipendente su una domanda precisa: un modello linguistico piccolo migliora davvero quando recupera una procedura, o gli basta rivedere la soluzione di un caso simile? Ogni compito, una funzione Python con un bug reale verificata da pytest, viene eseguito in quattro configurazioni: modello grande, modello piccolo da solo, modello piccolo con una procedura recuperata e modello piccolo con la soluzione di un caso simile.",
-        "en": "Independent research on a precise question: does a small language model really improve when it retrieves a procedure, or does it only need to see the solution of a similar case? Every task, a Python function with a real bug checked by pytest, is run in four configurations: a larger model, a small model alone, a small model with a retrieved procedure and a small model given the solution of a similar case."
+        "it": "Ricerca indipendente su una domanda precisa: un modello linguistico piccolo migliora davvero quando recupera una procedura, o gli basta rivedere la soluzione di un caso simile? Ogni compito, un bug Python reale verificato da pytest, viene eseguito in quattro configurazioni che permettono di separare le due spiegazioni.",
+        "en": "Independent research on a precise question: does a small language model really improve when it retrieves a procedure, or does it only need to see the solution of a similar case? Every task, a real Python bug checked by pytest, is run in four configurations that make it possible to tell the two explanations apart."
       },
       "tags": {
         "it": "Python, pytest, modelli linguistici, valutazione sperimentale, verifica causale",
@@ -38,18 +38,16 @@
       "url": "https://github.com/Ferdinando980/Procedural-memory-lab",
       "highlights": {
         "it": [
-          "Aiuta davvero? Su 39 compiti il modello piccolo con la libreria di procedure ne ha risolti 38, contro i 36 del modello piccolo da solo: una direzione, non ancora un effetto statisticamente significativo.",
-          "Procedura o esempio? La soluzione di un caso simile ha dato gli stessi risultati della procedura, quindi con questi dati le due spiegazioni non si distinguono.",
-          "Ragiona o copia? Cambiando una costante dentro la procedura, la risposta del modello la seguiva 12 volte su 12. Riscrivendo la procedura perché chieda di derivare il valore, il modello ha calcolato tolleranze su sette ordini di grandezza.",
-          "Serve sempre? In 27 dei 31 compiti in cui era stata fornita una procedura, il modello piccolo avrebbe comunque risolto il compito: pertinente non significa necessario.",
-          "Chi controlla il controllore? La ricerca ha trovato sei bug nel sistema di verifica e due test difettosi: un risultato ripetibile può comunque essere sbagliato."
+          "Una procedura aiuta? In alcuni casi sì, ma non abbastanza da dimostrare che sia meglio di un semplice esempio.",
+          "Ragiona o copia? Modificando un valore dentro la procedura, la risposta del modello lo seguiva ogni volta: un controllo causale per distinguere le due cose.",
+          "Serve sempre? Spesso il modello avrebbe risolto il compito anche senza: pertinente non significa necessario.",
+          "Chi controlla il controllore? Anche il verificatore può sbagliare, e la ricerca ha mostrato dove."
         ],
         "en": [
-          "Does it really help? On 39 tasks the small model with the procedure library solved 38, against 36 for the small model alone: a direction, not yet a statistically significant effect.",
-          "Procedure or example? The solution of a similar case produced the same results as the procedure, so with this data the two explanations cannot be told apart.",
-          "Reasoning or copying? Changing a constant inside the procedure made the model's answer follow it 12 times out of 12. After the procedure was rewritten to ask for a derivation, the model computed tolerances across seven orders of magnitude.",
-          "Is it always needed? On 27 of the 31 tasks where a procedure was supplied, the small model would have solved the task anyway: relevant does not mean necessary.",
-          "Who checks the checker? The research found six bugs in the verification system and two flawed tests: a repeatable result can still be wrong."
+          "Does a procedure help? In some cases, but not enough to show it beats a simple example.",
+          "Reasoning or copying? Changing a value inside the procedure made the model's answer follow it every time: a causal check to tell the two apart.",
+          "Is it always needed? Often the model would have solved the task without it: relevant does not mean necessary.",
+          "Who checks the checker? The checker can be wrong too, and the research showed where."
         ]
       },
       "teaser": {
